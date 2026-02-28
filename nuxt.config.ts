@@ -8,6 +8,7 @@ export default defineNuxtConfig({
         "@nuxt/eslint",
         "@nuxtjs/stylelint-module",
         "shadcn-nuxt",
+        "lenis/nuxt",
     ],
 
     eslint: {
