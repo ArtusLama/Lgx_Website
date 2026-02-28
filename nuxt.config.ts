@@ -9,6 +9,13 @@ export default defineNuxtConfig({
         "@nuxtjs/stylelint-module",
         "shadcn-nuxt",
         "lenis/nuxt",
+        "@nuxt/hints",
+        "@nuxt/icon",
+        "@nuxt/a11y",
+        "@vueuse/nuxt",
+        "@nuxtjs/seo",
+        "@nuxtjs/html-validator",
+        "@nuxt/image",
     ],
 
     eslint: {
