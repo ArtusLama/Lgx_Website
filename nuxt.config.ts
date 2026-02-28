@@ -1,13 +1,26 @@
+import tailwindcss from "@tailwindcss/vite"
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
-// eslint-disable-next-line no-undef
 export default defineNuxtConfig({
     compatibilityDate: "2025-07-15",
     devtools: { enabled: true },
-    modules: ["@nuxt/eslint", "@nuxtjs/stylelint-module"],
+    modules: [
+        "@nuxt/eslint",
+        "@nuxtjs/stylelint-module",
+        "shadcn-nuxt",
+    ],
 
     eslint: {
         config: {
             stylistic: true,
         },
+    },
+
+    css: ["~/assets/css/tailwind.css"],
+    vite: {
+        plugins: [
+            // @ts-expect-error - Can be safely ignored as the plugin is compatible with Nuxt!
+            tailwindcss(),
+        ],
     },
 })
