@@ -10,5 +10,9 @@
     },
 
     // Stylelint validation
-    "stylelint.validate": ["css", "vue"]
+    "stylelint.validate": ["css", "vue"],
+
+    "json.schemaDownload.trustedDomains": {
+        "https://shadcn-vue.com/schema.json": true
+    }
 }
