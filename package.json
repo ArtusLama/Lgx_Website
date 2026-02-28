@@ -9,7 +9,9 @@
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
         "lint": "eslint . && stylelint '**/*.{css,vue}'",
-        "lint:fix": "eslint . --fix && stylelint '**/*.{css,vue}' --fix"
+        "lint:fix": "eslint . --fix && stylelint '**/*.{css,vue}' --fix",
+        "prepare": "husky",
+        "pre-commit": "lint-staged"
     },
     "dependencies": {
         "@nuxt/eslint": "1.15.2",
@@ -22,9 +24,15 @@
         "@antfu/eslint-config": "^7.6.1",
         "@stylistic/stylelint-plugin": "^5.0.1",
         "eslint": "^10.0.2",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.3.0",
         "stylelint": "^17.4.0",
         "stylelint-config-recommended-vue": "^1.6.1",
         "stylelint-config-standard": "^40.0.0",
         "stylelint-config-tailwindcss": "^1.0.1"
+    },
+    "lint-staged": {
+        "*": "eslint .",
+        "*.{css,vue}": "stylelint '**/*.{css,vue}'"
     }
 }
