@@ -6,14 +6,13 @@
     --color-foreground: var(--foreground);
     --color-foreground-secondary: var(--foreground-secondary);
     --color-primary: var(--primary);
-
 }
 
 
 :root {
     --background: #f7f6f2;
     --background-secondary: #e0d5bc;
-    --foreground: #1c1917;
+    --foreground: #2E2D2B;
     --foreground-secondary: #f9f9f9;
     --primary: #ed3d60;
 }
