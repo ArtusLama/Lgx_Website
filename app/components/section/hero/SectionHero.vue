@@ -1,13 +1,39 @@
+<script setup lang="ts">
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+const { gsap } = useGsap()
+
+function scrollParallax(target: string, speed: number) {
+    gsap.to(target, {
+        y: (1 - speed) * ScrollTrigger.maxScroll(window),
+        ease: "none",
+        scrollTrigger: {
+            start: 0,
+            end: ScrollTrigger.maxScroll(window),
+            invalidateOnRefresh: true,
+            scrub: 0.5,
+        },
+    })
+}
+
+onMounted(() => {
+    scrollParallax("#hero-title", 0.8)
+    scrollParallax("#hero-signature", 0.75)
+    scrollParallax("#hero-links", 0.7)
+    scrollParallax("#hero-skin-render", 0.6)
+})
+</script>
+
 <template>
     <SectionHeroWrapper class="relative m-12 h-160 w-300 mx-auto">
         <div class="text-center flex flex-col items-center">
-            <SvgHeoSignature class="h-16 w-fit -mb-8 z-10 *:fill-primary" />
-            <h2 class="text-white uppercase font-black text-7xl">
+            <SvgHeoSignature id="hero-signature" class="h-16 w-fit -mb-8 z-10 *:fill-primary" />
+            <h2 id="hero-title" class="text-white uppercase font-black text-7xl">
                 All growth<br>
                 takes time
             </h2>
         </div>
-        <div class="flex justify-between px-32">
+        <div id="hero-links" class="flex justify-between px-32">
             <SectionHeroLinksList
                 title="Design"
                 :links="[
@@ -17,8 +43,6 @@
                     { label: 'Pricing', scrollTo: '#' },
                 ]"
             />
-
-            <NuxtImg src="/imgs/HeroSectionSkinRender.png" class="pointer-events-none select-none absolute -bottom-20 left-1/2 -translate-x-1/2" />
 
             <SectionHeroLinksList
                 title="Contact"
@@ -30,5 +54,10 @@
                 ]"
             />
         </div>
+
+        <NuxtImg id="hero-skin-render" src="/imgs/HeroSectionSkinRender.png" class="pointer-events-none select-none absolute -bottom-18 left-1/2 -translate-x-1/2 z-20" />
+        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-[35rem] mt-4 -z-10 text-background opacity-15 select-none">
+            LGX
+        </p>
     </SectionHeroWrapper>
 </template>

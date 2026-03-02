@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SectionHero />
+        <SectionHero class="mt-50" />
 
         <p class="h-[200rem]">
             Platzhalter

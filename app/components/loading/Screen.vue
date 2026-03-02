@@ -4,7 +4,7 @@ const isLoading = ref(true)
 onMounted(() => {
     setTimeout(() => {
         isLoading.value = false
-    }, 2500)
+    }, 10000) // 3
 
     const lockScroll = useScrollLock(document.body, isLoading.value)
     syncRef(isLoading, lockScroll)
