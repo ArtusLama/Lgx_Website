@@ -4,7 +4,7 @@ const isLoading = ref(true)
 onMounted(() => {
     setTimeout(() => {
         isLoading.value = false
-    }, 1500)
+    }, 2500)
 
     const lockScroll = useScrollLock(document.body, isLoading.value)
     syncRef(isLoading, lockScroll)
@@ -23,11 +23,15 @@ onMounted(() => {
 </script>
 
 <template>
-    <Transition name="fade">
-        <div v-if="isLoading" class="fixed inset-0 bg-amber-50 flex items-center justify-center">
-            <LoadingSignatureAnim />
-        </div>
-    </Transition>
+    <Teleport to="body">
+        <Transition name="fade">
+            <div v-if="isLoading" class="fixed inset-0 z-1000 bg-backround-secondary flex items-center justify-center">
+                <ClientOnly>
+                    <LoadingSignatureAnim />
+                </ClientOnly>
+            </div>
+        </Transition>
+    </Teleport>
 </template>
 
 <style>

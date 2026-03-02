@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         "lenis/nuxt",
         "@nuxt/hints",
         "@nuxt/icon",
+        "@nuxt/fonts",
         "@nuxt/a11y",
         "@vueuse/nuxt",
         "@nuxtjs/seo",
@@ -29,6 +30,12 @@ export default defineNuxtConfig({
         plugins: [
             // @ts-expect-error - Can be safely ignored as the plugin is compatible with Nuxt!
             tailwindcss(),
+        ],
+    },
+
+    fonts: {
+        families: [
+            { name: "Gantelline Signature", src: "/fonts/GantellineSignature.ttf" },
         ],
     },
 })

@@ -1,0 +1,16 @@
+
+
+@theme inline {
+    --color-background: var(--background);
+    --color-backround-secondary: var(--backround-secondary);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+}
+
+
+:root {
+    --background: #f7f6f2;
+    --backround-secondary: #ebe4d4;
+    --foreground: #1c1917;
+    --primary: #ed3d60;
+}
