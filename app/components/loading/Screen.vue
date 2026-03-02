@@ -4,7 +4,7 @@ const isLoading = ref(true)
 onMounted(() => {
     setTimeout(() => {
         isLoading.value = false
-    }, 10000) // 3
+    }, 3000)
 
     const lockScroll = useScrollLock(document.body, isLoading.value)
     syncRef(isLoading, lockScroll)
@@ -25,10 +25,16 @@ onMounted(() => {
 <template>
     <Teleport to="body">
         <Transition name="fade">
-            <div v-if="isLoading" class="fixed inset-0 z-1000 bg-backround-secondary flex items-center justify-center">
-                <ClientOnly>
-                    <LoadingSignatureAnim />
-                </ClientOnly>
+            <div v-if="isLoading" class="fixed inset-0 z-1000 bg-background-secondary flex items-center justify-center">
+                <div class="flex flex-col items-center gap-12">
+                    <ClientOnly class="h-30">
+                        <LoadingSignatureAnim />
+                    </ClientOnly>
+                    <p class="font-semibold text-small text-background text-center">
+                        Loading portfolio...<br>
+                        © 2026 Lgx Art. All rights reserved.
+                    </p>
+                </div>
             </div>
         </Transition>
     </Teleport>

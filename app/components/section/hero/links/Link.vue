@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { SplitText } from "gsap/SplitText"
-
 const props = defineProps<{
     label: string
     href?: string
@@ -17,11 +15,13 @@ function scrollToTarget() {
 const linkTextElement = useTemplateRef<HTMLElement>("linkTextElement")
 const { gsap } = useGsap()
 
-let splitText: SplitText | null = null
+let splitText: { chars: Element[], revert: () => void } | null = null
 
-onMounted(() => {
+onMounted(async () => {
     if (!linkTextElement.value)
         return
+
+    const { SplitText } = await import("gsap/SplitText")
 
     splitText = SplitText.create(linkTextElement.value, {
         type: "chars",

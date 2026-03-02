@@ -2,15 +2,18 @@
 
 @theme inline {
     --color-background: var(--background);
-    --color-backround-secondary: var(--backround-secondary);
+    --color-background-secondary: var(--background-secondary);
     --color-foreground: var(--foreground);
+    --color-foreground-secondary: var(--foreground-secondary);
     --color-primary: var(--primary);
+
 }
 
 
 :root {
-    --background: #726f61;
-    --backround-secondary: #e0d5bc;
+    --background: #f7f6f2;
+    --background-secondary: #e0d5bc;
     --foreground: #1c1917;
+    --foreground-secondary: #f9f9f9;
     --primary: #ed3d60;
 }

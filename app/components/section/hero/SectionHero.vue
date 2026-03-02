@@ -28,10 +28,10 @@ onMounted(() => {
     <SectionHeroWrapper class="relative m-12 h-160 w-300 mx-auto">
         <div class="text-center flex flex-col items-center">
             <SvgHeoSignature id="hero-signature" class="h-16 w-fit -mb-8 z-10 *:fill-primary" />
-            <h2 id="hero-title" class="text-white uppercase font-black text-7xl">
+            <p id="hero-title" class="text-foreground-secondary uppercase font-black text-7xl">
                 All growth<br>
                 takes time
-            </h2>
+            </p>
         </div>
         <div id="hero-links" class="flex justify-between px-32">
             <SectionHeroLinksList
@@ -55,9 +55,18 @@ onMounted(() => {
             />
         </div>
 
-        <NuxtImg id="hero-skin-render" src="/imgs/HeroSectionSkinRender.png" class="pointer-events-none select-none absolute -bottom-18 left-1/2 -translate-x-1/2 z-20" />
+        <NuxtImg id="hero-skin-render" alt="Minecraft skin render" src="/imgs/HeroSectionSkinRender.png" class="pointer-events-none select-none absolute -bottom-18 left-1/2 -translate-x-1/2 z-20" />
+
         <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-[35rem] mt-4 -z-10 text-background opacity-15 select-none">
             LGX
         </p>
+
+        <UiButton
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30"
+            @click="useScrollTo('#')"
+        >
+            <Icon name="lucide:sparkles" />
+            View my work
+        </UiButton>
     </SectionHeroWrapper>
 </template>
