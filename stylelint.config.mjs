@@ -13,4 +13,8 @@ export default {
         "lightness-notation": null,
         "selector-class-pattern": null,
     },
+    ignoreFiles: [
+        ".nuxt/**/*",
+        "dist/**/*",
+    ],
 }
