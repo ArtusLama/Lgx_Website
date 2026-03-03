@@ -26,7 +26,7 @@ const cardWidth = computed(() => {
         <div class="flex items-center gap-4">
             <img :src="imgUrl" alt="Trusted channel image" class="rounded-full w-14 h-14 object-cover">
             <div class="flex flex-col font-bold">
-                <a class="text-xl underline" :href="channel.url" target="_blank">
+                <a class="text-xl underline w-fit" :href="channel.url" target="_blank">
                     @{{ channel.name }}
                 </a>
                 <p class="text-primary">

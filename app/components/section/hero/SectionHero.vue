@@ -30,6 +30,7 @@ onMounted(() => {
             <div class="text-center flex flex-col items-center">
                 <SvgHeoSignature id="hero-signature" class="h-16 w-fit -mb-8 z-10 *:fill-primary" />
                 <p id="hero-title" class="text-foreground-secondary uppercase font-black text-7xl">
+                    <!-- TODO: make bigger?! -->
                     All growth<br>
                     takes time
                 </p>

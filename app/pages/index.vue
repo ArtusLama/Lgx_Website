@@ -4,6 +4,8 @@
 
         <SectionTrusted class="mt-20" />
 
+        <SectionGalleryThumbnail class="mt-32" />
+
         <p class="h-600" />
     </div>
 </template>

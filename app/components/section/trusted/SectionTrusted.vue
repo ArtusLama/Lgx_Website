@@ -76,6 +76,7 @@ const reviews = [
 </script>
 
 <template>
+    <!-- TODO: GSAP: Appear -> slide up & fade + subs count animate up. Also maybe parallax?! -->
     <Section name="Trusted" class="grid grid-cols-[max-content_max-content_max-content] items-start justify-center gap-12">
         <SectionTrustedCard
             v-if="reviews[0]"
