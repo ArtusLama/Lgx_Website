@@ -77,14 +77,8 @@ const reviews = [
 
 <template>
     <!-- TODO: GSAP: Appear -> slide up & fade + subs count animate up. Also maybe parallax?! -->
-    <Section name="Trusted" class="grid grid-cols-[max-content_max-content_max-content] items-start justify-center gap-12">
-        <SectionTrustedCard
-            v-if="reviews[0]"
-            v-bind="reviews[0]"
-            class="justify-self-start self-end"
-        />
-
-        <div class="space-y-4 text-center flex flex-col items-center">
+    <Section name="Trusted" class="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 md:items-start md:justify-items-start md:justify-center md:gap-8 lg:grid-cols-[max-content_max-content] lg:gap-10 2xl:grid-cols-[max-content_max-content_max-content] 2xl:gap-12">
+        <div class="order-1 md:order-1 2xl:order-2 space-y-4 text-center md:text-left 2xl:text-center flex flex-col items-center md:items-start 2xl:items-center">
             <p class="text-5xl font-bold">
                 Trusted by<br>
                 <span class="text-6xl text-primary">
@@ -98,16 +92,22 @@ const reviews = [
         </div>
 
         <SectionTrustedCard
+            v-if="reviews[0]"
+            v-bind="reviews[0]"
+            class="order-2 md:order-2 2xl:order-1 md:justify-self-start md:self-end"
+        />
+
+        <SectionTrustedCard
             v-for="(review, index) in reviews.slice(1)"
             :key="review.channel.name"
             v-bind="review"
-            :class="[
+            class="order-3 md:order-3" :class="[
                 (index + 2) % 3 === 0
-                    ? 'justify-self-start'
+                    ? '2xl:justify-self-start'
                     : (index + 2) % 3 === 1
-                        ? 'justify-self-center'
-                        : 'justify-self-end',
-                index < 1 ? 'self-end' : 'self-start',
+                        ? '2xl:justify-self-center'
+                        : '2xl:justify-self-end',
+                index < 1 ? '2xl:self-end' : '2xl:self-start',
             ]"
         />
     </Section>

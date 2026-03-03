@@ -198,7 +198,7 @@ onBeforeUnmount(() => {
                 </p>
             </div>
 
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 px-12">
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-12">
                 <SectionGalleryThumbnailItem
                     v-for="(thumbnail, index) in tempGalleryImages"
                     :key="index"
