@@ -42,19 +42,21 @@ onMounted(() => {
         const items = gsap.utils.toArray<HTMLElement>(".gallery-thumbnail-item")
 
         items.forEach((item) => {
-            const resolveImage = () => item.querySelector("img")
+            const resolveImages = () => Array.from(item.querySelectorAll<HTMLImageElement>("img"))
 
-            const ensureImagePrepared = (imageElement: HTMLImageElement | null) => {
-                if (!imageElement || imageElement.dataset.gsapPrepared === "true") {
-                    return
-                }
+            const ensureImagesPrepared = (imageElements: HTMLImageElement[]) => {
+                imageElements.forEach((imageElement) => {
+                    if (imageElement.dataset.gsapPrepared === "true") {
+                        return
+                    }
 
-                gsap.set(imageElement, {
-                    filter: "brightness(1) contrast(1) saturate(1)",
-                    willChange: "transform, filter",
+                    gsap.set(imageElement, {
+                        filter: "brightness(1) contrast(1) saturate(1)",
+                        willChange: "transform, filter",
+                    })
+
+                    imageElement.dataset.gsapPrepared = "true"
                 })
-
-                imageElement.dataset.gsapPrepared = "true"
             }
 
             gsap.set(item, {
@@ -65,7 +67,7 @@ onMounted(() => {
                 "willChange": "transform, box-shadow",
             })
 
-            ensureImagePrepared(resolveImage())
+            ensureImagesPrepared(resolveImages())
 
             gsap.fromTo(
                 item,
@@ -89,8 +91,8 @@ onMounted(() => {
             )
 
             const handleMouseMove = (event: MouseEvent) => {
-                const image = resolveImage()
-                ensureImagePrepared(image)
+                const images = resolveImages()
+                ensureImagesPrepared(images)
 
                 const rect = item.getBoundingClientRect()
                 const xPercent = (event.clientX - rect.left) / rect.width - 0.5
@@ -106,19 +108,17 @@ onMounted(() => {
                     overwrite: "auto",
                 })
 
-                if (image) {
-                    gsap.to(image, {
-                        scale: 1.02,
-                        filter: `brightness(${shine}) contrast(1.05) saturate(1.08)`,
-                        duration: 0.25,
-                        ease: "power2.out",
-                        overwrite: "auto",
-                    })
-                }
+                gsap.to(images, {
+                    scale: 1.02,
+                    filter: `brightness(${shine}) contrast(1.05) saturate(1.08)`,
+                    duration: 0.25,
+                    ease: "power2.out",
+                    overwrite: "auto",
+                })
             }
 
             const handleMouseEnter = () => {
-                ensureImagePrepared(resolveImage())
+                ensureImagesPrepared(resolveImages())
                 gsap.killTweensOf(item, "--thumb-shadow-alpha")
 
                 gsap.to(item, {
@@ -129,8 +129,8 @@ onMounted(() => {
             }
 
             const handleMouseLeave = () => {
-                const image = resolveImage()
-                ensureImagePrepared(image)
+                const images = resolveImages()
+                ensureImagesPrepared(images)
 
                 gsap.killTweensOf(item, "rotateX,rotateY,scale")
 
@@ -150,17 +150,15 @@ onMounted(() => {
                     "overwrite": "auto",
                 })
 
-                if (image) {
-                    gsap.killTweensOf(image, "scale,filter")
+                gsap.killTweensOf(images, "scale,filter")
 
-                    gsap.to(image, {
-                        scale: 1,
-                        filter: "brightness(1) contrast(1) saturate(1)",
-                        duration: 0.45,
-                        ease: "power2.out",
-                        overwrite: "auto",
-                    })
-                }
+                gsap.to(images, {
+                    scale: 1,
+                    filter: "brightness(1) contrast(1) saturate(1)",
+                    duration: 0.45,
+                    ease: "power2.out",
+                    overwrite: "auto",
+                })
             }
 
             item.addEventListener("mouseenter", handleMouseEnter)
