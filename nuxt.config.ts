@@ -17,6 +17,7 @@ export default defineNuxtConfig({
         "@nuxtjs/seo",
         "@nuxtjs/html-validator",
         "@nuxt/image",
+        "vue3-carousel-nuxt",
     ],
 
     eslint: {
@@ -37,5 +38,9 @@ export default defineNuxtConfig({
         families: [
             { name: "Gantelline Signature", src: "/fonts/GantellineSignature.ttf" },
         ],
+    },
+
+    carousel: {
+        prefix: "Carousel",
     },
 })

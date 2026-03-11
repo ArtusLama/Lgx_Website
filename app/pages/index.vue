@@ -6,8 +6,6 @@
 
         <SectionGalleryThumbnail class="mt-32" />
 
-        <SectionOrder class="mt-32" />
-
         <p class="h-600" />
     </div>
 </template>
