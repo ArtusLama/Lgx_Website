@@ -18,6 +18,8 @@ export default defineNuxtConfig({
         "@nuxtjs/html-validator",
         "@nuxt/image",
         "vue3-carousel-nuxt",
+        "@nuxt/content",
+        "nuxt-studio",
     ],
 
     eslint: {
@@ -42,5 +44,22 @@ export default defineNuxtConfig({
 
     carousel: {
         prefix: "Carousel",
+    },
+
+    studio: {
+        route: "/admin",
+        repository: {
+            provider: "github",
+            owner: "ArtusLama",
+            repo: "Lgx_Website",
+            branch: "main",
+        },
+    },
+
+    nitro: {
+        prerender: {
+            routes: ["/", "/shop"],
+            crawlLinks: true,
+        },
     },
 })
