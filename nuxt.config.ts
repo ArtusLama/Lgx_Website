@@ -56,10 +56,11 @@ export default defineNuxtConfig({
         },
     },
 
+    /*
     nitro: {
         prerender: {
             routes: ["/", "/shop"],
             crawlLinks: true,
         },
-    },
+    }, */
 })

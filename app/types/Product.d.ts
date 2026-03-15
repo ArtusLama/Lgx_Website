@@ -7,6 +7,8 @@ interface Product {
     descriptionList?: string[]
     images: string[]
     price: number
+    deliveryTime?: string
+    shopUrl: string
 }
 
 type ProductTagColor = "primary" | "muted" | "destructive"

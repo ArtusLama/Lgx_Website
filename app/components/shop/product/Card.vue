@@ -21,7 +21,7 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
 </script>
 
 <template>
-    <div class="hover:scale-105 hover:border-primary border-[1.5px] border-background-secondary/50 transition-all bg-background-secondary/20 rounded-lg px-6 py-4 shadow-xs flex flex-col gap-2">
+    <div class="hover:scale-[1.02] hover:border-primary border-[1.5px] border-background-secondary/50 transition-all bg-background-secondary/20 rounded-lg px-6 py-4 shadow-xs flex flex-col gap-2">
         <div class="flex items-start justify-between gap-3">
             <h4 class="text-xl font-bold">
                 {{ product.name }}
@@ -54,14 +54,16 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
             </p>
         </div>
 
-        <div class="mt-4 space-x-2">
+        <div class="mt-4 flex flex-wrap gap-2">
             <UiButton variant="outline" size="sm" @click="isExamplesOpen = true">
                 <Icon name="lucide:eye" />
                 View Examples
             </UiButton>
             <UiButton size="sm">
-                <Icon name="lucide:shopping-cart" />
-                Buy Now
+                <NuxtLink :to="product.shopUrl" target="_blank" external class="flex items-center gap-1">
+                    <Icon name="lucide:shopping-cart" />
+                    Buy Now
+                </NuxtLink>
             </UiButton>
         </div>
 
@@ -75,37 +77,43 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
                 </UiDialogHeader>
 
                 <div class="mt-2">
-                    <NuxtImg
-                        v-if="product.images.length === 1"
-                        :src="product.images[0]"
-                        :alt="`${product.name} example image 1`"
-                        class="w-full rounded-xl aspect-video object-cover select-none"
-                        :draggable="false"
-                    />
+                    <Suspense>
+                        <LazyNuxtImg
+                            v-if="product.images.length === 1"
+                            :src="product.images[0]"
+                            :alt="`${product.name} example image 1`"
+                            class="w-full rounded-xl aspect-video object-cover select-none"
+                            :draggable="false"
+                        />
 
-                    <CarouselCarousel
-                        v-else
-                        :gap="12"
-                        :items-to-show="1"
-                        class="shop-examples-carousel rounded-xl overflow-hidden"
-                    >
-                        <CarouselSlide
-                            v-for="(imagePath, index) in product.images"
-                            :key="`${product.id}-example-${index}`"
+                        <LazyCarouselCarousel
+                            v-else
+                            :gap="12"
+                            :items-to-show="1"
+                            class="shop-examples-carousel rounded-xl overflow-hidden"
                         >
-                            <NuxtImg
-                                class="w-full rounded-xl aspect-video object-cover select-none"
-                                :draggable="false"
-                                :src="imagePath"
-                                :alt="`${product.name} example image ${index + 1}`"
-                            />
-                        </CarouselSlide>
+                            <CarouselSlide
+                                v-for="(imagePath, index) in product.images"
+                                :key="`${product.id}-example-${index}`"
+                            >
+                                <LazyNuxtImg
+                                    class="w-full rounded-xl aspect-video object-cover select-none"
+                                    :draggable="false"
+                                    :src="imagePath"
+                                    :alt="`${product.name} example image ${index + 1}`"
+                                />
+                            </CarouselSlide>
 
-                        <template #addons>
-                            <CarouselNavigation />
-                            <CarouselPagination />
+                            <template #addons>
+                                <CarouselNavigation />
+                                <CarouselPagination />
+                            </template>
+                        </LazyCarouselCarousel>
+
+                        <template #fallback>
+                            <div class="w-full aspect-video rounded-xl bg-muted animate-pulse" />
                         </template>
-                    </CarouselCarousel>
+                    </Suspense>
                 </div>
             </UiDialogContent>
         </UiDialog>

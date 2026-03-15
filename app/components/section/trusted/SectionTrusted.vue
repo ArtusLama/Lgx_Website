@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const { data: testimonials } = await useAsyncData("testimonials", () => {
-    return queryCollection("testimonials")
-        .order("sort", "ASC")
-        .all()
-})
+const { data: testimonials } = await useAsyncData("testimonials", () => queryCollection("testimonials").all())
 </script>
 
 <template>
