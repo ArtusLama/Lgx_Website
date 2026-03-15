@@ -1,0 +1,13 @@
+name: 3x Thumbnail Bundle
+description: Three custom Minecraft thumbnails with bundle savings.
+detailsList:
+    -   "Bundle discount: -10%"
+    -   Based on Minecraft thumbnail commissions
+    -   Final price can vary by request complexity
+price: 13.5€
+deliveryTime: 2-7 days
+tag:
+    enabled: true
+    name: -10%
+    color: muted
+shopUrl: https://example.com/shop/thumbnail-bundle-3

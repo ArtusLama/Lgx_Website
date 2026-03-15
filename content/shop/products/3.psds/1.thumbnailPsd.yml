@@ -3,9 +3,10 @@ description: Layered PSD source file for your thumbnail design.
 detailsList:
     -   Editable text, effects, and composition layers
     -   Great for future edits and reuse
-price: "10"
+price: 10€
 deliveryTime: 1-3 days
 tag:
+    enabled: true
     name: Source File
     color: muted
 shopUrl: https://example.com/shop/thumbnail-psd

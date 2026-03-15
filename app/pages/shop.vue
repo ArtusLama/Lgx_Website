@@ -1,5 +1,5 @@
 <template>
-    <div class="space-y-12">
+    <div class="space-y-12 mt-24">
         <TitleElement
             tinytitle="My Store"
             title="Check out my products"

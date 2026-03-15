@@ -2,17 +2,15 @@
 import type { ClassValue } from "vue"
 
 defineProps<{
-    product: Product
+    product: ShopProduct
 }>()
 
 const isExamplesOpen = ref(false)
 
-function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue {
-    switch (color) {
+function getProductTagColorClass(tag: ShopProduct["tag"] | undefined): ClassValue {
+    switch (tag?.color) {
         case "muted":
             return "text-muted-foreground border-muted-foreground/25"
-        case "destructive":
-            return "text-destructive border-destructive"
         case "primary":
         default:
             return "text-primary border-primary"
@@ -27,35 +25,35 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
                 {{ product.name }}
             </h4>
             <span
-                v-if="product.tag"
+                v-if="product.tag && product.tag.enabled"
                 class="shrink-0 text-sm font-semibold px-2 py-0.5 rounded border-[1.5px] tracking-tight"
-                :class="getProductTagColorClass(product.tagColor)"
+                :class="getProductTagColorClass(product.tag)"
             >
-                {{ product.tag }}
+                {{ product.tag.name }}
             </span>
         </div>
         <p>
             {{ product.description }}
         </p>
 
-        <ul v-if="product.descriptionList" class="flex-1 list-disc list-inside text-sm text-muted-foreground space-y-1">
-            <li v-for="(item, index) in product.descriptionList" :key="index">
+        <ul class="flex-1 list-disc list-inside text-sm text-muted-foreground space-y-1">
+            <li v-for="(item, index) in product.detailsList" :key="index">
                 {{ item }}
             </li>
         </ul>
 
         <div class="mt-4 flex flex-col">
             <p class="text-xl font-semibold">
-                ${{ product.price.toFixed(2) }}
+                {{ product.price }}
             </p>
             <p class="text-muted-foreground font-medium flex items-center gap-1">
                 <Icon name="lucide:clock" />
-                1-7 days delivery
+                {{ product.deliveryTime }}
             </p>
         </div>
 
         <div class="mt-4 flex flex-wrap gap-2">
-            <UiButton variant="outline" size="sm" @click="isExamplesOpen = true">
+            <UiButton v-if="product.exampleImages" variant="outline" size="sm" @click="isExamplesOpen = true">
                 <Icon name="lucide:eye" />
                 View Examples
             </UiButton>
@@ -67,24 +65,25 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
             </UiButton>
         </div>
 
-        <UiDialog v-model:open="isExamplesOpen">
+        <UiDialog v-if="product.exampleImages" v-model:open="isExamplesOpen">
             <UiDialogContent class="shop-examples-dialog p-3 sm:p-4 max-w-200!">
                 <UiDialogHeader>
-                    <UiDialogTitle>{{ product.name }} Examples</UiDialogTitle>
-                    <UiDialogDescription>
-                        Sample previews for this product.
-                    </UiDialogDescription>
+                    <UiDialogTitle>{{ product.name }} - Examples</UiDialogTitle>
                 </UiDialogHeader>
 
                 <div class="mt-2">
                     <Suspense>
-                        <LazyNuxtImg
-                            v-if="product.images.length === 1"
-                            :src="product.images[0]"
-                            :alt="`${product.name} example image 1`"
-                            class="w-full rounded-xl aspect-video object-cover select-none"
-                            :draggable="false"
-                        />
+                        <div
+                            v-if="product.exampleImages.length === 1"
+                            class="shop-example-frame"
+                        >
+                            <LazyNuxtImg
+                                :src="product.exampleImages[0]"
+                                :alt="`${product.name} example image 1`"
+                                class="h-full w-full object-contain select-none"
+                                :draggable="false"
+                            />
+                        </div>
 
                         <LazyCarouselCarousel
                             v-else
@@ -93,15 +92,17 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
                             class="shop-examples-carousel rounded-xl overflow-hidden"
                         >
                             <CarouselSlide
-                                v-for="(imagePath, index) in product.images"
-                                :key="`${product.id}-example-${index}`"
+                                v-for="(imagePath, index) in product.exampleImages"
+                                :key="`${product.name}-example-${index}`"
                             >
-                                <LazyNuxtImg
-                                    class="w-full rounded-xl aspect-video object-cover select-none"
-                                    :draggable="false"
-                                    :src="imagePath"
-                                    :alt="`${product.name} example image ${index + 1}`"
-                                />
+                                <div class="shop-example-frame">
+                                    <LazyNuxtImg
+                                        class="h-full w-full object-contain select-none"
+                                        :draggable="false"
+                                        :src="imagePath"
+                                        :alt="`${product.name} example image ${index + 1}`"
+                                    />
+                                </div>
                             </CarouselSlide>
 
                             <template #addons>
@@ -120,8 +121,8 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
     </div>
 </template>
 
-<style scoped>
-.shop-examples-dialog {
+<style>
+.shop-examples-carousel {
     --vc-nav-color: var(--color-muted-foreground);
     --vc-nav-color-hover: var(--color-foreground);
     --vc-pgn-background-color: var(--color-muted-foreground);
@@ -132,12 +133,20 @@ function getProductTagColorClass(color: ProductTagColor | undefined): ClassValue
     --vc-pgn-width: 1rem;
 }
 
-.shop-examples-carousel :deep(.carousel__pagination-button) {
+.shop-examples-carousel .carousel__pagination-button {
     transition: width 0.3s ease-in-out;
     opacity: 0.5;
 }
 
-.shop-examples-carousel :deep(.carousel__pagination-button--active) {
+.shop-examples-carousel .carousel__pagination-button--active {
     width: 2rem !important;
+}
+
+.shop-example-frame {
+    padding: 2rem;
+}
+
+.shop-example-frame img {
+    border-radius: 0.5rem;
 }
 </style>

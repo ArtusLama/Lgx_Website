@@ -1,15 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
-    imgUrl: string
-    channel: {
-        name: string
-        url: string
-    }
-    subscribers: string
-    quote: string
+    testimonial: Testimonial
 }>()
 
-const contentLength = props.quote.length
+const contentLength = props.testimonial.message.length
 const cardWidth = computed(() => {
     if (contentLength < 80)
         return "max-w-96"
@@ -24,18 +18,18 @@ const cardWidth = computed(() => {
 <template>
     <div :class="cardWidth" class="bg-background-secondary/20 border border-background-secondary/50 rounded-lg px-8 py-4 flex flex-col gap-4">
         <div class="flex items-center gap-4">
-            <img :src="imgUrl" alt="Trusted channel image" class="rounded-full w-14 h-14 object-cover">
+            <img :src="testimonial.channelProfilePicture" alt="Trusted channel image" class="rounded-full w-14 h-14 object-cover">
             <div class="flex flex-col font-bold">
-                <a class="text-xl underline w-fit" :href="channel.url" target="_blank">
-                    @{{ channel.name }}
+                <a class="text-xl underline w-fit" :href="testimonial.channelUrl" target="_blank">
+                    @{{ testimonial.name }}
                 </a>
                 <p class="text-primary">
-                    {{ subscribers }} Subscribers
+                    {{ testimonial.subscribers }} Subscribers
                 </p>
             </div>
         </div>
         <p class="text-lg font-semibold">
-            <b>“</b>{{ quote }}<b>”</b>
+            <b>“</b>{{ testimonial.message }}<b>”</b>
         </p>
     </div>
 </template>
