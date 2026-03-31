@@ -25,8 +25,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <Section name="Home" class="flex flex-col items-center w-screen px-0 h-100 md:h-auto">
-        <SectionHeroWrapper class="relative w-full xl:w-300 h-160 px-4 sm:px-6 md:px-8">
+    <Section id="home" name="Home" class="flex flex-col items-center w-screen px-0 h-100 md:h-auto">
+        <SectionHeroWrapper class="relative w-full xl:w-300 h-[90vh]! max-h-160 px-4 sm:px-6 md:px-8">
             <div class="text-center flex flex-col items-center">
                 <SvgHeoSignature id="hero-signature" class="h-10 sm:h-12 md:h-14 lg:h-16 w-fit -mb-3 sm:-mb-5 md:-mb-7 z-10 *:fill-primary" />
                 <p id="hero-title" class="text-foreground-secondary uppercase font-black text-[clamp(2.25rem,9vw,6rem)] leading-[0.9]">
@@ -39,20 +39,20 @@ onMounted(() => {
                 <SectionHeroLinksList
                     title="Design"
                     :links="[
-                        { label: 'Portfolio', scrollTo: '#' },
-                        { label: 'Reviews', scrollTo: '#' },
-                        { label: 'Commissions', scrollTo: '#' },
-                        { label: 'Pricing', scrollTo: '#' },
+                        { label: 'Portfolio', to: 'thumbnail-gallery', scrollToTarget: true },
+                        { label: 'Reviews', to: 'trusted', scrollToTarget: true },
+                        { label: 'Commissions', to: 'shop' },
+                        { label: 'Pricing', to: 'shop' },
                     ]"
                 />
 
                 <SectionHeroLinksList
                     title="Contact"
                     :links="[
-                        { label: 'YouTube', href: '#' },
-                        { label: 'Discord', href: '#' },
-                        { label: 'Ko-fi', href: '#' },
-                        { label: 'Partners', href: '#' },
+                        { label: 'YouTube', to: 'https://www.youtube.com/@Lgx__', external: true },
+                        { label: 'Discord', to: 'https://discord.gg/XJe4JHkQgz', external: true },
+                        { label: 'Ko-fi', to: 'https://ko-fi.com/lgxgfx', external: true },
+                        { label: 'Partners', to: 'partners' },
                     ]"
                 />
             </div>
@@ -66,7 +66,7 @@ onMounted(() => {
 
             <UiButton
                 class="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-30"
-                @click="useScrollTo('#')"
+                @click="useScrollTo('thumbnail-gallery')"
             >
                 <Icon name="lucide:sparkles" />
                 View my work

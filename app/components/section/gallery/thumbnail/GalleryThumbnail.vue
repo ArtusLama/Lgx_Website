@@ -1,22 +1,5 @@
 <script setup lang="ts">
-const tempGalleryImages = [
-    {
-        original: "https://media.discordapp.net/attachments/1082408224856211526/1478446424591962183/v2.png?ex=69a86e07&is=69a71c87&hm=b1d5f0dcd61195d1fa689f05fd50233a305cc821d7bef7db129b5d9864852a29&=&format=webp&quality=lossless&width=1421&height=800",
-        unedited: "https://i.ibb.co/jk6sXXq9/image.png",
-    },
-    {
-        original: "https://media.discordapp.net/attachments/1082408224856211526/1478446425200263269/Prestige_vs_Voil.png?ex=69a86e07&is=69a71c87&hm=632ead4836f00297c999892e0ef3df4325b0872fc21746df6eef9da7a63c4a72&=&format=webp&quality=lossless&width=1421&height=800",
-    },
-    {
-        original: "https://media.discordapp.net/attachments/1082408224856211526/1478446425816957000/RigedTournament.png?ex=69a86e08&is=69a71c88&hm=049b1d180cd64b2da5ccd1d0e10ec470ec7db96d83f87c3759eab8abed9467c4&=&format=webp&quality=lossless&width=1421&height=800",
-    },
-    {
-        original: "https://media.discordapp.net/attachments/1082408224856211526/1478446426273878159/Modernlegendslp.png?ex=69a86e08&is=69a71c88&hm=571b7cef707af56454d1c58fd216016013ebeeccb90f4bf04e848b45cbe21371&=&format=webp&quality=lossless&width=1421&height=800",
-    },
-    {
-        original: "https://media.discordapp.net/attachments/1082408224856211526/1478446436793454844/Best_16x_Packs.png?ex=69a86e0a&is=69a71c8a&hm=76f5b78d28e901e89b6f0c66702914067a9b3133755db867accfe630f171d8b9&=&format=webp&quality=lossless&width=1421&height=800",
-    },
-]
+const { data: thumbnails } = await useAsyncData("thumbnails", () => queryCollection("showcaseThumbnails").all())
 
 const { gsap } = useGsap()
 const galleryRef = ref<HTMLElement | null>(null)
@@ -26,7 +9,10 @@ const activeIndex = ref(0)
 let cleanupHoverListeners: (() => void) | null = null
 let gsapContext: gsap.Context | null = null
 
-const activeImage = computed(() => tempGalleryImages[activeIndex.value]?.original ?? "")
+const activeImage = computed(() => {
+    const thumbnail = thumbnails.value?.[activeIndex.value]
+    return thumbnail ? thumbnail.imageUrl : ""
+})
 
 function openPreview(index: number) {
     activeIndex.value = index
@@ -198,11 +184,12 @@ onBeforeUnmount(() => {
 
             <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-12">
                 <SectionGalleryThumbnailItem
-                    v-for="(thumbnail, index) in tempGalleryImages"
+                    v-for="(thumbnail, index) in thumbnails"
                     :key="index"
                     class="gallery-thumbnail-item"
-                    :thumbnail="thumbnail.original"
-                    :unedited-tumbnail="thumbnail.unedited"
+                    :thumbnail="thumbnail.imageUrl"
+                    :unedited-tumbnail="thumbnail.beforeImageUrl"
+                    :short-description="thumbnail.shortDescription"
                     @preview="openPreview(index)"
                 />
             </div>
@@ -216,6 +203,19 @@ onBeforeUnmount(() => {
                     />
                 </UiDialogContent>
             </UiDialog>
+        </div>
+
+        <div class="mt-10 w-full flex items-center">
+            <UiButton
+                size="lg"
+                as-child
+                class="mx-auto"
+            >
+                <NuxtLink to="/portfolio">
+                    <Icon name="lucide:sparkles" />
+                    View More
+                </NuxtLink>
+            </UiButton>
         </div>
     </Section>
 </template>

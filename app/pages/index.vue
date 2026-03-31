@@ -1,6 +1,8 @@
 <template>
     <div class="flex flex-col items-center">
-        <SectionHero class="mt-30" />
+        <SectionHero class="mt-30 md:mt-10" />
+
+        <div id="hero-nav-observer" />
 
         <SectionTrusted class="mt-20" />
 

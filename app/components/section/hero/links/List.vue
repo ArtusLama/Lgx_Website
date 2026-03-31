@@ -1,11 +1,7 @@
 <script setup lang="ts">
 defineProps<{
     title: string
-    links: {
-        label: string
-        href?: string
-        scrollTo?: string
-    }[]
+    links: NavigationLink[]
 }>()
 </script>
 
@@ -18,7 +14,7 @@ defineProps<{
             <SectionHeroLinksLink
                 v-for="link in links"
                 :key="link.label"
-                v-bind="link"
+                :link="link"
             />
         </ul>
     </div>

@@ -6,10 +6,5 @@ export default antfu({
         indent: 4,
         quotes: "double",
     },
-    yaml: {
-        overrides: {
-            "style/no-multi-spaces": "off",
-            "yaml/indent": ["error", 4],
-        },
-    },
+    yaml: false,
 })

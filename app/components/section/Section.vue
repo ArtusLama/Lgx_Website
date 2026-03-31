@@ -8,7 +8,7 @@ defineProps<{
     <section
         :id="name"
         :aria-label="`Section ${name}`"
-        class="relative w-full max-w-400"
+        class="relative w-full max-w-400 scroll-mt-24"
     >
         <slot />
     </section>

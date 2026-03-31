@@ -5,7 +5,7 @@ const { data: testimonials } = await useAsyncData("testimonials", () => queryCol
 <template>
     <!--- TDODO: Fix subs count in content -->
     <!-- TODO: GSAP: Appear -> slide up & fade + subs count animate up. Also maybe parallax?! -->
-    <Section v-if="testimonials" name="Trusted" class="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 md:items-start md:justify-items-start md:justify-center md:gap-8 lg:grid-cols-[max-content_max-content] lg:gap-10 2xl:grid-cols-[max-content_max-content_max-content] 2xl:gap-12">
+    <Section v-if="testimonials" name="trusted" class="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 md:items-start md:justify-items-start md:justify-center md:gap-8 lg:grid-cols-[max-content_max-content] lg:gap-10 2xl:grid-cols-[max-content_max-content_max-content] 2xl:gap-12">
         <div class="order-1 md:order-1 2xl:order-2 space-y-4 text-center md:text-left 2xl:text-center flex flex-col items-center md:items-start 2xl:items-center">
             <p class="text-5xl font-bold">
                 Trusted by<br>

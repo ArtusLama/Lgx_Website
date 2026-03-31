@@ -1,15 +1,13 @@
 <script setup lang="ts">
 const props = defineProps<{
-    label: string
-    href?: string
-    scrollTo?: string
+    link: NavigationLink
 }>()
 
-function scrollToTarget() {
-    if (!props.scrollTo)
-        return
-
-    useScrollTo(props.scrollTo)
+function onClick(event: PointerEvent) {
+    if (props.link.scrollToTarget) {
+        event.preventDefault()
+        useScrollTo(props.link.to)
+    }
 }
 
 const linkTextElement = useTemplateRef<HTMLElement>("linkTextElement")
@@ -67,16 +65,16 @@ function playRoll(direction: "up" | "down") {
 <template>
     <li>
         <NuxtLink
-            :to="href || scrollTo"
-            :target="!!href ? '_blank' : '_self'"
-            :external="!!href"
+            :to="props.link.scrollToTarget ? `#${props.link.to}` : props.link.to"
+            :target="props.link.external ? '_blank' : '_self'"
+            :external="props.link.external"
             class="hero-link inline-block leading-none select-none"
             @mouseenter="playRoll('up')"
             @mouseleave="playRoll('down')"
-            @click="scrollToTarget"
+            @click="onClick"
         >
             <span class="roll-line-mask">
-                <span ref="linkTextElement">{{ label }}</span>
+                <span ref="linkTextElement">{{ props.link.label }}</span>
             </span>
         </NuxtLink>
     </li>

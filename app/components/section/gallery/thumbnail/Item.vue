@@ -2,6 +2,7 @@
 const props = defineProps<{
     thumbnail: string
     uneditedTumbnail?: string
+    shortDescription?: string
 }>()
 const emit = defineEmits<{
     preview: []
@@ -41,13 +42,13 @@ function openPreview() {
         <div class="relative overflow-hidden">
             <NuxtImg
                 :src="uneditedTumbnail || thumbnail"
-                alt="Unedited gallery thumbnail image"
+                :alt="shortDescription || 'Unedited gallery thumbnail image'"
                 class="w-full h-full object-cover"
             />
             <NuxtImg
                 v-if="uneditedTumbnail"
                 :src="thumbnail"
-                alt="Gallery thumbnail image"
+                :alt="shortDescription || 'Gallery thumbnail image'"
                 class="w-full h-full object-cover absolute inset-0"
                 :style="uneditedTumbnail ? revealStyle : undefined"
             />

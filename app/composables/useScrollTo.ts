@@ -1,5 +1,5 @@
 export default function (id: string) {
-    const target: HTMLElement | null = document.getElementById(id)
+    const target: HTMLElement | null = document.getElementById(id.replace(/^#/, ""))
 
     if (!target) {
         console.warn(`Element with id "${id}" not found.`)

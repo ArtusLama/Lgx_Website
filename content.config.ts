@@ -1,7 +1,8 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content"
-import { ShopCategorySchema } from "./shared/types/category"
-import { ShopProductSchema } from "./shared/types/product"
-import { TestimonialSchema } from "./shared/types/testimonial"
+import { ShopCategorySchema } from "./shared/types/content/category"
+import { ShopProductSchema } from "./shared/types/content/product"
+import { ThumbnailShowcaseSchema } from "./shared/types/content/showcase/thumbnailShowcase"
+import { TestimonialSchema } from "./shared/types/content/testimonial"
 
 export default defineContentConfig({
     collections: {
@@ -20,5 +21,11 @@ export default defineContentConfig({
             source: "shop/products/**/!(_category).yml",
             schema: ShopProductSchema,
         }),
+        showcaseThumbnails: defineCollection({
+            type: "data",
+            source: "showcase/thumbnails/**.yml",
+            schema: ThumbnailShowcaseSchema,
+        }),
+
     },
 })
