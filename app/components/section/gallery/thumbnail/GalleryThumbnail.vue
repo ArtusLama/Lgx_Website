@@ -1,5 +1,17 @@
 <script setup lang="ts">
-const { data: thumbnails } = await useAsyncData("thumbnails", () => queryCollection("showcaseThumbnails").all())
+const { onlyPreview } = defineProps<{
+    onlyPreview?: boolean
+}>()
+
+const { data: thumbnails } = await useAsyncData(`showcaseThumbnails${onlyPreview ? "-preview" : ""}`, async () => {
+    const query = queryCollection("showcaseThumbnails")
+    if (onlyPreview) {
+        return query.limit(6).all()
+    }
+    else {
+        return query.all()
+    }
+})
 
 const { gsap } = useGsap()
 const galleryRef = ref<HTMLElement | null>(null)
@@ -9,10 +21,7 @@ const activeIndex = ref(0)
 let cleanupHoverListeners: (() => void) | null = null
 let gsapContext: gsap.Context | null = null
 
-const activeImage = computed(() => {
-    const thumbnail = thumbnails.value?.[activeIndex.value]
-    return thumbnail ? thumbnail.imageUrl : ""
-})
+const activeImage = computed(() => thumbnails.value?.[activeIndex.value])
 
 function openPreview(index: number) {
     activeIndex.value = index
@@ -183,21 +192,24 @@ onBeforeUnmount(() => {
             </div>
 
             <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-12">
-                <SectionGalleryThumbnailItem
+                <Suspense
                     v-for="(thumbnail, index) in thumbnails"
                     :key="index"
-                    class="gallery-thumbnail-item"
-                    :thumbnail="thumbnail.imageUrl"
-                    :unedited-tumbnail="thumbnail.beforeImageUrl"
-                    :short-description="thumbnail.shortDescription"
-                    @preview="openPreview(index)"
-                />
+                >
+                    <SectionGalleryThumbnailItem
+                        class="gallery-thumbnail-item"
+                        :thumbnail="thumbnail.imageUrl"
+                        :unedited-tumbnail="thumbnail.beforeImageUrl"
+                        :short-description="thumbnail.shortDescription"
+                        @preview="openPreview(index)"
+                    />
+                </Suspense>
             </div>
 
             <UiDialog v-model:open="isPreviewOpen">
                 <UiDialogContent class="bg-transparent p-0 border-0 flex min-w-fit max-w-300!">
                     <NuxtImg
-                        :src="activeImage"
+                        :src="activeImage?.imageUrl"
                         alt="Gallery preview image"
                         class="block rounded-md object-contain w-full"
                     />
@@ -205,7 +217,7 @@ onBeforeUnmount(() => {
             </UiDialog>
         </div>
 
-        <div class="mt-10 w-full flex items-center">
+        <div v-if="onlyPreview" class="mt-10 w-full flex items-center">
             <UiButton
                 size="lg"
                 as-child

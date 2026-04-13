@@ -56,10 +56,17 @@ export default defineNuxtConfig({
         },
     },
 
+    site: {
+        // DEV VALUES -> Override site defaults using environment variables - see .env.example
+        url: "http://localhost:3000",
+        name: "Raspocket Studios",
+        env: "development",
+    },
+
     /*
     nitro: {
         prerender: {
-            routes: ["/", "/shop"],
+            routes: ["/", "/shop", "/portfolio"],
             crawlLinks: true,
         },
     }, */

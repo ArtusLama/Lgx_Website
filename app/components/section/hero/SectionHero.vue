@@ -26,7 +26,7 @@ onMounted(() => {
 
 <template>
     <Section id="home" name="Home" class="flex flex-col items-center w-screen px-0 h-100 md:h-auto">
-        <SectionHeroWrapper class="relative w-full xl:w-300 h-[90vh]! max-h-160 px-4 sm:px-6 md:px-8">
+        <SectionHeroWrapper class="relative w-[95vw] h-[90vh]! aspect-video px-4 sm:px-6 md:px-8">
             <div class="text-center flex flex-col items-center">
                 <SvgHeoSignature id="hero-signature" class="h-10 sm:h-12 md:h-14 lg:h-16 w-fit -mb-3 sm:-mb-5 md:-mb-7 z-10 *:fill-primary" />
                 <p id="hero-title" class="text-foreground-secondary uppercase font-black text-[clamp(2.25rem,9vw,6rem)] leading-[0.9]">
