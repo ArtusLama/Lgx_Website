@@ -6,4 +6,4 @@
 - Portfolio Site -> Section overview sidebar
 - Home / Hero Page ?!
 - Trusted Section -> more minimal => no bg/border and no quote
--
+- REWRITE => V2
