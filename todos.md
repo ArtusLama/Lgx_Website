@@ -1,0 +1,9 @@
+- Color Scheme (Dark BG sections and Light BG sections, one primary color)
+- Portfolio site -> images bigger on big screen
+- Shop -> Commission to Discord with popup, others to kofi store (https://ko-fi.com/lgxgfx/shop)
+- (Recolor for thumbnails => cycle variants btn)
+- Home, numbers-impress section -> rolling up entry animation
+- Portfolio Site -> Section overview sidebar
+- Home / Hero Page ?!
+- Trusted Section -> more minimal => no bg/border and no quote
+-

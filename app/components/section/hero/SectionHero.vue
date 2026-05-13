@@ -26,7 +26,7 @@ onMounted(() => {
 
 <template>
     <Section id="home" name="Home" class="flex flex-col items-center w-screen px-0 h-100 md:h-auto">
-        <SectionHeroWrapper class="relative w-[95vw] h-[90vh]! aspect-video px-4 sm:px-6 md:px-8">
+        <SectionHeroWrapper class="relative w-[95vw] h-[90vh]! aspect-video px-4 sm:px-6 md:px-8 overflow-hidden">
             <div class="text-center flex flex-col items-center">
                 <SvgHeoSignature id="hero-signature" class="h-10 sm:h-12 md:h-14 lg:h-16 w-fit -mb-3 sm:-mb-5 md:-mb-7 z-10 *:fill-primary" />
                 <p id="hero-title" class="text-foreground-secondary uppercase font-black text-[clamp(2.25rem,9vw,6rem)] leading-[0.9]">
@@ -58,7 +58,15 @@ onMounted(() => {
             </div>
 
             <!-- TODO: Size of img!!! responsive -->
-            <NuxtImg id="hero-skin-render" alt="Minecraft skin render" src="/imgs/HeroSectionSkinRender.png" class="pointer-events-none select-none absolute bottom-0 sm:-bottom-2 md:-bottom-4 lg:-bottom-6 left-1/2 -translate-x-1/2 z-20 h-[20rem] md:h-[18rem] lg:h-[16rem]" />
+            <NuxtImg
+                id="hero-skin-render"
+                alt="Minecraft skin render"
+                src="/imgs/HeroSectionSkinRender.png"
+                class="pointer-events-none select-none absolute z-20 left-1/2 -translate-x-1/2
+                bg-red-500 sm:bg-amber-500 md:bg-green-500 lg:bg-blue-500 xl:bg-pink-500
+                bottom-0 sm:-bottom-2 md:-bottom-4 lg:-bottom-6
+                h-[20rem] md:h-[18rem] lg:h-[16rem]"
+            />
 
             <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-[clamp(7rem,34vw,28rem)] mt-4 -z-10 text-background opacity-15 select-none leading-none">
                 LGX

@@ -4,12 +4,12 @@ detailsList:
     -   "Price range: $5-50 (usually $7-17)"
     -   Price depends on detail and effects
 exampleImages:
-    -   /imgs/shop/examples/thumbnails/100DaysHardcoreThumbnail.png
-    -   /imgs/shop/examples/thumbnails/Bedwars4000StarsMissionThumbnail.png
-    -   /imgs/shop/examples/thumbnails/PrestigeVsVoilThumbnail.png
-    -   /imgs/shop/examples/thumbnails/RiggedTournamentThumbnail.png
-    -   /imgs/shop/examples/thumbnails/TreeTotemThumbnail.png
-    -   /imgs/shop/examples/thumbnails/VivillyHorrorSirenHeadThumbnail.png
+    -   /imgs/showcase/thumbnails/100DaysHardcoreThumbnail.png
+    -   /imgs/showcase/thumbnails/Bedwars4000StarsMissionThumbnail.png
+    -   /imgs/showcase/thumbnails/PrestigeVsVoilThumbnail.png
+    -   /imgs/showcase/thumbnails/RiggedTournamentThumbnail.png
+    -   /imgs/showcase/thumbnails/TreeTotemThumbnail.png
+    -   /imgs/showcase/thumbnails/VivillyHorrorSirenHeadThumbnail.png
 name: Thumbnails
 price: 5-50€
 shopUrl: https://example.com/shop/thumbnails
