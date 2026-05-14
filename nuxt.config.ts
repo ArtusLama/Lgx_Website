@@ -24,7 +24,13 @@ export default defineNuxtConfig({
 
         // SEO
         "@nuxtjs/seo",
+
+        // Utility
+        "@vueuse/nuxt",
     ],
+
+    // Include UnoCSS reset (Tailwind v4) => https://unocss.dev/guide/style-reset
+    css: ["@unocss/reset/tailwind-v4.css"],
 
     eslint: {
         config: {

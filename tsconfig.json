@@ -1,4 +1,7 @@
 {
+    "compilerOptions": {
+        "strict": true
+    },
     "references": [
         {
             "path": "./.nuxt/tsconfig.app.json"
