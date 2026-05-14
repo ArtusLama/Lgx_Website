@@ -26,6 +26,12 @@ export default defineNuxtConfig({
         "@nuxtjs/seo",
     ],
 
+    eslint: {
+        config: {
+            stylistic: true,
+        },
+    },
+
     fonts: {
         families: [],
     },
@@ -36,6 +42,13 @@ export default defineNuxtConfig({
                 lang: "en",
             },
         },
+    },
+
+    site: {
+        // DEV VALUES -> Override site defaults using environment variables - see .env.example
+        url: "http://localhost:3000",
+        name: "Raspocket Studios",
+        env: "development",
     },
 
     // TODO: Maybe prerender some routes

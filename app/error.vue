@@ -28,7 +28,8 @@ useSeoMeta({
         </p>
 
         <button
-            class="hover:bg-primary-dark px-4 py-2 rounded bg-gray-500 transition-colors"
+            type="button"
+            class="px-4 py-2 rounded bg-gray-500 transition-colors hover:bg-blue-400"
             @click="handleError"
         >
             Go back to Home
