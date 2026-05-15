@@ -5,9 +5,11 @@ const toggleOpen = useToggle(isOpen)
 
 <template>
     <button
+        type="button"
         variant="outline"
         size="icon"
         class="text-gray-600 bg-gray-400 size-12"
+        aria-label="Toggle mobile menu"
         @click="toggleOpen()"
     >
         <svg

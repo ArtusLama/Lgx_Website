@@ -72,13 +72,26 @@ export default defineNuxtConfig({
         },
 
         editor: {
-            iconLibraries: ["lucide"],
+            iconLibraries: ["simple-icons", "lucide"],
         },
 
         git: {
             commit: {
                 messagePrefix: ":memo: Update content:",
             },
+        },
+    },
+
+    // TODO: is this necessary and correct?! Suggested by logs
+    vite: {
+        optimizeDeps: {
+            include: [
+                "@vue/devtools-kit",
+                "gsap",
+                "gsap/DrawSVGPlugin",
+                "gsap/ScrollTrigger",
+                "gsap/SplitText",
+            ],
         },
     },
 

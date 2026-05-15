@@ -18,6 +18,7 @@ function onLinkClick(link: NavBarLink) {
 
 <template>
     <nav
+        aria-label="Mobile Navigation"
         :style="{ height: showMenu ? 'calc(100vh - var(--spacing-navbar-height))' : '0' }"
         class="mt-navbar-height bg-gray-100 transition-height duration-300 left-0 right-0 top-0 fixed overflow-hidden md:hidden"
     >

@@ -1,7 +1,7 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content"
-import { ThumbnailSchema } from "./shared/types/content/portfolio/thumbnail"
-import { ShopCategorySchema } from "./shared/types/content/shop/category"
-import { ShopProductSchema } from "./shared/types/content/shop/product"
+import { ThumbnailSchema } from "./shared/utils/content/schemas/portfolio/thumbnail"
+import { ShopCategorySchema } from "./shared/utils/content/schemas/shop/category"
+import { ShopProductSchema } from "./shared/utils/content/schemas/shop/product"
 
 export default defineContentConfig({
     collections: {

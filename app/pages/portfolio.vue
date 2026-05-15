@@ -1,17 +1,11 @@
-<script setup lang="ts">
-const { pending, error, data } = useLazyAsyncData("portfolio-thumbnails", () => queryCollection("portfolioThumbnails").all())
-</script>
-
 <template>
-    <div>
-        <p>portfolio</p>
-        <p>{{ pending }}</p>
-        <p>{{ error }}</p>
+    <div class="flex flex-col gap-12 items-center">
+        <h1 class="text-4xl font-black mt-20">
+            PORTFOLIO
+        </h1>
 
-        <ul>
-            <li v-for="(thumbnail, index) in data" :key="index">
-                {{ thumbnail }}
-            </li>
-        </ul>
+        <div class="w-full">
+            <PortfolioThumbnailsGrid />
+        </div>
     </div>
 </template>

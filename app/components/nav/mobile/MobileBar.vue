@@ -20,7 +20,7 @@ function handleLogoClick() {
 </script>
 
 <template>
-    <div class="pl-8 pr-3 flex h-full w-full w-full items-center justify-between md:hidden">
+    <div class="pl-8 pr-3 flex h-full w-full items-center justify-between md:hidden">
         <NavLogo @click="handleLogoClick" />
         <NavMobileBurgerMenuBtn v-model:is-open="isOpen" class="shrink-0" />
     </div>

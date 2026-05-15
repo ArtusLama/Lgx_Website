@@ -1,10 +1,10 @@
 {
   "beforeImage": {
-    "src": "/imgs/content/portfolio/thumbnails/100DaysHardcoreThumbnail_BEFORE.png",
+    "src": "/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail_BEFORE.png",
     "alt": "X"
   },
   "finalImage": {
-    "src": "/imgs/content/portfolio/thumbnails/100DaysHardcoreThumbnail.png",
+    "src": "/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png",
     "alt": "X"
   }
 }

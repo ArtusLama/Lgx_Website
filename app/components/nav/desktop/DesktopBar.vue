@@ -9,7 +9,10 @@ const rightHalfLinks = computed(() => links.slice(middleIndexLinks.value))
 </script>
 
 <template>
-    <nav class="gap-16 h-full w-full hidden items-center justify-center md:flex">
+    <nav
+        aria-label="Desktop Navigation"
+        class="gap-16 h-full w-full hidden items-center justify-center md:flex"
+    >
         <ul class="flex gap-8">
             <li v-for="link in leftHalfLinks" :key="link.label">
                 <NavDesktopLink :link="link" />

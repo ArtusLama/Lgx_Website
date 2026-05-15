@@ -1,10 +1,10 @@
 {
   "beforeImage": {
-    "src": "/imgs/content/portfolio/thumbnails/TreeTotemThumbnail_BEFORE.png",
+    "src": "/imgs/portfolio/thumbnails/TreeTotemThumbnail_BEFORE.png",
     "alt": "X"
   },
   "finalImage": {
-    "src": "/imgs/content/portfolio/thumbnails/TreeTotemThumbnail.png",
+    "src": "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png",
     "alt": "X"
   }
 }

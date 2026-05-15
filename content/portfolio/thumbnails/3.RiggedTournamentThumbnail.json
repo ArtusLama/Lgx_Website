@@ -1,10 +1,10 @@
 {
   "beforeImage": {
-    "src": "/imgs/content/portfolio/thumbnails/RiggedTournamentThumbnail_BEFORE.png",
+    "src": "/imgs/portfolio/thumbnails/RiggedTournamentThumbnail_BEFORE.png",
     "alt": "X"
   },
   "finalImage": {
-    "src": "/imgs/content/portfolio/thumbnails/RiggedTournamentThumbnail.png",
+    "src": "/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png",
     "alt": "X"
   }
 }

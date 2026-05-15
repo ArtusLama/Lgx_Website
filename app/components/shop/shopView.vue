@@ -35,6 +35,7 @@ const groupedProducts: ComputedRef<GroupedCategory[]> = computed(() => {
     })
 
     shopProducts.value.forEach((product) => {
+        // TODO: fix type
         const category = categories.find(c => stemToCategory(c.category.stem) === stemToCategory(product.stem))
         if (category)
             category.products.push(product)
