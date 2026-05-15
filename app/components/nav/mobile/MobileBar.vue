@@ -13,25 +13,15 @@ function closeMenu() {
 const route = useRoute()
 watch(() => route.path, closeMenu)
 
-function scrollToTop() {
-    const lenis = useLenis().value
-    if (lenis) {
-        lenis.scrollTo(0)
-    }
-    else {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-    }
-}
-
 function handleLogoClick() {
     closeMenu()
-    scrollToTop()
+    useScroll().toTop()
 }
 </script>
 
 <template>
     <div class="pl-8 pr-3 flex h-full w-full w-full items-center justify-between md:hidden">
-        <NavLogo class="cursor-pointer" @click="handleLogoClick" />
+        <NavLogo @click="handleLogoClick" />
         <NavMobileBurgerMenuBtn v-model:is-open="isOpen" class="shrink-0" />
     </div>
 </template>

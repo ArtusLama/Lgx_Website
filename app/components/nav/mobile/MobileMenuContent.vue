@@ -7,6 +7,13 @@ defineProps<{
 const emit = defineEmits<{
     (e: "linkClicked"): void
 }>()
+
+function onLinkClick(link: NavBarLink) {
+    if (!link.external)
+        useScroll().toTop()
+
+    emit("linkClicked")
+}
 </script>
 
 <template>
@@ -16,7 +23,7 @@ const emit = defineEmits<{
     >
         <ul>
             <li v-for="link in links" :key="link.label" class="px-4 py-2">
-                <NavMobileLink :link="link" @click="emit('linkClicked')" />
+                <NavMobileLink :link="link" @click="onLinkClick(link)" />
             </li>
 
             <li>

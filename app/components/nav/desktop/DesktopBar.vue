@@ -6,16 +6,6 @@ const { links } = defineProps<{
 const middleIndexLinks = computed(() => Math.ceil(links.length / 2))
 const leftHalfLinks = computed(() => links.slice(0, middleIndexLinks.value))
 const rightHalfLinks = computed(() => links.slice(middleIndexLinks.value))
-
-function scrollToTop() {
-    const lenis = useLenis().value
-    if (lenis) {
-        lenis.scrollTo(0)
-    }
-    else {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-    }
-}
 </script>
 
 <template>
@@ -25,7 +15,7 @@ function scrollToTop() {
                 <NavDesktopLink :link="link" />
             </li>
         </ul>
-        <div class="cursor-pointer" @click="scrollToTop">
+        <div @click="useScroll().toTop()">
             <NavLogo />
         </div>
         <ul class="flex gap-8">
