@@ -10,7 +10,7 @@ const isMobileMenuOpen = ref(false)
 </script>
 
 <template>
-    <header class="bg-gray-300 flex h-navbar-height items-center left-0 right-0 top-0 sticky z-50">
+    <header class="bg-gray-300 flex h-navbar-height items-center left-0 right-0 top-0 fixed z-50">
         <NavDesktopBar :links="navigationLinks" />
 
         <NavMobileBar v-model:is-open="isMobileMenuOpen" />

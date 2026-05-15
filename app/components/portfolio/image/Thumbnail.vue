@@ -13,6 +13,30 @@ const revealStyle = computed(() => ({
     willChange: "clip-path, filter",
 }))
 
+const allVariants = computed(() => [thumbnail.finalImage, ...thumbnail.finalImageVariants])
+const {
+    state: currentThumbnail,
+    next: nextVariant,
+} = useCycleList(allVariants)
+
+const { open } = useImageViewer()
+
+function openFullscreen() {
+    if (showBeforeVersion.value && thumbnail.beforeImage?.src) {
+        open({ src: thumbnail.beforeImage.src, alt: thumbnail.beforeImage.alt })
+        return
+    }
+
+    open({
+        src: currentThumbnail.value?.src || "",
+        alt: currentThumbnail.value?.alt || "Thumbnail image",
+    })
+}
+
+onMounted(() => {
+    // const { gsap } = useGsap()
+})
+
 // TODO: image optimization with vercel and NuxtImg => placeholder, sizes, etc
 </script>
 
@@ -20,34 +44,53 @@ const revealStyle = computed(() => ({
     <div
         role="button"
         tabindex="0"
-        class="group rounded-lg bg-background w-full cursor-pointer shadow-sm transition-all relative overflow-hidden focus-within:(shadow-md scale-103) hover:(shadow-md scale-103)"
+        class="group rounded-lg bg-background w-full aspect-video cursor-pointer shadow-sm transition-all relative overflow-hidden focus-within:(shadow-md scale-103) hover:(shadow-md scale-103)"
         @pointerdown.prevent
+        @click="openFullscreen"
     >
         <NuxtImg
             v-if="hasBeforeImageVersion"
-            class="w-full pointer-events-none select-none left-0 top-0 absolute"
+            class="w-full pointer-events-none select-none transition-transform duration-300 left-0 top-0 absolute group-focus-within:scale-103 group-hover:scale-103"
             loading="lazy"
             :src="thumbnail.beforeImage!.src"
-            :alt="thumbnail.beforeImage!.alt"
+            :alt="thumbnail.beforeImage?.alt || 'Before Thumbnail image'"
         />
-        <NuxtImg
-            class="w-full pointer-events-none select-none transition-transform duration-300 group-focus-within:scale-103 group-hover:scale-103"
-            loading="lazy"
-            :src="thumbnail.finalImage.src"
-            :alt="thumbnail.finalImage.alt"
+        <div
+            class="w-full"
             :style="revealStyle"
-        />
-
-        <UiButton
-            v-if="hasBeforeImageVersion"
-            icon
-            size="small"
-            variant="secondary"
-            class="opacity-0 transition-opacity duration-300 right-2 top-2 absolute group-focus-within:opacity-100 group-hover:opacity-100"
-            @click="showBeforeVersion = !showBeforeVersion"
         >
-            <Icon :name="showBeforeVersion ? 'lucide:eye' : 'lucide:eye-off'" />
-            {{ showBeforeVersion ? "Show After" : "Show Before" }}
-        </UiButton>
+            <NuxtImg
+                class="w-full pointer-events-none select-none transition-transform duration-300 group-focus-within:scale-103 group-hover:scale-103"
+                loading="lazy"
+                :src="currentThumbnail.src || ''"
+                :alt="currentThumbnail.alt || 'Thumbnail image'"
+            />
+        </div>
+
+        <div class="opacity-0 flex flex-col gap-2 transition-opacity duration-300 items-end right-2 top-2 absolute group-focus-within:opacity-100 group-hover:opacity-100 *:w-fit">
+            <UiButton
+                v-if="hasBeforeImageVersion"
+                icon
+                size="small"
+                variant="secondary"
+                class=""
+                @click.stop="showBeforeVersion = !showBeforeVersion"
+            >
+                <Icon :name="showBeforeVersion ? 'lucide:eye' : 'lucide:eye-off'" />
+                {{ showBeforeVersion ? "Show After" : "Show Before" }}
+            </UiButton>
+            <UiButton
+                v-if="allVariants.length > 1"
+                icon
+                size="small"
+                variant="secondary"
+                class=""
+                :disabled="showBeforeVersion"
+                @click.stop="nextVariant()"
+            >
+                <Icon name="lucide:arrow-left-right" />
+                Next Variant
+            </UiButton>
+        </div>
     </div>
 </template>

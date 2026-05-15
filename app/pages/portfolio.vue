@@ -7,5 +7,7 @@
         <div class="w-full">
             <PortfolioThumbnailsGrid />
         </div>
+
+        <UiFullscreenImageView />
     </div>
 </template>

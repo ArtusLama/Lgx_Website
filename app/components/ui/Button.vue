@@ -21,12 +21,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const variantStyles = computed(() => {
     switch (props.variant) {
+        // TODO: use color theme!
         case "primary":
-            return "bg-blue-500 text-white hover:bg-blue-600"
+            return "bg-primary text-white hover:bg-primary/90"
         case "secondary":
-            return "bg-gray-500 text-white hover:bg-gray-600"
+            return "bg-secondary text-white hover:bg-gray-600"
         case "outline":
-            return "border border-blue-500 text-blue-500 hover:bg-blue-100"
+            return "border border-border text-blue-500 hover:bg-blue-100"
         default:
             return ""
     }
@@ -50,7 +51,7 @@ const sizeStyles = computed(() => {
 
 <template>
     <Primitive
-        class="rounded-md transition-all duration-200 active:scale-98 hover:scale-103"
+        class="rounded-md transition-all duration-200 focus-visible:(outline-none ring-2 ring-blue-400) disabled:(opacity-50 cursor-not-allowed) active:scale-98 hover:scale-103"
         data-slot="button"
         :data-variant="variant"
         :as="as"
