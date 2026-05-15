@@ -3,7 +3,7 @@
         <!-- TODO: make default layout -->
         <NavBar />
 
-        <main class="min-h-[calc(100vh-var(--spacing-navbar-height))] relative">
+        <main class="min-h-[calc(100vh-var(--spacing-navbar-height))] relative overflow-x-hidden">
             <slot />
         </main>
 

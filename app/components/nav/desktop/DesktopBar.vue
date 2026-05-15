@@ -24,8 +24,13 @@ const rightHalfLinks = computed(() => links.slice(middleIndexLinks.value))
             </li>
         </ul>
 
-        <NuxtLink to="/shop" class="right-8 absolute">
-            SHOP
-        </NuxtLink>
+        <div class="right-8 absolute">
+            <UiButton icon as-child>
+                <NuxtLink to="/shop">
+                    <Icon name="lucide:shopping-cart" />
+                    Shop
+                </NuxtLink>
+            </UiButton>
+        </div>
     </nav>
 </template>

@@ -1,0 +1,11 @@
+{
+    "beforeImage": {
+        "src": "/imgs/content/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail_BEFORE.png",
+        "alt": "X"
+    },
+    "finalImage": {
+        "src": "/imgs/content/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",
+        "alt": "X"
+    },
+    "finalImageVariants": []
+}

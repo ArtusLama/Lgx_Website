@@ -10,4 +10,7 @@ export default antfu({
         quotes: "double",
     },
     yaml: false,
+    ignores: [
+        "content/**/*json",
+    ],
 })

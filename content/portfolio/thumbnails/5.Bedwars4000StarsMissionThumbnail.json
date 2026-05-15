@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/content/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/content/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png",
+    "alt": "X"
+  }
+}

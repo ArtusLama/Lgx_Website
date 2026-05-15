@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: [
         // Appearance
+        "reka-ui/nuxt",
         "@unocss/nuxt",
         "@nuxt/icon",
         "@nuxt/fonts",
@@ -21,6 +22,7 @@ export default defineNuxtConfig({
 
         // CMS / Content
         "@nuxt/content",
+        "nuxt-studio",
 
         // SEO
         "@nuxtjs/seo",
@@ -55,6 +57,29 @@ export default defineNuxtConfig({
         url: "http://localhost:3000",
         name: "Raspocket Studios",
         env: "development",
+    },
+
+    studio: {
+        // for local testing disable 'dev' to simulate production environment.
+        dev: true,
+
+        route: "/admin",
+        repository: {
+            provider: "github",
+            owner: "ArtusLama",
+            repo: "Lgx_Website",
+            branch: "main",
+        },
+
+        editor: {
+            iconLibraries: ["lucide"],
+        },
+
+        git: {
+            commit: {
+                messagePrefix: ":memo: Update content:",
+            },
+        },
     },
 
     // TODO: Maybe prerender some routes
