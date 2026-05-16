@@ -1,12 +1,10 @@
 <template>
-    <div class="flex flex-col gap-12 items-center">
-        <h1 class="text-4xl font-black mt-20">
+    <div>
+        <p>
             PORTFOLIO
-        </h1>
+        </p>
 
-        <div class="w-full">
-            <PortfolioThumbnailsGrid />
-        </div>
+        <SectionPortfolioThumbnails />
 
         <UiFullscreenImageView />
     </div>

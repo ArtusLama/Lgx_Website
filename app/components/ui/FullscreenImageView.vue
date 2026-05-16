@@ -22,10 +22,9 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
         <DialogPortal>
             <DialogOverlay class="bg-black/80 inset-0 fixed z-40 backdrop-blur-sm" />
             <DialogContent
-                class="outline-none flex flex-col items-center inset-0 justify-center fixed z-55"
+                class="p-6 outline-none flex flex-col items-center inset-0 justify-center fixed z-55 lg:p-16 sm:p-10"
                 @click="close"
             >
-                <!-- Close button - positioned absolutely at top right -->
                 <DialogClose
                     class="text-white mt-6 p-1.5 rounded-md flex size-12 transition-colors items-center right-6 top-[var(--spacing-navbar-height)] justify-center absolute z-50 hover:bg-white/20"
                     aria-label="Close"
@@ -33,13 +32,12 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
                     <Icon name="lucide:x" :size="32" />
                 </DialogClose>
 
-                <!-- Image container with padding -->
-                <div class="p-6 flex h-full w-full items-center justify-center">
+                <div class="flex h-full w-full items-center justify-center">
                     <NuxtImg
                         v-if="hasImage"
                         :src="image?.src || ''"
                         :alt="image?.alt || 'Fullscreen image'"
-                        class="rounded-lg max-h-full max-w-full object-contain"
+                        class="rounded-lg h-auto max-h-full max-w-full w-auto object-contain"
                         @click.stop
                     />
                 </div>

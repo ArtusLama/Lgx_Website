@@ -1,5 +1,6 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content"
 import { ThumbnailSchema } from "./shared/utils/content/schemas/portfolio/thumbnail"
+import { TrustedByChannelsSchema } from "./shared/utils/content/schemas/portfolio/trustedByChannels"
 import { ShopCategorySchema } from "./shared/utils/content/schemas/shop/category"
 import { ShopProductSchema } from "./shared/utils/content/schemas/shop/product"
 
@@ -20,6 +21,12 @@ export default defineContentConfig({
             type: "data",
             source: "portfolio/thumbnails/*.json",
             schema: ThumbnailSchema,
+        }),
+
+        trustedByChannels: defineCollection({
+            type: "data",
+            source: "portfolio/trustedByChannels/channels.json",
+            schema: TrustedByChannelsSchema,
         }),
     },
 })

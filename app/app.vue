@@ -35,7 +35,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <div>
+    <div class="text-foreground bg-background">
         <VueLenis
             ref="lenis"
             root

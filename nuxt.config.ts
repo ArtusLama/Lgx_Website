@@ -41,7 +41,14 @@ export default defineNuxtConfig({
     },
 
     fonts: {
-        families: [],
+        families: [
+            {
+                name: "Plus Jakarta Sans",
+                provider: "google",
+                weights: ["200 800"],
+                styles: ["normal", "italic"],
+            },
+        ],
     },
 
     app: {
@@ -93,6 +100,18 @@ export default defineNuxtConfig({
                 "gsap/SplitText",
             ],
         },
+    },
+
+    runtimeConfig: {
+        youtubeApiKey: "", // Set in .env using: NUXT_YOUTUBE_API_KEY=...
+    },
+
+    image: {
+        domains: [
+            "yt3.ggpht.com",
+            "yt3.googleusercontent.com",
+            "i.ytimg.com",
+        ],
     },
 
     // TODO: Maybe prerender some routes

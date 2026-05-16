@@ -3,7 +3,7 @@
         <!-- TODO: make default layout -->
         <NavBar />
 
-        <main class="mx-auto mt-[var(--spacing-navbar-height)] px-4 max-w-120rem min-h-[calc(100vh-var(--spacing-navbar-height))] relative overflow-x-hidden md:px-12 xl:px-24">
+        <main class="mt-[var(--spacing-navbar-height)] min-h-[calc(100vh-var(--spacing-navbar-height))] relative overflow-x-hidden">
             <slot />
         </main>
 

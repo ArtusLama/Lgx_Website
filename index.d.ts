@@ -21,4 +21,14 @@ declare module "vue" {
     }
 }
 
+declare module "nuxt/schema" {
+    interface RuntimeConfig {
+        youtubeApiKey: string
+    }
+
+    interface PublicRuntimeConfig {
+
+    }
+}
+
 export {}
