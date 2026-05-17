@@ -114,7 +114,14 @@ export default defineNuxtConfig({
         ],
     },
 
-    // TODO: Maybe prerender some routes
+    content: {
+        experimental: {
+            // TODO: hopefully this fixes vercel deployment issues => https://github.com/nuxt/content/issues/3534
+            sqliteConnector: "native",
+        },
+    },
+
+    // TODO: Maybe prerender some routes. Also check if this works with content
     /* nitro: {
         prerender: {
             routes: ["/"],
