@@ -1,4 +1,19 @@
 {
-    "name": "Profile Picture PSD",
-    "description": "PSD source for profile picture commissions."
+    "title": "Profile Picture PSD",
+    "shortDescription": "Layered PSD source for profile picture commissions.",
+    "informationList": [
+        "Smart object for avatar",
+        "Editable background",
+        "Square export"
+    ],
+    "price": "$10",
+    "deliveryTime": "Instant download",
+    "buyLink": {
+        "label": "Buy PSD",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png",
+        "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png"
+    ]
 }

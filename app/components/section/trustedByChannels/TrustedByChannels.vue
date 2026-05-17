@@ -133,6 +133,6 @@ onBeforeUnmount(() => {
             </h2>
         </div>
 
-        <SectionTrustedByChannelsView />
+        <SectionTrustedByChannelsView class="mt-10 p-10" />
     </Section>
 </template>

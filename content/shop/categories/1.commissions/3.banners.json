@@ -1,4 +1,20 @@
 {
-    "name": "Banners",
-    "description": "GFX banner commissions for channels and social platforms."
+    "title": "Banners",
+    "shortDescription": "Channel and social banner art with clean branding.",
+    "informationList": [
+        "YouTube and Twitch safe areas",
+        "High-res export",
+        "1 revision pass"
+    ],
+    "price": "From $35",
+    "deliveryTime": "3-5 days",
+    "buyLink": {
+        "label": "Order on Ko-fi",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png",
+        "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
+        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
+    ]
 }

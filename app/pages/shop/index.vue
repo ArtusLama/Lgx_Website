@@ -1,7 +1,5 @@
 <template>
     <div>
-        <p>SHOP</p>
-
-        <ShopView />
+        <SectionShopProducts />
     </div>
 </template>

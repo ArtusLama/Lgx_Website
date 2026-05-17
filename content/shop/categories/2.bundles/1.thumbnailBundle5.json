@@ -1,4 +1,24 @@
 {
-    "name": "5x Thumbnail Bundle",
-    "description": "Five custom Minecraft thumbnails with stronger bundle savings."
+    "title": "5x Thumbnail Bundle",
+    "shortDescription": "Five thumbnails with stronger bundle savings.",
+    "tag": {
+        "label": "Best Value",
+        "color": "secondary"
+    },
+    "informationList": [
+        "5 custom thumbnails",
+        "Consistent branding across the set",
+        "Priority queue"
+    ],
+    "price": "$100",
+    "deliveryTime": "5-7 days",
+    "buyLink": {
+        "label": "Order bundle",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",
+        "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png",
+        "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png"
+    ]
 }

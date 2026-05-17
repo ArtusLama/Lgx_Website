@@ -63,7 +63,7 @@ const resolvedChannels = computed(() => {
     <div v-else-if="hasError" class="py-6 text-center">
         <p>ERROR loading channels</p>
     </div>
-    <div v-else class="gap-6 grid lg:grid-cols-3 sm:grid-cols-2">
+    <div v-else class="mx-auto gap-16 grid grid-cols-1 max-w-[80rem] w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <SectionTrustedByChannelsChannelCard
             v-for="channel in resolvedChannels"
             :key="channel.id"

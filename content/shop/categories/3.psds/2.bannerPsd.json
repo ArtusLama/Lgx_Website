@@ -1,4 +1,19 @@
 {
-    "name": "Banner PSD",
-    "description": "Layered PSD source file for channel and social banners."
+    "title": "Banner PSD",
+    "shortDescription": "Layered PSD source file for channel and social banners.",
+    "informationList": [
+        "Safe-area guides included",
+        "Editable colors",
+        "Well-labeled layers"
+    ],
+    "price": "$15",
+    "deliveryTime": "Instant download",
+    "buyLink": {
+        "label": "Buy PSD",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
+        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
+    ]
 }

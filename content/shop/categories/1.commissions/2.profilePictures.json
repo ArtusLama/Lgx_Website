@@ -1,4 +1,19 @@
 {
-    "name": "Profile Pictures",
-    "description": "GFX profile picture commissions."
+    "title": "Profile Pictures",
+    "shortDescription": "GFX profile picture commissions for creators and servers.",
+    "informationList": [
+        "Square avatar sized for social platforms",
+        "Transparent background included",
+        "1 round of tweaks"
+    ],
+    "price": "From $20",
+    "deliveryTime": "2-3 days",
+    "buyLink": {
+        "label": "Order on Ko-fi",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
+        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
+    ]
 }

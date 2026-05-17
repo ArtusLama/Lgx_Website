@@ -1,4 +1,23 @@
 {
-    "name": "Icons",
-    "description": "Custom icon commissions."
+    "title": "Icons",
+    "shortDescription": "Custom icon commissions for streams and servers.",
+    "tag": {
+        "label": "Quick",
+        "color": "muted"
+    },
+    "informationList": [
+        "Single icon or small set",
+        "PNG export with transparency",
+        "Sized for Discord and Twitch"
+    ],
+    "price": "From $10",
+    "deliveryTime": "1-2 days",
+    "buyLink": {
+        "label": "Order on Ko-fi",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",
+        "/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png"
+    ]
 }

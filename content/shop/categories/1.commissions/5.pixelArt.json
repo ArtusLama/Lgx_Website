@@ -1,4 +1,19 @@
 {
-    "name": "Pixel Art",
-    "description": "Custom pixel art commissions."
+    "title": "Pixel Art",
+    "shortDescription": "Custom pixel art pieces for profiles and packs.",
+    "informationList": [
+        "Sprite size up to 128x128",
+        "Transparent PNG",
+        "Style matched to your references"
+    ],
+    "price": "From $15",
+    "deliveryTime": "2-4 days",
+    "buyLink": {
+        "label": "Order on Ko-fi",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png",
+        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
+    ]
 }

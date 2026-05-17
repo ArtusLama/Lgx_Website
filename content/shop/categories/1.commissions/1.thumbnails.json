@@ -1,4 +1,24 @@
 {
-    "name": "Thumbnails",
-    "description": "Thumbnails for commissions."
+    "title": "Thumbnails",
+    "shortDescription": "High-impact Minecraft thumbnails designed to boost clicks.",
+    "tag": {
+        "label": "Popular",
+        "color": "primary"
+    },
+    "informationList": [
+        "1 custom thumbnail",
+        "High-res JPG and PNG",
+        "2 minor revisions"
+    ],
+    "price": "From $25",
+    "deliveryTime": "2-4 days",
+    "buyLink": {
+        "label": "Order on Ko-fi",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",
+        "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png",
+        "/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png"
+    ]
 }

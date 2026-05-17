@@ -1,4 +1,19 @@
 {
-    "name": "Skin",
-    "description": "Minecraft skin commissions for revamps or fully new skins."
+    "title": "Skin",
+    "shortDescription": "Minecraft skin commissions for new looks or revamps.",
+    "informationList": [
+        "New skin or rework of existing",
+        "Slim or classic model",
+        "PNG export"
+    ],
+    "price": "From $18",
+    "deliveryTime": "2-4 days",
+    "buyLink": {
+        "label": "Order on Ko-fi",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png",
+        "/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png"
+    ]
 }

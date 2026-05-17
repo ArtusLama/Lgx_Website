@@ -1,4 +1,20 @@
 {
-    "name": "3x Thumbnail Bundle",
-    "description": "Three custom Minecraft thumbnails with bundle savings."
+    "title": "3x Thumbnail Bundle",
+    "shortDescription": "Three thumbnails bundled for creators.",
+    "informationList": [
+        "3 custom thumbnails",
+        "Matching style and layout",
+        "Bundle discount"
+    ],
+    "price": "$65",
+    "deliveryTime": "4-6 days",
+    "buyLink": {
+        "label": "Order bundle",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png",
+        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png",
+        "/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png"
+    ]
 }

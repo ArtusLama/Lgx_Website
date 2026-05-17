@@ -3,13 +3,16 @@ const {
     pending: shopCategoriesPending,
     error: shopCategoriesError,
     data: shopCategories,
-} = useLazyAsyncData("shop-categories", () => queryCollection("shopCategories").all())
+} = useLazyAsyncData<ShopCategoryEntry[]>("shop-categories", () => queryCollection("shopCategories").all())
 
 const {
     pending: shopProductsPending,
     error: shopProductsError,
     data: shopProducts,
-} = useLazyAsyncData("shop-products", () => queryCollection("shopProducts").all())
+} = useLazyAsyncData<ShopProductEntry[]>("shop-products", () => queryCollection("shopProducts").all())
+
+const pending = computed(() => shopCategoriesPending.value || shopProductsPending.value)
+const hasError = computed(() => !!shopCategoriesError.value || !!shopProductsError.value)
 
 function stemToCategory(stem: string) {
     // Removes from right until slash or backslash and use as result the text from there until the next slash or backslash (on the left). Example: ".../categories/test/_category" -> "test"
@@ -18,8 +21,8 @@ function stemToCategory(stem: string) {
 }
 
 interface GroupedCategory {
-    category: ShopCategory
-    products: ShopProduct[]
+    category: ShopCategoryEntry
+    products: ShopProductEntry[]
 }
 
 const groupedProducts: ComputedRef<GroupedCategory[]> = computed(() => {
@@ -35,7 +38,6 @@ const groupedProducts: ComputedRef<GroupedCategory[]> = computed(() => {
     })
 
     shopProducts.value.forEach((product) => {
-        // TODO: fix type
         const category = categories.find(c => stemToCategory(c.category.stem) === stemToCategory(product.stem))
         if (category)
             category.products.push(product)
@@ -46,25 +48,19 @@ const groupedProducts: ComputedRef<GroupedCategory[]> = computed(() => {
 </script>
 
 <template>
-    <div>
-        <div
-            v-if="!shopCategoriesError && !shopProductsError"
-            class="m-4 p-8 border border-blue-300"
-        >
-            <div v-if="!shopCategoriesPending && !shopProductsPending">
-                <ShopCategory
-                    v-for="group in groupedProducts"
-                    :key="group.category.stem"
-                    :category="group.category"
-                    :products="group.products"
-                />
-            </div>
-            <div v-else>
-                <p>Loading...</p>
-            </div>
-        </div>
-        <div v-else>
-            <p>ERROR</p>
-        </div>
+    <div v-if="pending">
+        <p>Loading...</p>
+    </div>
+    <div v-else-if="hasError">
+        <p>ERROR</p>
+    </div>
+    <div v-else>
+        <ShopCategory
+            v-for="(group, index) in groupedProducts"
+            :key="group.category.name"
+            :category="group.category"
+            :products="group.products"
+            :index="index"
+        />
     </div>
 </template>

@@ -12,24 +12,22 @@ function formatCount(value: number): string {
 </script>
 
 <template>
-    <div class="flex gap-4 items-center">
+    <div class="flex flex-col gap-2 items-center">
         <NuxtImg
             :src="channel.profilePictureUrl"
             :alt="channel.handle"
-            class="rounded-full size-14 object-cover"
+            class="p-4 rounded-full max-h-64 object-cover"
         />
-        <div class="min-w-0">
-            <NuxtLink
-                external
-                :to="channel.url"
-                target="_blank"
-                class="font-bold underline truncate"
-            >
-                {{ channel.handle }}
-            </NuxtLink>
-            <p class="text-sm text-gray-500">
-                {{ formatCount(channel.subscriberCount) }} subs
-            </p>
-        </div>
+        <NuxtLink
+            external
+            :to="channel.url"
+            target="_blank"
+            class="text-xl font-semibold underline"
+        >
+            {{ channel.handle }}
+        </NuxtLink>
+        <p class="text-lg text-primary font-bold">
+            {{ formatCount(channel.subscriberCount) }} subs
+        </p>
     </div>
 </template>

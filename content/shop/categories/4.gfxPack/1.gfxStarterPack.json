@@ -1,4 +1,24 @@
 {
-    "name": "GFX Starter Pack",
-    "description": "One complete creator branding pack."
+    "title": "GFX Starter Pack",
+    "shortDescription": "Complete starter branding pack for creators.",
+    "tag": {
+        "label": "Full Pack",
+        "color": "primary"
+    },
+    "informationList": [
+        "Profile picture, banner, and 5 icons",
+        "Consistent brand visuals",
+        "Source files included"
+    ],
+    "price": "$120",
+    "deliveryTime": "7-10 days",
+    "buyLink": {
+        "label": "Order pack",
+        "url": "https://ko-fi.com/lgx"
+    },
+    "examples": [
+        "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
+        "/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png",
+        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
+    ]
 }
