@@ -1,4 +1,3 @@
-import { property } from "@nuxt/content"
 import { z } from "zod"
 
 const ShopProductTagSchema = z.object({
@@ -31,7 +30,7 @@ export const ShopProductSchema = z.object({
     deliveryTime: z.string().optional(),
     buyLink: ShopProductBuyLinkSchema.optional(),
     contactDialog: ShopProductContactDialogSchema.optional(),
-    examples: z.array(property(z.string()).editor({ input: "media" })).default([]),
+    examples: z.array(z.string()).default([]),
 })
 
 export type ShopProduct = z.infer<typeof ShopProductSchema>
