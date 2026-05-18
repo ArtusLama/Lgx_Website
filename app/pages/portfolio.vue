@@ -1,9 +1,5 @@
 <template>
     <div>
-        <p>
-            PORTFOLIO
-        </p>
-
         <SectionPortfolioThumbnails />
 
         <UiFullscreenImageView />

@@ -22,11 +22,11 @@ function formatCount(value: number): string {
             external
             :to="channel.url"
             target="_blank"
-            class="text-xl font-semibold underline"
+            class="text-2xl font-semibold"
         >
             {{ channel.handle }}
         </NuxtLink>
-        <p class="text-lg text-primary font-bold">
+        <p class="text-xl text-foreground-secondary/75 font-bold">
             {{ formatCount(channel.subscriberCount) }} subs
         </p>
     </div>

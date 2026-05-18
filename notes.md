@@ -1,6 +1,6 @@
 - Loading indicators only after a delay, to avoid flashing them on fast loads
 - item gsap appear animations => e.g. YT Channels, Shop products, portfolio thumbnails, ...
-- fix nuxt content optionals vs empty strings
+- fix nuxt content optionals vs empty strings (kinda done)
 - 
 - Too many YT Channels on mobile -> to much scrolling
 - 

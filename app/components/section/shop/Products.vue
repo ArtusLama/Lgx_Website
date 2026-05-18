@@ -60,11 +60,11 @@ onBeforeUnmount(() => {
 
 <template>
     <Section>
-        <div class="font-jakarta">
-            <p ref="preheading" class="text-3xl text-primary tracking-wider font-black uppercase font-italic">
+        <div class="font-jakarta text-center sm:text-left">
+            <p ref="preheading" class="text-xl text-primary tracking-wider font-black uppercase font-italic sm:text-3xl">
                 MY OFFERS:
             </p>
-            <h1 ref="heading" class="text-8xl font-black">
+            <h1 ref="heading" class="text-5xl font-black sm:text-8xl">
                 You Ask, I Create!<br>
                 What I offer:
             </h1>

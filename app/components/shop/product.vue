@@ -95,7 +95,7 @@ function openExamples() {
 
         <div v-if="hasActionButtons" class="mt-8 p-2 flex flex-wrap gap-2">
             <UiButton v-if="hasExamples" icon variant="outline" @click="openExamples">
-                <Icon name="lucide:eye" class="mt-1" />
+                <Icon name="lucide:eye" class="mt-0.5" />
                 Show Examples
             </UiButton>
             <UiButton v-if="hasContactDialog" icon @click="isContactOpen = true">
