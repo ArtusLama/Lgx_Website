@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
             </p>
             <h1 ref="heading" class="text-8xl font-black">
                 You Ask, I Create!<br>
-                Things I offer:
+                What I offer:
             </h1>
         </div>
 

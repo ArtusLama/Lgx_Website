@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         "@nuxt/icon",
         "@nuxt/fonts",
         "lenis/nuxt",
+        "vue3-carousel-nuxt",
 
         // Performance
         "@nuxt/image",
@@ -119,6 +120,10 @@ export default defineNuxtConfig({
             // TODO: hopefully this fixes vercel deployment issues => https://github.com/nuxt/content/issues/3534
             sqliteConnector: "native",
         },
+    },
+
+    carousel: {
+        prefix: "Carousel",
     },
 
     // TODO: Maybe prerender some routes. Also check if this works with content

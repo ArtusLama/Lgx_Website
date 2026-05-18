@@ -14,8 +14,8 @@ defineProps<{
             </span>
             {{ category.name }}:
         </h2>
-        <ul class="ml-0 mt-8 gap-8 grid grid-cols-1 sm:ml-12 lg:grid-cols-3 md:grid-cols-2">
-            <li v-for="product in products" :key="product.title">
+        <ul class="ml-0 mt-8 gap-8 grid grid-cols-1 items-stretch sm:ml-12 lg:grid-cols-3 md:grid-cols-2">
+            <li v-for="product in products" :key="product.title" class="h-full">
                 <ShopProduct :product="product" />
             </li>
         </ul>

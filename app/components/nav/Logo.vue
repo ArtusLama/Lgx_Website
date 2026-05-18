@@ -1,3 +1,3 @@
 <template>
-    <SvgLogoSignature class="h-fit w-32 cursor-pointer transition-transform active:scale-95 hover:scale-105" />
+    <SvgLogoSignature class="h-fit w-32 cursor-pointer transition-transform active:scale-95 hover:scale-105 *:fill-primary!" />
 </template>

@@ -19,6 +19,10 @@ export default defineConfig({
             "background-secondary": "rgb(13, 13, 13)", // Background for other sections
             "foreground-secondary": "rgb(247, 247, 247)", // Text for other sections
 
+            "nav-background": "#ffffff", // Navbar Background
+            "nav-foreground": "#1e1e1e", // Navbar Text
+            "nav-link-active": "#ff2ff2", // Active Navbar Link
+
             // ACCENT COLORS
             "primary": "#ff4081", // Primary Accent Color
             "primary-foreground": "white", // Text for primary elements

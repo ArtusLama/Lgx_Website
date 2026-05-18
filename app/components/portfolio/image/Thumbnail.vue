@@ -23,13 +23,19 @@ const { open } = useImageViewer()
 
 function openFullscreen() {
     if (showBeforeVersion.value && thumbnail.beforeImage?.src) {
-        open({ src: thumbnail.beforeImage.src, alt: thumbnail.beforeImage.alt })
+        open({
+            images: [{ src: thumbnail.beforeImage.src, alt: thumbnail.beforeImage.alt }],
+            startIndex: 0,
+        })
         return
     }
 
     open({
-        src: currentThumbnail.value?.src || "",
-        alt: currentThumbnail.value?.alt || "Thumbnail image",
+        images: [{
+            src: currentThumbnail.value?.src || "",
+            alt: currentThumbnail.value?.alt || "Thumbnail image",
+        }],
+        startIndex: 0,
     })
 }
 

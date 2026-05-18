@@ -1,2 +1,6 @@
 - Loading indicators only after a delay, to avoid flashing them on fast loads
 - item gsap appear animations => e.g. YT Channels, Shop products, portfolio thumbnails, ...
+- 
+- 
+- Too many YT Channels on mobile -> to much scrolling
+- 

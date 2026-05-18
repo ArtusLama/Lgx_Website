@@ -47,8 +47,7 @@ useSeoMeta({
         />
 
         <NuxtRouteAnnouncer />
-        <NuxtLoadingIndicator />
-        <!-- TODO: change indicator color -->
+        <NuxtLoadingIndicator color="var(--colors-primary)" />
 
         <NuxtLayout>
             <NuxtPage />

@@ -77,6 +77,9 @@ importers:
       vue-router:
         specifier: ^5.0.6
         version: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3))
+      vue3-carousel-nuxt:
+        specifier: ^1.1.6
+        version: 1.1.6(magicast@0.5.3)(vue@3.5.34(typescript@6.0.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^9.0.0
@@ -7796,6 +7799,14 @@ packages:
         optional: true
       pinia:
         optional: true
+
+  vue3-carousel-nuxt@1.1.6:
+    resolution: {integrity: sha512-y5CTJBj3HryL0l+8pzvXyWHTj/SUiBYChsces5GMyKQoad2yMXsdofzpKSrTquoCgrd1hWHUO2DBnN6ougA0Gg==}
+
+  vue3-carousel@0.15.1:
+    resolution: {integrity: sha512-nV2ChLZtgAOikmls8WaVe37vO4Wagk4RYawePHIvXrFtduFnQODyzPx8MmXaAb6l+ka72yAi04ZeCyciiyJMyA==}
+    peerDependencies:
+      vue: ^3.5.0
 
   vue@3.5.34:
     resolution: {integrity: sha512-WdLBG9gm02OgJIG9axd5Hpx0TFLdzVgfG2evFFu8Rur5O/IoGc5cMjnjh3tPL6GnRGsYvUhBSKVPYVcxRKpMCA==}
@@ -17008,6 +17019,18 @@ snapshots:
       yaml: 2.9.0
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.34
+
+  vue3-carousel-nuxt@1.1.6(magicast@0.5.3)(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      '@nuxt/kit': 3.21.5(magicast@0.5.3)
+      vue3-carousel: 0.15.1(vue@3.5.34(typescript@6.0.3))
+    transitivePeerDependencies:
+      - magicast
+      - vue
+
+  vue3-carousel@0.15.1(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      vue: 3.5.34(typescript@6.0.3)
 
   vue@3.5.34(typescript@6.0.3):
     dependencies:
