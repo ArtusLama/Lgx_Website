@@ -1,19 +1,27 @@
 {
-    "title": "Profile Pictures",
-    "shortDescription": "GFX profile picture commissions for creators and servers.",
-    "informationList": [
-        "Square avatar sized for social platforms",
-        "Transparent background included",
-        "1 round of tweaks"
-    ],
-    "price": "20-30€",
-    "deliveryTime": "2-3 days",
-    "buyLink": {
-        "label": "Order on Ko-fi",
-        "url": "https://ko-fi.com/lgx"
-    },
-    "examples": [
-        "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
-        "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
-    ]
+  "title": "Profile Pictures",
+  "buyLink": {
+    "label": "",
+    "url": ""
+  },
+  "deliveryTime": "2-3 days",
+  "examples": [
+    "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
+    "/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png"
+  ],
+  "informationList": [
+    "Square avatar sized for social platforms",
+    "Transparent background included",
+    "1 round of tweaks"
+  ],
+  "price": "20-30€",
+  "shortDescription": "GFX profile picture commissions for creators and servers.",
+  "contactDialog": {
+    "title": "Test Lol",
+    "description": "hahah",
+    "link": {
+      "label": "adwada",
+      "url": "https://example.com"
+    }
+  }
 }

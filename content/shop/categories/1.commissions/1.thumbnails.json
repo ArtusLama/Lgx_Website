@@ -12,9 +12,13 @@
     ],
     "price": "25-40€",
     "deliveryTime": "2-4 days",
-    "buyLink": {
-        "label": "Order on Ko-fi",
-        "url": "https://ko-fi.com/lgx"
+    "contactDialog": {
+        "title": "How to order",
+        "description": "Send me a message on Discord with your idea and references. We'll confirm the price and delivery time before I start.",
+        "link": {
+            "label": "Message on Discord",
+            "url": "https://discord.gg/XJe4JHkQgz"
+        }
     },
     "examples": [
         "/imgs/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",

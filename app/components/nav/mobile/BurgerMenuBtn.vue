@@ -6,9 +6,7 @@ const toggleOpen = useToggle(isOpen)
 <template>
     <button
         type="button"
-        variant="outline"
-        size="icon"
-        class="text-gray-600 bg-gray-400 size-12"
+        class="text-nav-foreground border border-2 border-nav-foreground/10 rounded-lg size-12 transition-colors duration-300 hover:(border-nav-foreground/30 opacity-80)"
         aria-label="Toggle mobile menu"
         @click="toggleOpen()"
     >

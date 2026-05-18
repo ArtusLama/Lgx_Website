@@ -1,3 +1,4 @@
+import { property } from "@nuxt/content"
 import { z } from "zod"
 
 const ShopProductTagSchema = z.object({
@@ -10,6 +11,17 @@ const ShopProductBuyLinkSchema = z.object({
     url: z.string(),
 })
 
+const ShopProductContactLinkSchema = z.object({
+    label: z.string(),
+    url: z.string(),
+})
+
+const ShopProductContactDialogSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    link: ShopProductContactLinkSchema.optional(),
+})
+
 export const ShopProductSchema = z.object({
     title: z.string(),
     shortDescription: z.string(),
@@ -17,8 +29,9 @@ export const ShopProductSchema = z.object({
     informationList: z.array(z.string()).default([]),
     price: z.string(),
     deliveryTime: z.string().optional(),
-    buyLink: ShopProductBuyLinkSchema,
-    examples: z.array(z.string()).default([]),
+    buyLink: ShopProductBuyLinkSchema.optional(),
+    contactDialog: ShopProductContactDialogSchema.optional(),
+    examples: z.array(property(z.string()).editor({ input: "media" })).default([]),
 })
 
 export type ShopProduct = z.infer<typeof ShopProductSchema>
