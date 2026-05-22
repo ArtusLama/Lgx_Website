@@ -23,7 +23,7 @@ export default defineConfig({
             "foreground-secondary": "rgb(247, 247, 247)", // Text for other sections
 
             "nav-background": "#f0ece6", // Navbar Background
-            "nav-foreground": "#242424", // Navbar Text
+            "nav-foreground": "#1e1e1e", // Navbar Text
             "nav-link-active": "#ff4081", // Active Navbar Link
 
             // ACCENT COLORS

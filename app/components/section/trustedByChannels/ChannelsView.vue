@@ -54,20 +54,31 @@ const resolvedChannels = computed(() => {
         return b.subscriberCount - a.subscriberCount
     })
 })
+
+const showMore = ref(false)
+
+const showChannels = computed(() => {
+    if (showMore.value) {
+        return resolvedChannels.value
+    }
+    return resolvedChannels.value.slice(0, 8)
+})
 </script>
 
 <template>
-    <div v-if="isPending" class="py-6 text-center">
-        <p>Loading channels...</p>
-    </div>
+    <div v-if="isPending" class="py-6 text-center" />
     <div v-else-if="hasError" class="py-6 text-center">
         <p>ERROR loading channels</p>
     </div>
     <div v-else class="mx-auto gap-16 grid grid-cols-1 max-w-[80rem] w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <SectionTrustedByChannelsChannelCard
-            v-for="channel in resolvedChannels"
+            v-for="channel in showChannels"
             :key="channel.id"
             :channel="channel"
         />
+        <UiButton v-if="channels.length > 4 && !showMore" class="mx-auto col-span-full" icon @click="showMore = true">
+            <Icon name="lucide:eye" />
+            Show more
+        </UiButton>
     </div>
 </template>
