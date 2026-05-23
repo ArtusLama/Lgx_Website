@@ -40,7 +40,7 @@ useSeoMeta({
             ref="lenis"
             root
             :options="{
-                duration: 0.75,
+                duration: 1,
                 autoToggle: true,
                 autoRaf: false,
             }"

@@ -3,4 +3,4 @@
 - fix nuxt content optionals vs empty strings (kinda done)
 - 
 - Too many YT Channels on mobile -> to much scrolling
-- 
+- Headings animate on mount and not on reveal!

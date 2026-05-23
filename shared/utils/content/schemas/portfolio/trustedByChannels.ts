@@ -3,6 +3,7 @@ import { z } from "zod"
 export const TrustedByChannelsSchema = z.object({
     channels: z.array(z.object({
         handle: z.string(),
+        pinToTop: z.boolean(),
     })).default([]),
 })
 

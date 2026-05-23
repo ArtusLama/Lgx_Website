@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import type { TrustedByChannel } from "~~/shared/types/content"
-import type { YouTubeChannel } from "~~/shared/types/youtubeChannels"
-
 const {
-    data: contentChannels,
+    data: contentChannelsQuery,
     error: contentError,
     pending: contentPending,
 } = useLazyAsyncData("trustedChannels", () => queryCollection("trustedByChannels").all())
 
-const channels = computed<TrustedByChannel["channels"]>(() => contentChannels.value?.[0]?.channels || [])
+const contentChannels = computed<TrustedByChannel["channels"]>(() => contentChannelsQuery.value?.[0]?.channels || [])
 
 const {
-    data: channelInfos,
+    data: channels,
     error: channelsError,
     pending: channelsPending,
     execute: fetchChannelInfos,
 } = useLazyAsyncData("trustedChannelsInfo", async () => {
-    if (!channels.value.length) {
+    if (!contentChannels.value.length) {
         return []
     }
 
     const results = await Promise.all(
-        channels.value.map(async (channel) => {
+        contentChannels.value.map(async (channel) => {
             try {
-                return await $fetch<YouTubeChannel>(`/api/getYouTubeChannelInfo/${channel.handle}`)
+                return {
+                    contentEntry: channel,
+                    data: await $fetch<YouTubeChannel>(`/api/getYouTubeChannelInfo/${channel.handle}`),
+                }
             }
             catch {
                 return null
@@ -31,28 +31,28 @@ const {
         }),
     )
 
-    return results.filter((channel): channel is YouTubeChannel => !!channel)
+    return results.filter((result): result is NonNullable<typeof result> => !!result)
 }, { immediate: false })
 
-watch(
-    [() => contentPending.value, channels],
-    ([isPending]) => {
-        if (!isPending && channels.value.length) {
-            fetchChannelInfos()
-        }
-    },
-    { immediate: true },
-)
+watchEffect(() => {
+    if (contentChannels.value.length) {
+        void fetchChannelInfos()
+    }
+})
 
 const isPending = computed(() => contentPending.value || channelsPending.value)
 const hasError = computed(() => !!contentError.value || !!channelsError.value)
 
 const resolvedChannels = computed(() => {
-    const items = [...(channelInfos.value || [])]
+    const items = [...(channels.value || [])]
 
     return items.sort((a, b) => {
-        return b.subscriberCount - a.subscriberCount
-    })
+        if (a.contentEntry.pinToTop !== b.contentEntry.pinToTop) {
+            return a.contentEntry.pinToTop ? -1 : 1
+        }
+
+        return b.data.subscriberCount - a.data.subscriberCount
+    }) || []
 })
 
 const showMore = ref(false)
@@ -73,10 +73,10 @@ const showChannels = computed(() => {
     <div v-else class="mx-auto gap-16 grid grid-cols-1 max-w-[80rem] w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <SectionTrustedByChannelsChannelCard
             v-for="channel in showChannels"
-            :key="channel.id"
-            :channel="channel"
+            :key="channel.data.id"
+            :channel="channel.data"
         />
-        <UiButton v-if="channels.length > 4 && !showMore" class="mx-auto col-span-full" icon @click="showMore = true">
+        <UiButton v-if="resolvedChannels.length > 4 && !showMore" class="mx-auto col-span-full" icon @click="showMore = true">
             <Icon name="lucide:eye" />
             Show more
         </UiButton>

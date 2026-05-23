@@ -6,9 +6,7 @@
 
         <SectionTrustedByChannels />
 
-        <Section secondary-background>
-            <p>OTHER</p>
-        </Section>
+        <SectionStats />
 
         <Section>
             <p>BOTTOM</p>

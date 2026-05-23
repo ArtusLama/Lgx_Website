@@ -120,10 +120,10 @@ onBeforeUnmount(() => {
 <template>
     <Section secondary-background>
         <div class="font-jakarta">
-            <p ref="preheading" class="text-3xl text-primary tracking-wider font-black uppercase font-italic">
+            <p ref="preheading" class="text-4xl text-primary tracking-wider font-black uppercase font-italic">
                 MY CLIENTS:
             </p>
-            <h2 ref="heading" class="text-8xl font-black">
+            <h2 ref="heading" class="text-9xl font-black">
                 Trusted<br>
                 by
                 <span ref="bigWord" class="text-primary">
@@ -133,6 +133,6 @@ onBeforeUnmount(() => {
             </h2>
         </div>
 
-        <SectionTrustedByChannelsView class="mt-10 p-10" />
+        <SectionTrustedByChannelsView class="mt-10 p-10 min-h-[50rem]" />
     </Section>
 </template>
