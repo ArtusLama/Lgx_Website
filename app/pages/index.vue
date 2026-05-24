@@ -1,15 +1,11 @@
 <template>
     <div>
-        <Section>
-            <p>TOP</p>
-        </Section>
+        <SectionHero />
 
-        <SectionTrustedByChannels />
+        <SectionTrustedByChannels class="pt-32" />
 
         <SectionStats />
 
-        <Section>
-            <p>BOTTOM</p>
-        </Section>
+        <SectionContact class="pt-24" />
     </div>
 </template>

@@ -1,23 +1,84 @@
 {
-    "channels": [
-        { "handle": "@Blissolic", "pinToTop": true },
-        { "handle": "@Felbolt", "pinToTop": true },
-        { "handle": "@xFlxme", "pinToTop": true },
-        { "handle": "@OvejaGD", "pinToTop": true },
-        { "handle": "@ModernLegendsLP", "pinToTop": true },
-        { "handle": "@OvejaPlays", "pinToTop": true },
-        { "handle": "@OvejaDash", "pinToTop": true },
-        { "handle": "@DasherOveja", "pinToTop": true },
-        { "handle": "@giraplus", "pinToTop": false },
-        { "handle": "@xWxter", "pinToTop": false },
-        { "handle": "@deanomats", "pinToTop": false },
-        { "handle": "@bandisergio", "pinToTop": false },
-        { "handle": "@cydeYT", "pinToTop": false },
-        { "handle": "@Twixxel_lesgo", "pinToTop": false },
-        { "handle": "@CarpyyVuoleGiocare", "pinToTop": false },
-        { "handle": "@BBlocks", "pinToTop": false },
-        { "handle": "@clevooo", "pinToTop": false },
-        { "handle": "@Carpyy", "pinToTop": false },
-        { "handle": "@Thunderflares", "pinToTop": false }
-    ]
+  "channels": [
+    {
+      "handle": "@Blissolic",
+      "pinToTop": false
+    },
+    {
+      "handle": "@Felbolt",
+      "pinToTop": false
+    },
+    {
+      "handle": "@xFlxme",
+      "pinToTop": true
+    },
+    {
+      "handle": "@OvejaGD",
+      "pinToTop": false
+    },
+    {
+      "handle": "@ModernLegendsLP",
+      "pinToTop": false
+    },
+    {
+      "handle": "@OvejaPlays",
+      "pinToTop": false
+    },
+    {
+      "handle": "@OvejaDash",
+      "pinToTop": false
+    },
+    {
+      "handle": "@DasherOveja",
+      "pinToTop": false
+    },
+    {
+      "handle": "@giraplus",
+      "pinToTop": false
+    },
+    {
+      "handle": "@xWxter",
+      "pinToTop": false
+    },
+    {
+      "handle": "@deanomats",
+      "pinToTop": false
+    },
+    {
+      "handle": "@bandisergio",
+      "pinToTop": true
+    },
+    {
+      "handle": "@cydeYT",
+      "pinToTop": false
+    },
+    {
+      "handle": "@Twixxel_lesgo",
+      "pinToTop": false
+    },
+    {
+      "handle": "@CarpyyVuoleGiocare",
+      "pinToTop": false
+    },
+    {
+      "handle": "@BBlocks",
+      "pinToTop": false
+    },
+    {
+      "handle": "@clevooo",
+      "pinToTop": false
+    },
+    {
+      "handle": "@Carpyy",
+      "pinToTop": true
+    },
+    {
+      "handle": "@Thunderflares",
+      "pinToTop": false
+    },
+    {
+      "pinToTop": false,
+      "handle": "@SculkyYoutube"
+    }
+  ]
 }

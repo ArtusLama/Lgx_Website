@@ -76,7 +76,7 @@ const showChannels = computed(() => {
             :key="channel.data.id"
             :channel="channel.data"
         />
-        <UiButton v-if="resolvedChannels.length > 4 && !showMore" class="mx-auto col-span-full" icon @click="showMore = true">
+        <UiButton v-if="resolvedChannels.length > 4 && !showMore" class="mx-auto col-span-full h-fit" icon @click="showMore = true">
             <Icon name="lucide:eye" />
             Show more
         </UiButton>

@@ -17,20 +17,23 @@ export default defineConfig({
             // TODO: make all colors to oklch
 
             // MAIN BACKGROUND AND TEXT COLORS
-            "background": "#faf6ef", // Main Page Background
+            "background": "#ffffff", // Main Page Background
             "foreground": "#1e1e1e", // Main Text
-            "background-secondary": "rgb(13, 13, 13)", // Background for other sections
+            "background-secondary": "#050505", // Background for other sections
             "foreground-secondary": "rgb(247, 247, 247)", // Text for other sections
 
-            "nav-background": "#f0ece6", // Navbar Background
+            "nav-background": "#fafafa", // Navbar Background
             "nav-foreground": "#1e1e1e", // Navbar Text
-            "nav-link-active": "#ff4081", // Active Navbar Link
+            "nav-link-active": "#ff465c", // Active Navbar Link
 
             // ACCENT COLORS
-            "primary": "#ff4081", // Primary Accent Color
+            "primary": "#ff465c", // Primary Accent Color
             "primary-foreground": "white", // Text for primary elements
             "secondary": "#0070f3", // Secondary Accent Color
             "secondary-foreground": "red", // Text for secondary elements
+
+            // CARDS
+            "card": "#ffffff", // Card Background
         },
         spacing: {
             "navbar-height": "4rem",
