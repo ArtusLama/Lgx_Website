@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-    <Section class="px-0!">
+    <Section class="px-0! md:justify-start!">
         <h2 class="text-5xl font-bold font-jakarta italic">
             <span class="text-4xl text-primary font-black mr-2">
                 {{ index + 1 }}.
