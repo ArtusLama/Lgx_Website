@@ -1,50 +1,5 @@
-<script setup lang="ts">
-const footer = useTemplateRef<HTMLElement>("footer")
-const footerSpacer = useTemplateRef<HTMLElement>("footerSpacer")
-
-onMounted(() => {
-    const { gsap, ScrollTrigger } = useGsap()
-    const footerEl = footer.value
-    const spacerEl = footerSpacer.value
-
-    if (!footerEl || !spacerEl)
-        return
-
-    const updateSpacerHeight = () => {
-        spacerEl.style.height = `${footerEl.offsetHeight}px`
-        ScrollTrigger.refresh()
-    }
-
-    updateSpacerHeight()
-
-    const resizeObserver = new ResizeObserver(updateSpacerHeight)
-    resizeObserver.observe(footerEl)
-
-    gsap.set(footerEl, { yPercent: 40 })
-
-    const parallaxTween = gsap.to(footerEl, {
-        yPercent: 0,
-        ease: "none",
-        scrollTrigger: {
-            trigger: spacerEl,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-        },
-    })
-
-    onBeforeUnmount(() => {
-        resizeObserver.disconnect()
-        parallaxTween.scrollTrigger?.kill()
-        parallaxTween.kill()
-    })
-})
-</script>
-
 <template>
-    <div ref="footerSpacer" class="border-t-1 border-t-foreground/10 w-full" aria-hidden="true" />
-
-    <footer ref="footer" class="px-4 pb-12 pt-20 flex w-full inset-x-0 bottom-0 justify-center fixed z-0 md:px-12 xl:px-24">
+    <footer class="px-4 pb-12 pt-20 border-t-1 border-t-foreground/10 flex w-full justify-center md:px-12 xl:px-24">
         <div class="max-w-120rem w-full">
             <div class="gap flex flex-col flex-wrap gap-12 items-center justify-between md:flex-row md:items-start">
                 <div class="text-center flex flex-col items-center md:text-start md:items-start">
@@ -57,9 +12,10 @@ onMounted(() => {
                     </p>
 
                     <div class="mt-6 flex gap-2 justify-center md:justify-start">
-                        <FooterSocialIcon icon="simple-icons:youtube" href="https://www.youtube.com/@Lgx__" />
-                        <FooterSocialIcon icon="simple-icons:discord" href="https://discord.gg/XJe4JHkQgz" />
-                        <FooterSocialIcon icon="simple-icons:kofi" href="https://ko-fi.com/lgxgfx" />
+                        <FooterSocialIcon icon="simple-icons:youtube" href="https://www.youtube.com/@Lgx__" color="#FF0000" />
+                        <FooterSocialIcon icon="simple-icons:discord" href="https://discord.gg/XJe4JHkQgz" color="#7289da" />
+                        <FooterSocialIcon icon="simple-icons:kofi" href="https://ko-fi.com/lgxgfx" color="#FF6433" />
+                        <FooterSocialIcon icon="lucide:link" href="https://solo.to/lgx_" color="#256ff8" />
                     </div>
                 </div>
                 <div class="mt-0 text-center flex flex-col gap-2 md:mt-8 md:text-start">

@@ -119,13 +119,12 @@ onBeforeUnmount(() => {
 
 <template>
     <Section secondary-background>
-        <div class="font-jakarta">
-            <p ref="preheading" class="text-4xl text-primary tracking-wider font-black uppercase font-italic">
+        <div class="font-jakarta text-center">
+            <p ref="preheading" class="text-xl text-primary tracking-wider font-black uppercase font-italic sm:text-3xl">
                 MY CLIENTS:
             </p>
-            <h2 ref="heading" class="text-9xl font-black">
-                Trusted<br>
-                by
+            <h2 ref="heading" class="text-5xl font-black sm:text-8xl">
+                Trusted by<br>
                 <span ref="bigWord" class="text-primary">
                     BIG
                 </span>

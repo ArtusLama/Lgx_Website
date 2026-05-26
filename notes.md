@@ -5,3 +5,4 @@
 - trusted by channels => cards + show more button hydration error?!
 - shop page performance issues (scroll laggs)
 - after heading split text, revert to real one
+- add discord profile to the contact thing
