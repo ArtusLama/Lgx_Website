@@ -1,117 +1,117 @@
 <script setup lang="ts">
-const clickText = useTemplateRef<HTMLSpanElement>("clickText")
-const clickTextHover = useTemplateRef<HTMLSpanElement>("clickTextHover")
-const clickPill = useTemplateRef<HTMLSpanElement>("clickPill")
+const heroTitle = useTemplateRef<HTMLHeadingElement>("hero-title")
+const background = useTemplateRef<HTMLImageElement>("background")
+const heroSkinRender = useTemplateRef<HTMLImageElement>("hero-skin-render")
+const sloganSection = useTemplateRef<HTMLDivElement>("slogan-section")
 
 onMounted(() => {
     const { gsap, SplitText } = useGsap()
 
-    if (!clickText.value)
+    const backgroundEl = (background.value as any)?.$el ?? background.value
+    const heroSkinRenderEl = (heroSkinRender.value as any)?.$el ?? heroSkinRender.value
+
+    if (!heroTitle.value || !heroSkinRenderEl || !backgroundEl || !sloganSection.value)
         return
 
-    const split = SplitText.create(clickText.value, { type: "chars" })
+    const split = SplitText.create(heroTitle.value, {
+        type: "lines",
+        mask: "lines",
+        linesClass: "hero-title-line",
+    })
+    gsap.set(split.lines, { yPercent: 100 })
+    gsap.to(split.lines, {
+        yPercent: 0,
+        stagger: 0.05,
+        ease: "power2.out",
+        duration: 1,
+    })
 
-    // on hover move stagger letters up. start at the last letter
-
-    const hoverAnimation = gsap.to(split.chars, {
-        yPercent: -120,
-        stagger: {
-            each: 0.05,
-            from: "end",
+    gsap.to(split.lines, {
+        scale: 1.05,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: heroTitle.value,
+            start: "top center",
+            end: "bottom top",
+            scrub: true,
         },
-        paused: true,
-        ease: "power2.inOut",
     })
 
-    const typingText = "Another Click"
-    const defaultHoverText = clickTextHover.value?.textContent ?? "I know you wanna click"
-    let typingTween: gsap.core.Tween | null = null
-    let resetTween: gsap.core.Tween | null = null
-    let isHovered = false
-
-    const startTyping = () => {
-        if (!clickTextHover.value)
-            return
-
-        typingTween?.kill()
-        clickTextHover.value.textContent = ""
-
-        const chars = typingText.split("")
-        const state = { i: 0 }
-
-        typingTween = gsap.to(state, {
-            i: chars.length,
-            duration: chars.length * 0.05,
-            ease: "none",
-            onUpdate: () => {
-                const count = Math.floor(state.i)
-                clickTextHover.value!.textContent = chars.slice(0, count).join("")
-            },
-            onComplete: () => {
-                clickTextHover.value!.textContent = typingText
-            },
-        })
-    }
-
-    const resetHoverText = () => {
-        if (!clickTextHover.value)
-            return
-
-        typingTween?.kill()
-        clickTextHover.value.textContent = defaultHoverText
-    }
-
-    const scheduleReset = () => {
-        resetTween?.kill()
-        resetTween = gsap.delayedCall(0.3, () => {
-            if (!isHovered)
-                resetHoverText()
-        })
-    }
-
-    const hoverTarget = clickPill.value ?? clickText.value
-
-    hoverTarget.addEventListener("mouseenter", () => {
-        isHovered = true
-        resetTween?.kill()
-        hoverAnimation.play()
-    })
-    hoverTarget.addEventListener("mouseleave", () => {
-        isHovered = false
-        hoverAnimation.reverse()
-        scheduleReset()
+    gsap.to(heroSkinRenderEl, {
+        yPercent: 40,
+        scale: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: heroSkinRenderEl,
+            start: "top center",
+            end: "top+=300 top",
+            scrub: true,
+        },
     })
 
-    if (clickPill.value) {
-        clickPill.value.addEventListener("click", () => {
-            startTyping()
-        })
-    }
+    gsap.to(heroSkinRenderEl, {
+        x: 500,
+        ease: "power1out",
+        scrollTrigger: {
+            trigger: heroSkinRenderEl,
+            start: "top center",
+            end: "top+=300 top",
+            scrub: true,
+        },
+    })
+
+    gsap.to(sloganSection.value, {
+        yPercent: -50,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: sloganSection.value,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+        },
+    })
+
+    const pageLoadTimeline = gsap.timeline({ delay: 0.5 })
+
+    pageLoadTimeline.fromTo(
+        backgroundEl,
+        { scale: 1.2, autoAlpha: 0 },
+        { scale: 1, autoAlpha: 1, duration: 1.5, ease: "power2.out" },
+    )
+    pageLoadTimeline.fromTo(
+        heroSkinRenderEl,
+        { y: 40, scale: 0.98, autoAlpha: 0 },
+        { y: 0, scale: 1, autoAlpha: 1, duration: 1, ease: "power2.out" },
+        "<+0.2",
+    )
 })
 </script>
 
 <template>
-    <Section class="min-h-screen w-full items-start relative">
-        <div class="z-10] flex flex-col gap-24 h-full w-full relative">
-            <h1 class="text-[12em] leading-[1] tracking-tight font-black font-jakarta">
-                <span class="text-primary">
-                    Raspocket
-                </span><br>
-                Studios
-            </h1>
+    <Section class="px-0! pt-0! *:max-w-screen">
+        <div class="flex min-h-screen w-screen items-center relative z-10">
+            <NuxtImg ref="background" src="/imgs/HeroBackground.png" alt="Hero Background" class="h-full w-full pointer-events-none select-none left-0 top-0 absolute object-cover object-center -z-10" />
 
-            <p class="text-8xl tracking-wide font-bold font-jakarta">
-                I made<br>
-                <span class="text-primary">40 Million</span><br>
-                people
-                <span ref="clickPill" class="group text-7xl text-primary-foreground px-6 pb-3 pt-1 text-center rounded-full bg-primary flex inline-block cursor-pointer transition-transform items-center justify-center relative overflow-hidden -mb-3 hover:scale-95">
-                    <span ref="clickText">click</span>
-                    <span ref="clickTextHover" class="text-2xl font-bold opacity-0 flex pointer-events-none transition-opacity transition-delay-100 items-center inset-0 justify-center absolute group-hover:(opacity-100 transition-delay-300)">
-                        I know you wanna click
-                    </span>
-                </span><br>
-                my designs.<br>
-            </p>
+            <div class="mx-auto relative -mt-48">
+                <h1 ref="hero-title" class="text-size-[clamp(3rem,12vw,15rem)] text-primary leading-[0.8] tracking-[10] font-black text-center uppercase [&>span]:(py-5 -my-5)">
+                    <span>Raspocket</span><br>
+                    <span class="text-size-[clamp(4rem,16vw,18rem)]">Studios</span>
+                </h1>
+
+                <NuxtImg ref="hero-skin-render" src="/imgs/HeroSkinRender.png" alt="Hero Skin Render" class="w-150 pointer-events-none select-none transform left-1/2 top-[clamp(4rem,14vw,18rem)] absolute z-20 -translate-x-1/2" />
+            </div>
+        </div>
+
+        <div ref="slogan-section" class="flex w-full items-center justify-center relative z-10 sm:-ml-[10vw]">
+            <SectionHeroSlogan />
         </div>
     </Section>
 </template>
+
+<style>
+/* Fix gsap mask cut-off characters */
+.hero-title-line {
+    padding-bottom: 10px !important;
+    margin-bottom: -10px !important;
+}
+</style>

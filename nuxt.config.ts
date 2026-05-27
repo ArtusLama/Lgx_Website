@@ -57,6 +57,12 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: "en",
             },
+            // Disable dark mode for now to avoid issues with darkreader.
+            meta: [
+                {
+                    name: "darkreader-lock",
+                },
+            ],
         },
     },
 
