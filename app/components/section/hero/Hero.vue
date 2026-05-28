@@ -109,9 +109,9 @@ onMounted(() => {
 </template>
 
 <style>
-/* Fix gsap mask cut-off characters */
+/* Fix gsap mask cut-off characters TODO: check if this works */
 .hero-title-line {
-    padding-bottom: 10px !important;
-    margin-bottom: -10px !important;
+    padding: 10px !important;
+    margin: -10px !important;
 }
 </style>

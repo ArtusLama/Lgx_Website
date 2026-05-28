@@ -128,12 +128,14 @@ onBeforeUnmount(() => {
 
                 <div class="mt-6 p-4 pr-6 border border-foreground-secondary/10 rounded-xl bg-foreground-secondary/10 w-fit">
                     <div class="flex gap-4 items-center">
-                        <div class="text-white border border-foreground-secondary/20 rounded-full bg-primary/80 flex shrink-0 size-12 items-center justify-center">
-                            <Icon name="simple-icons:discord" :size="20" />
-                        </div>
+                        <NuxtImg
+                            class="rounded-full size-12"
+                            src="/imgs/DiscordProfilePicture.png"
+                            loading="lazy"
+                        />
                         <div>
                             <p class="text-sm tracking-wider font-bold uppercase">
-                                Discord
+                                Lgx_
                             </p>
                             <p class="text-sm text-foreground-secondary/75">
                                 Send your idea and references, then I will reply with next steps.

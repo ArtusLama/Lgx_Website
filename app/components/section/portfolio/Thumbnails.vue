@@ -60,16 +60,16 @@ onBeforeUnmount(() => {
 
 <template>
     <Section class="flex flex-col gap-12 items-center">
-        <div class="font-jakarta text-center sm:text-left">
+        <div class="font-jakarta text-center">
             <p ref="preheading" class="text-xl text-primary tracking-wider font-black uppercase font-italic sm:text-3xl">
-                THUMBNAILS
+                PORTFOLIO
             </p>
             <h2 ref="heading" class="text-5xl font-black sm:text-8xl">
-                Thumbnails that get clicks
+                Thumbnails<br>that get clicks
             </h2>
         </div>
 
-        <div class="mt-12 w-full">
+        <div class="mt-24 w-full">
             <PortfolioThumbnailsGrid />
         </div>
     </Section>

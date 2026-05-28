@@ -24,8 +24,7 @@ onMounted(() => {
         ease: "power2.out",
         scrollTrigger: {
             trigger: container,
-            start: "top 80%",
-            scrub: true,
+            start: "top 90%",
         },
     })
 })
@@ -33,19 +32,29 @@ onMounted(() => {
 
 <template>
     <Section>
-        <div ref="bestWorkImageContainer" class="gap-6 grid grid-cols-1 relative z-20 sm:grid-cols-2">
-            <SectionBestWorkShowcaseImage>
-                <NuxtImg src="/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png" />
-            </SectionBestWorkShowcaseImage>
-            <SectionBestWorkShowcaseImage>
-                <NuxtImg src="/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png" />
-            </SectionBestWorkShowcaseImage>
-            <SectionBestWorkShowcaseImage>
-                <NuxtImg src="/imgs/portfolio/thumbnails/TreeTotemThumbnail.png" />
-            </SectionBestWorkShowcaseImage>
-            <SectionBestWorkShowcaseImage>
-                <NuxtImg src="/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png" />
-            </SectionBestWorkShowcaseImage>
+        <div class="flex flex-col gap-12 items-center">
+            <div ref="bestWorkImageContainer" class="gap-6 grid grid-cols-1 relative z-20 sm:grid-cols-2">
+                <SectionBestWorkShowcaseImage>
+                    <NuxtImg src="/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png" loading="lazy" />
+                </SectionBestWorkShowcaseImage>
+                <SectionBestWorkShowcaseImage>
+                    <NuxtImg src="/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png" loading="lazy" />
+                </SectionBestWorkShowcaseImage>
+                <SectionBestWorkShowcaseImage>
+                    <NuxtImg src="/imgs/portfolio/thumbnails/TreeTotemThumbnail.png" loading="lazy" />
+                </SectionBestWorkShowcaseImage>
+                <SectionBestWorkShowcaseImage>
+                    <NuxtImg src="/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png" loading="lazy" />
+                </SectionBestWorkShowcaseImage>
+            </div>
+            <div>
+                <UiButton icon as-child>
+                    <NuxtLink to="/portfolio">
+                        <Icon name="lucide:arrow-right" />
+                        View Full Portfolio
+                    </NuxtLink>
+                </UiButton>
+            </div>
         </div>
     </Section>
 </template>

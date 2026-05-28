@@ -25,7 +25,7 @@ const variantStyles = computed(() => {
         case "primary":
             return "bg-primary text-white hover:bg-primary/90"
         case "secondary":
-            return "bg-secondary text-white hover:bg-gray-600"
+            return "bg-white text-foreground hover:bg-gray-200"
         case "outline":
             return "border border-border text-primary hover:bg-primary/10"
         default:

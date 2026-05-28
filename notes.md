@@ -1,8 +1,7 @@
 - Loading indicators only after a delay, to avoid flashing them on fast loads
 - item gsap appear animations => e.g. YT Channels, Shop products, portfolio thumbnails, ...
 - fix nuxt content optionals vs empty strings (kinda done)
-- Headings animate on mount and not on reveal!
 - trusted by channels => cards + show more button hydration error?!
 - shop page performance issues (scroll laggs)
-- after heading split text, revert to real one
+- after heading split text, revert to real one (optional)
 - add discord profile to the contact thing
