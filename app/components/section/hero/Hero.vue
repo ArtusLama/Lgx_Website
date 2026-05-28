@@ -27,7 +27,7 @@ onMounted(() => {
     })
 
     gsap.to(split.lines, {
-        scale: 1.05,
+        scale: 0.85,
         ease: "power2.out",
         scrollTrigger: {
             trigger: heroTitle.value,
