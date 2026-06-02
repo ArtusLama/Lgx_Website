@@ -1,23 +1,23 @@
 {
-    "title": "Thumbnail PSD",
-    "shortDescription": "Layered PSD source file for a thumbnail design.",
-    "tag": {
-        "label": "Instant",
-        "color": "muted"
-    },
-    "informationList": [
-        "Organized layers and groups",
-        "Editable text",
-        "Color adjustment layers"
-    ],
-    "price": "12€",
-    "deliveryTime": "Instant download",
-    "buyLink": {
-        "label": "Buy PSD",
-        "url": "https://ko-fi.com/lgx"
-    },
-    "examples": [
-        "/imgs/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",
-        "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png"
-    ]
+  "title": "Thumbnail PSD",
+  "buyLink": {
+    "label": "Buy PSD",
+    "url": "https://ko-fi.com/lgx"
+  },
+  "deliveryTime": "Instant download",
+  "examples": [
+    "/imgs/portfolio/thumbnails/VivillyHorrorSirenHeadThumbnail.png",
+    "/imgs/portfolio/thumbnails/TreeTotemThumbnail.png"
+  ],
+  "informationList": [
+    "Organized layers and groups",
+    "Editable text",
+    "Color adjustment layers"
+  ],
+  "price": "150€",
+  "shortDescription": "Layered PSD source file for a thumbnail design.",
+  "tag": {
+    "label": "Instant",
+    "color": "muted"
+  }
 }

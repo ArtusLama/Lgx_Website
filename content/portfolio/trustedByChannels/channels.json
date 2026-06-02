@@ -2,7 +2,7 @@
   "channels": [
     {
       "handle": "@Blissolic",
-      "pinToTop": false
+      "pinToTop": true
     },
     {
       "handle": "@Felbolt",
