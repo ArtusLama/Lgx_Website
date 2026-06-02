@@ -4,4 +4,9 @@
 - trusted by channels => cards + show more button hydration error?!
 - shop page performance issues (scroll laggs)
 - after heading split text, revert to real one (optional)
-- add discord profile to the contact thing
+- image fullscreen not working on large screens
+- title typing load in animation -> start opacity to 0
+- start type loading screen animation -> typing logo effect
+- become partner page -> maybe form (if easy) else link to mail
+- partners -> maybe infinity horizontal carousel with patners logos/text
+- website icon rounded corners

@@ -7,7 +7,6 @@ const props = defineProps<{
 
 const valueText = useTemplateRef<HTMLSpanElement>("value")
 const displayValue = ref(props.value)
-const plusOpacity = ref(0)
 
 let cleanupAnimations = () => {}
 
@@ -65,7 +64,6 @@ onMounted(() => {
     const parsed = parseValue(props.value)
     if (!parsed) {
         displayValue.value = props.value
-        plusOpacity.value = 1
         return
     }
 
@@ -80,7 +78,6 @@ onMounted(() => {
     const runCountUp = () => {
         countTween?.kill()
         counter.value = 0
-        plusOpacity.value = 0
         render()
 
         countTween = gsap.to(counter, {
@@ -89,15 +86,6 @@ onMounted(() => {
             ease: "power3.out",
             snap: { value: step },
             onUpdate: render,
-            onComplete: () => {
-                counter.value = parsed.value
-                render()
-                gsap.to(plusOpacity, {
-                    value: 1,
-                    duration: 0.2,
-                    ease: "power1.out",
-                })
-            },
         })
     }
 
@@ -126,8 +114,7 @@ onBeforeUnmount(() => {
             {{ preTitle }}
         </p>
         <p class="text-8xl text-primary font-black">
-            <span ref="value">{{ displayValue }}</span>
-            <span :style="{ opacity: plusOpacity }">+</span>
+            <span ref="value">{{ displayValue }}</span>+
         </p>
         <h3 class="text-5xl tracking-wide font-bold mt-2 uppercase">
             {{ title }}

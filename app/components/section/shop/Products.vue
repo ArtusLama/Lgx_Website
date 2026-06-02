@@ -21,7 +21,7 @@ onMounted(() => {
         overflow: "hidden",
     })
     gsap.set(preheadingChars, { yPercent: 120 })
-    gsap.set(headingChars, { opacity: 0.1 })
+    gsap.set(headingChars, { opacity: 0 })
 
     const introTimeline = gsap.timeline({
         defaults: { ease: "power3.out" },
