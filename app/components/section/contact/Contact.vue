@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
                             loading="lazy"
                         />
                         <div>
-                            <p class="text-sm tracking-wider font-bold uppercase">
+                            <p class="text-sm tracking-wider font-bold">
                                 Lgx_
                             </p>
                             <p class="text-sm text-foreground-secondary/75">
@@ -147,6 +147,7 @@ onBeforeUnmount(() => {
                 <div class="mt-6 flex flex-wrap gap-3">
                     <UiButton as-child icon>
                         <NuxtLink
+                            class="bg-[#7289da]! hover:bg-[#5b6eae]!"
                             external
                             target="_blank"
                             to="https://discord.gg/XJe4JHkQgz"
@@ -168,7 +169,6 @@ onBeforeUnmount(() => {
                     <NuxtLink to="/portfolio" class="font-semibold underline-hover-anim">
                         portfolio
                     </NuxtLink>
-                    .
                 </p>
             </div>
         </div>
