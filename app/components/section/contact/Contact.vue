@@ -173,7 +173,7 @@ onBeforeUnmount(() => {
                     </p>
                 </div>
 
-                <SectionContactForm />
+                <SectionContactForm class="mt-4" />
             </div>
         </div>
     </Section>
