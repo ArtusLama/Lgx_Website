@@ -88,8 +88,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <Section class="px-0! pt-0! *:max-w-screen">
-        <div class="flex min-h-screen w-screen items-center relative z-10">
+    <Section class="px-0! pt-0! [&>div]:(max-w-none w-full)">
+        <div class="flex min-h-screen w-full items-center relative z-10">
             <NuxtImg ref="background" src="/imgs/HeroBackground.png" alt="Hero Background" class="h-full w-full pointer-events-none select-none left-0 top-0 absolute object-cover object-center -z-10" />
 
             <div class="mx-auto relative -mt-48">
