@@ -115,6 +115,7 @@ export default defineNuxtConfig({
         recaptcha: {
             secretKey: "", // Set in .env using: NUXT_RECAPTCHA_SECRET_KEY=... (the private secret key)
         },
+        discordContactWebhookUrl: "", // Set in .env using: NUXT_DISCORD_CONTACT_WEBHOOK_URL=... (Discord Webhook URL from a channel)
         public: {
             recaptcha: {
                 siteKey: "", // Set in .env using: NUXT_PUBLIC_RECAPTCHA_SITE_KEY=... (the public site key)

@@ -1,4 +1,5 @@
 import { z } from "zod"
+import sendDiscordWebhook from "../utils/sendDiscordWebhook"
 import sendMail from "../utils/sendMail"
 
 const cleanHeaderValue = (value: string) => value.replace(/[\r\n]+/g, " ").trim()
@@ -60,7 +61,8 @@ export default defineEventHandler(async (event) => {
         }),
     })
 
-    if (!recaptchaResponse.success) {
+    const isDev = import.meta.dev
+    if (!recaptchaResponse.success && !isDev) {
         throw createError({
             statusCode: 400,
             statusMessage: "Invalid reCAPTCHA token!",
@@ -68,6 +70,8 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
+        await sendDiscordWebhook(data.email, data.name, data.message)
+
         await sendMail(
             config.nodemailer.auth.user,
             `✨ Contact form submission from ${data.name} (${data.email})`,

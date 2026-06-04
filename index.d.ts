@@ -27,6 +27,7 @@ declare module "nuxt/schema" {
         recaptcha: {
             secretKey: string
         }
+        discordContactWebhookUrl: string
     }
 
     interface PublicRuntimeConfig {

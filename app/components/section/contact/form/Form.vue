@@ -92,7 +92,7 @@ async function submitForm(this: any, event: Event) {
         <div class="rounded-full bg-primary/20 opacity-70 h-40 w-40 pointer-events-none absolute blur-3xl -right-10 -top-10" />
         <div class="relative z-10">
             <p class="text-xs text-foreground-secondary/80 tracking-widest font-bold uppercase">
-                Direct message
+                Or send me an Email
             </p>
             <h3 class="text-2xl font-black font-jakarta mt-2 sm:text-3xl">
                 Tell me about your idea
