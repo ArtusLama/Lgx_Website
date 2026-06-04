@@ -82,7 +82,7 @@ onMounted(() => {
 
         countTween = gsap.to(counter, {
             value: parsed.value,
-            duration: 2,
+            duration: 3,
             ease: "power3.out",
             snap: { value: step },
             onUpdate: render,

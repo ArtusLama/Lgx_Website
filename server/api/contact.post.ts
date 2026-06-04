@@ -78,12 +78,6 @@ export default defineEventHandler(async (event) => {
             data.message,
         )
 
-        await sendMail(
-            data.email,
-            "✨ Thank you for contacting Me!",
-            `Hi ${data.name},\n\nThank you for reaching out! Your email has been sent successfully. I will get back to you as soon as possible.\n\nBest regards,\nLgx_`,
-        )
-
         return {
             success: true,
             message: "Email sent successfully!",

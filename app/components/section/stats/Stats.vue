@@ -76,9 +76,9 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="mt-24 gap-24 grid grid-cols-1 xl:grid-cols-3">
-            <SectionStatsStatCard pre-title="Generated" title="Views" value="140M" />
-            <SectionStatsStatCard pre-title="Made" title="Thumbnails" value="5000" />
-            <SectionStatsStatCard pre-title="Worked with" title="Clients" value="40" />
+            <SectionStatsStatCard pre-title="Generated" title="Views" value="100M" />
+            <SectionStatsStatCard pre-title="Made" title="Thumbnails" value="500" />
+            <SectionStatsStatCard pre-title="Worked with" title="Clients" value="100" />
         </div>
     </Section>
 </template>
