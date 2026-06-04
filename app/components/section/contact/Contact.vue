@@ -115,61 +115,65 @@ onBeforeUnmount(() => {
                 </div>
             </div>
 
-            <div class="p-6 border border-foreground-secondary/15 rounded-2xl bg-foreground-secondary/10 shadow-lg sm:p-8">
-                <p class="text-sm text-foreground-secondary/90 tracking-wider font-bold uppercase">
-                    Start a commission
-                </p>
-                <h3 class="text-3xl font-black font-jakarta mt-2 sm:text-4xl">
-                    Get a quick response on Discord.
-                </h3>
-                <p class="text-foreground-secondary/80 mt-4">
-                    Discord is the fastest way to lock in a slot and align on details.
-                </p>
+            <div>
+                <div class="p-6 border border-foreground-secondary/15 rounded-2xl bg-foreground-secondary/10 shadow-lg sm:p-8">
+                    <p class="text-sm text-foreground-secondary/90 tracking-wider font-bold uppercase">
+                        Start a commission
+                    </p>
+                    <h3 class="text-3xl font-black font-jakarta mt-2 sm:text-4xl">
+                        Get a quick response on Discord.
+                    </h3>
+                    <p class="text-foreground-secondary/80 mt-4">
+                        Discord is the fastest way to lock in a slot and align on details.
+                    </p>
 
-                <div class="mt-6 p-4 pr-6 border border-foreground-secondary/10 rounded-xl bg-foreground-secondary/10 w-fit">
-                    <div class="flex gap-4 items-center">
-                        <NuxtImg
-                            class="rounded-full size-12"
-                            src="/imgs/DiscordProfilePicture.png"
-                            loading="lazy"
-                        />
-                        <div>
-                            <p class="text-sm tracking-wider font-bold">
-                                Lgx_
-                            </p>
-                            <p class="text-sm text-foreground-secondary/75">
-                                Send your idea and references, then I will reply with next steps.
-                            </p>
+                    <div class="mt-6 p-4 pr-6 border border-foreground-secondary/10 rounded-xl bg-foreground-secondary/10 w-fit">
+                        <div class="flex gap-4 items-center">
+                            <NuxtImg
+                                class="rounded-full size-12"
+                                src="/imgs/DiscordProfilePicture.png"
+                                loading="lazy"
+                            />
+                            <div>
+                                <p class="text-sm tracking-wider font-bold">
+                                    Lgx_
+                                </p>
+                                <p class="text-sm text-foreground-secondary/75">
+                                    Send your idea and references, then I will reply with next steps.
+                                </p>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <UiButton as-child icon>
+                            <NuxtLink
+                                class="bg-[#7289da]! hover:bg-[#5b6eae]!"
+                                external
+                                target="_blank"
+                                to="https://discord.gg/XJe4JHkQgz"
+                            >
+                                <Icon name="simple-icons:discord" />
+                                Message on Discord
+                            </NuxtLink>
+                        </UiButton>
+                        <UiButton as-child icon variant="outline">
+                            <NuxtLink to="/shop">
+                                <Icon name="lucide:shopping-cart" />
+                                View commission menu
+                            </NuxtLink>
+                        </UiButton>
+                    </div>
+
+                    <p class="text-sm text-foreground-secondary/75 mt-4">
+                        Want examples? See the
+                        <NuxtLink to="/portfolio" class="font-semibold underline-hover-anim">
+                            portfolio
+                        </NuxtLink>
+                    </p>
                 </div>
 
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <UiButton as-child icon>
-                        <NuxtLink
-                            class="bg-[#7289da]! hover:bg-[#5b6eae]!"
-                            external
-                            target="_blank"
-                            to="https://discord.gg/XJe4JHkQgz"
-                        >
-                            <Icon name="simple-icons:discord" />
-                            Message on Discord
-                        </NuxtLink>
-                    </UiButton>
-                    <UiButton as-child icon variant="outline">
-                        <NuxtLink to="/shop">
-                            <Icon name="lucide:shopping-cart" />
-                            View commission menu
-                        </NuxtLink>
-                    </UiButton>
-                </div>
-
-                <p class="text-sm text-foreground-secondary/75 mt-4">
-                    Want examples? See the
-                    <NuxtLink to="/portfolio" class="font-semibold underline-hover-anim">
-                        portfolio
-                    </NuxtLink>
-                </p>
+                <SectionContactForm />
             </div>
         </div>
     </Section>

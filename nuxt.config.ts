@@ -30,6 +30,7 @@ export default defineNuxtConfig({
 
         // Utility
         "@vueuse/nuxt",
+        "nuxt-nodemailer",
     ],
 
     // Include UnoCSS reset (Tailwind v4) => https://unocss.dev/guide/style-reset
@@ -111,6 +112,14 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         youtubeApiKey: "", // Set in .env using: NUXT_YOUTUBE_API_KEY=...
+        recaptcha: {
+            secretKey: "", // Set in .env using: NUXT_RECAPTCHA_SECRET_KEY=... (the private secret key)
+        },
+        public: {
+            recaptcha: {
+                siteKey: "", // Set in .env using: NUXT_PUBLIC_RECAPTCHA_SITE_KEY=... (the public site key)
+            },
+        },
     },
 
     image: {
@@ -125,6 +134,15 @@ export default defineNuxtConfig({
         experimental: {
             // TODO: hopefully this fixes vercel deployment issues => https://github.com/nuxt/content/issues/3534
             sqliteConnector: "native",
+        },
+    },
+
+    nodemailer: {
+        service: "gmail",
+        secure: true,
+        auth: {
+            user: "", // Set in .env using: NUXT_NODEMAILER_AUTH_USER=... (gmail address)
+            pass: "", // Set in .env using: NUXT_NODEMAILER_AUTH_PASS=... (gmail app password)
         },
     },
 

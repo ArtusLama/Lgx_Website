@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <hr class="text-foreground/25 mb-2 mt-20">
+            <hr class="text-foreground/25 mb-2 mt-24">
 
             <div class="flex flex-wrap gap-x-8 justify-between">
                 <p>

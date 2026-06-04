@@ -79,7 +79,7 @@ onMounted(() => {
                 icon
                 size="small"
                 variant="secondary"
-                class=""
+                class="relative overflow-visible before:rounded-md before:content-[''] before:absolute before:-inset-3"
                 @click.stop="showBeforeVersion = !showBeforeVersion"
             >
                 <Icon :name="showBeforeVersion ? 'lucide:eye' : 'lucide:eye-off'" />
@@ -90,7 +90,7 @@ onMounted(() => {
                 icon
                 size="small"
                 variant="secondary"
-                class=""
+                class="relative overflow-visible before:rounded-md before:content-[''] before:absolute before:-inset-1"
                 :disabled="showBeforeVersion"
                 @click.stop="nextVariant()"
             >

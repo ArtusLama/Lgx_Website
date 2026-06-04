@@ -10,3 +10,4 @@
 - become partner page -> maybe form (if easy) else link to mail
 - partners -> maybe infinity horizontal carousel with patners logos/text
 - website icon rounded corners
+- portfolio close fullscreen scrolls user to the bottom of the page

@@ -24,10 +24,15 @@ declare module "vue" {
 declare module "nuxt/schema" {
     interface RuntimeConfig {
         youtubeApiKey: string
+        recaptcha: {
+            secretKey: string
+        }
     }
 
     interface PublicRuntimeConfig {
-
+        recaptcha: {
+            siteKey: string
+        }
     }
 }
 

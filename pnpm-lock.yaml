@@ -74,6 +74,9 @@ importers:
       vue:
         specifier: ^3.5.34
         version: 3.5.34(typescript@6.0.3)
+      vue-recaptcha-v3:
+        specifier: ^2.0.1
+        version: 2.0.1(vue@3.5.34(typescript@6.0.3))
       vue-router:
         specifier: ^5.0.6
         version: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3))
@@ -105,6 +108,12 @@ importers:
       lint-staged:
         specifier: ^17.0.4
         version: 17.0.4
+      nodemailer:
+        specifier: ^8.0.10
+        version: 8.0.10
+      nuxt-nodemailer:
+        specifier: ^1.1.4
+        version: 1.1.4(magicast@0.5.3)(nodemailer@8.0.10)
       unocss:
         specifier: ^66.6.8
         version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@unocss/webpack@66.6.8(webpack@5.106.2(esbuild@0.27.7)(lightningcss@1.32.0)(postcss@8.5.14)))(vite@7.3.3(@types/node@25.9.0)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(yaml@2.9.0))
@@ -3272,6 +3281,9 @@ packages:
   '@types/node@25.9.0':
     resolution: {integrity: sha512-AOQwYUNolgy3VosiRqXrACUXTN8nJUtPl7FJXMqZVyxiiCLhQuG3jXKvCS1ALr+Y2OmZhzzLVlYPEqJaiqkaJQ==}
 
+  '@types/nodemailer@7.0.11':
+    resolution: {integrity: sha512-E+U4RzR2dKrx+u3N4DlsmLaDC6mMZOM/TPROxA0UAPiTgI0y4CEFBmZE+coGWTjakDriRsXG368lNk1u9Q0a2g==}
+
   '@types/parse-path@7.1.0':
     resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
     deprecated: This is a stub types definition. parse-path provides its own type definitions, so you do not need this installed.
@@ -6214,6 +6226,10 @@ packages:
   node-releases@2.0.44:
     resolution: {integrity: sha512-5WUyunoPMsvvEhS8AxHtRzP+oA8UCkJ7YRxatWKjngndhDGLiqEVAQKWjFAiAiuL8zMRGzGSJxFnLetoa43qGQ==}
 
+  nodemailer@8.0.10:
+    resolution: {integrity: sha512-BLFuSth7QtHOkBzyqTehWWyub0NTRDuK2Q2SQfnGLsrJnzyU+Yeh4WpV1eZGuARFj1xQJHIdnTuJZLP+b9R1GQ==}
+    engines: {node: '>=6.0.0'}
+
   nopt@8.1.0:
     resolution: {integrity: sha512-ieGu42u/Qsa4TFktmaKEwM6MQH0pOWnaB3htzh0JRtx84+Mebc0cbZYN5bC+6WTZ4+77xrL9Pn5m7CV6VIkV7A==}
     engines: {node: ^18.17.0 || >=20.5.0}
@@ -6242,6 +6258,11 @@ packages:
     resolution: {integrity: sha512-QHaFlfJFuqhBanW/B4eRHuQOOavV4LgXvtbRqG0jaLp5qd9MPFZFdc+aZ79HGElebQqdVBCToiB2zbjbWr8aZA==}
     peerDependencies:
       nuxt: ^3.9.0 || ^4.0.0
+
+  nuxt-nodemailer@1.1.4:
+    resolution: {integrity: sha512-nIH9dfQ/Z58QtwspetoHJI+XGNraVBW7setEu0f8EJDTLLh2WRMIZgamVRmrF9d10/POT+fLDmQ2N1QEmUwWuw==}
+    peerDependencies:
+      nodemailer: ^7.0.6
 
   nuxt-og-image@6.5.0:
     resolution: {integrity: sha512-ewCV474kHKFDeOs+N70D6YsnGQ7qKzXtTxh0Y0uQajivZmtmzE6m4IKTOcphah89yVPSC3810en7Ac8IArPAyw==}
@@ -6908,6 +6929,9 @@ packages:
   readdirp@5.0.0:
     resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
     engines: {node: '>= 20.19.0'}
+
+  recaptcha-v3@1.11.3:
+    resolution: {integrity: sha512-sEE6J0RzUkS+sKEBpgCD/AqCU0ffrAVOADGjvAx9vcttN+VLK42SWMkj/J/I6vHu3Kew+xcfbBqDVb65N0QGDw==}
 
   redis-errors@1.2.0:
     resolution: {integrity: sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==}
@@ -7934,6 +7958,11 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
+
+  vue-recaptcha-v3@2.0.1:
+    resolution: {integrity: sha512-isEDtOfHU4wWRrZZuxciAELtQmPOeEEdicPNa0f1AOyLPy3sCcBEcpFt+FOcO3RQv5unJ3Yn5NlsWtXv9rXqjg==}
+    peerDependencies:
+      vue: ^3.0.11
 
   vue-router@5.0.7:
     resolution: {integrity: sha512-dqfk8kvRbCutmCOCj/XLDqDEYxc1wBdAOGLuVy5M93ifYMsBd5fIjfaPN4tQAbxr5IprdBDIox1gr4wYyOx/SA==}
@@ -11271,6 +11300,10 @@ snapshots:
   '@types/node@25.9.0':
     dependencies:
       undici-types: 7.24.6
+
+  '@types/nodemailer@7.0.11':
+    dependencies:
+      '@types/node': 25.9.0
 
   '@types/parse-path@7.1.0':
     dependencies:
@@ -14867,6 +14900,8 @@ snapshots:
 
   node-releases@2.0.44: {}
 
+  nodemailer@8.0.10: {}
+
   nopt@8.1.0:
     dependencies:
       abbrev: 3.0.1
@@ -14942,6 +14977,14 @@ snapshots:
       - vite
       - vue
       - zod
+
+  nuxt-nodemailer@1.1.4(magicast@0.5.3)(nodemailer@8.0.10):
+    dependencies:
+      '@nuxt/kit': 3.21.5(magicast@0.5.3)
+      '@types/nodemailer': 7.0.11
+      nodemailer: 8.0.10
+    transitivePeerDependencies:
+      - magicast
 
   nuxt-og-image@6.5.0(957875a4d1cc868f3d6b659f4b9532ca):
     dependencies:
@@ -16173,6 +16216,8 @@ snapshots:
 
   readdirp@5.0.0: {}
 
+  recaptcha-v3@1.11.3: {}
+
   redis-errors@1.2.0: {}
 
   redis-parser@3.0.0:
@@ -17382,6 +17427,11 @@ snapshots:
       semver: 7.8.0
     transitivePeerDependencies:
       - supports-color
+
+  vue-recaptcha-v3@2.0.1(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      recaptcha-v3: 1.11.3
+      vue: 3.5.34(typescript@6.0.3)
 
   vue-router@5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3)):
     dependencies:
