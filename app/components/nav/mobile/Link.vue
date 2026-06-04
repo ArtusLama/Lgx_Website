@@ -10,7 +10,7 @@ defineProps<{
         :target="link.external ? '_blank' : '_self'"
         :external="link.external"
         active-class="text-primary"
-        class="underline-hover-anim text-4xl text-nav-foreground font-bold font-jakarta italic transition-colors hover:opacity-80"
+        class="text-4xl text-nav-foreground font-bold font-jakarta underline-hover-anim italic transition-colors hover:opacity-80"
     >
         {{ link.label }}
     </NuxtLink>

@@ -64,13 +64,15 @@ async function submitForm(this: any, event: Event) {
 </script>
 
 <template>
-    <form @submit.prevent="submitForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required />
+    <div>
+        <form @submit.prevent="submitForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required />
 
-        <button type="submit">
-            Send
-        </button>
-    </form>
+            <button type="submit">
+                Send
+            </button>
+        </form>
+    </div>
 </template>
