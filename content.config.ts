@@ -1,8 +1,9 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content"
+import { PartnerSchema } from "./shared/utils/content/schemas/partners/partner"
 import { ThumbnailSchema } from "./shared/utils/content/schemas/portfolio/thumbnail"
-import { TrustedByChannelsSchema } from "./shared/utils/content/schemas/portfolio/trustedByChannels"
 import { ShopCategorySchema } from "./shared/utils/content/schemas/shop/category"
 import { ShopProductSchema } from "./shared/utils/content/schemas/shop/product"
+import { TrustedByYouTubeChannelsSchema } from "./shared/utils/content/schemas/trustedBy/trustedByYouTubeChannels"
 
 export default defineContentConfig({
     collections: {
@@ -25,8 +26,14 @@ export default defineContentConfig({
 
         trustedByChannels: defineCollection({
             type: "data",
-            source: "portfolio/trustedByChannels/channels.json",
-            schema: TrustedByChannelsSchema,
+            source: "trustedBy/trustedByYouTubeChannels.json",
+            schema: TrustedByYouTubeChannelsSchema,
+        }),
+
+        partners: defineCollection({
+            type: "data",
+            source: "partners/*.json",
+            schema: PartnerSchema,
         }),
     },
 })

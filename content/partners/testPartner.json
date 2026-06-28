@@ -1,0 +1,12 @@
+{
+  "description": "This is a test partner for demonstration purposes.",
+  "link": {
+    "label": "Visit Test Partner",
+    "url": "https://www.testpartner.com"
+  },
+  "logo": {
+    "url": "/imgs/partners/logos/TESTLOGO.png",
+    "alt": "Test Partner Logo"
+  },
+  "name": "Test Partner"
+}

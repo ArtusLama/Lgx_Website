@@ -1,6 +1,5 @@
 import { z } from "zod"
-import sendDiscordContactWebhook from "../utils/sendDiscordContactWebhook"
-
+import sendDiscordPartnerContactWebhook from "../utils/sendDiscordPartnerContactWebhook"
 import sendMail from "../utils/sendMail"
 
 const cleanHeaderValue = (value: string) => value.replace(/[\r\n]+/g, " ").trim()
@@ -71,11 +70,11 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        await sendDiscordContactWebhook(data.email, data.name, data.message)
+        await sendDiscordPartnerContactWebhook(data.email, data.name, data.message)
 
         await sendMail(
             config.nodemailer.auth.user,
-            `✨ Contact form submission from ${data.name} (${data.email})`,
+            `🤝 Partner Contact from ${data.name} (${data.email})`,
             data.message,
         )
 

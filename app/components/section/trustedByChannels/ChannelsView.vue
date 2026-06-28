@@ -5,7 +5,7 @@ const {
     pending: contentPending,
 } = useLazyAsyncData("trustedChannels", () => queryCollection("trustedByChannels").all())
 
-const contentChannels = computed<TrustedByChannel["channels"]>(() => contentChannelsQuery.value?.[0]?.channels || [])
+const contentChannels = computed<TrustedByYouTubeChannels["channels"]>(() => contentChannelsQuery.value?.[0]?.channels || [])
 
 const {
     data: channels,

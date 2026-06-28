@@ -52,7 +52,7 @@ async function submitForm(this: any, event: Event) {
 
         // send token to server alongside your form data
         // Send the validated data to the server
-        const response = await $fetch("/api/contact", {
+        const response = await $fetch("/api/partnerContact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -92,13 +92,13 @@ async function submitForm(this: any, event: Event) {
         <div class="rounded-full bg-primary/20 opacity-70 h-40 w-40 pointer-events-none absolute blur-3xl -right-10 -top-10" />
         <div class="relative z-10">
             <p class="text-xs text-foreground-secondary/80 tracking-widest font-bold uppercase">
-                Or send me an Email
+                Become a partner
             </p>
             <h3 class="text-2xl font-black font-jakarta mt-2 sm:text-3xl">
-                Tell me about your idea
+                Contact me to discuss partnership opportunities.
             </h3>
-            <p class="text-sm text-foreground-secondary/70 mt-2">
-                I will reply with pricing and next steps.
+            <p class="text-sm text-foreground-secondary/70 mt-2 max-w-lg">
+                Whether you're a brand, content creator, or business, I'm open to collaborations and partnerships. Let's explore how we can work together to create something amazing.
             </p>
 
             <form class="mt-6 gap-4 grid" @submit.prevent="submitForm">
@@ -130,7 +130,7 @@ async function submitForm(this: any, event: Event) {
                     <textarea
                         class="text-foreground-secondary px-4 py-3 outline-none border border-foreground-secondary/15 rounded-xl bg-foreground-secondary/5 min-h-40 w-full resize-none transition placeholder:text-foreground-secondary/40 focus:(border-primary/60 ring-2 ring-primary/20)"
                         name="message"
-                        placeholder="Project details, deadline, references..."
+                        placeholder="Describe who you are and what kind of partnership you're interested in."
                         required
                     />
                 </label>
