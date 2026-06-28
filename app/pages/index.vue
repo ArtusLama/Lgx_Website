@@ -1,7 +1,7 @@
 <template>
     <div>
         <SectionHero />
-        <SectionBestWorkShowcase class="pt-10" />
+        <SectionBestWorkShowcase class="-z-10" />
 
         <SectionTrustedByChannels class="pt-32" />
 

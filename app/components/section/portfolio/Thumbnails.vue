@@ -30,6 +30,7 @@ onMounted(() => {
             start: "top 80%",
             toggleActions: "play none none none",
         },
+        delay: 0.5,
     })
 
     introTimeline

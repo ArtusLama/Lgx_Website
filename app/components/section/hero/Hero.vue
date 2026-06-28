@@ -24,6 +24,7 @@ onMounted(() => {
         stagger: 0.05,
         ease: "power2.out",
         duration: 1,
+        delay: 1,
     })
 
     gsap.to(split.lines, {
@@ -38,20 +39,10 @@ onMounted(() => {
     })
 
     gsap.to(heroSkinRenderEl, {
-        yPercent: 40,
-        scale: 0.9,
+        yPercent: 5,
+        scale: 0.8,
+        opacity: 0.75,
         ease: "power2.out",
-        scrollTrigger: {
-            trigger: heroSkinRenderEl,
-            start: "top center",
-            end: "top+=300 top",
-            scrub: true,
-        },
-    })
-
-    gsap.to(heroSkinRenderEl, {
-        x: 500,
-        ease: "power1out",
         scrollTrigger: {
             trigger: heroSkinRenderEl,
             start: "top center",
@@ -88,7 +79,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <Section class="px-0! pt-0! [&>div]:(max-w-none w-full)">
+    <Section class="px-0! py-0! [&>div]:(max-w-none w-full)">
         <div class="flex min-h-screen w-full items-center relative z-10">
             <NuxtImg ref="background" src="/imgs/HeroBackground.png" alt="Hero Background" class="h-full w-full pointer-events-none select-none left-0 top-0 absolute object-cover object-center -z-10" />
 
@@ -102,8 +93,12 @@ onMounted(() => {
             </div>
         </div>
 
-        <div ref="slogan-section" class="flex w-full items-center justify-center relative z-10 sm:-ml-[10vw]">
-            <SectionHeroSlogan />
+        <div class="relative">
+            <div class="bg-background h-full bottom-0 left-0 right-0 absolute z-10" />
+
+            <div ref="slogan-section" class="pb-20 bg-background flex w-full items-center justify-center relative z-10 sm:-ml-[10vw]">
+                <SectionHeroSlogan />
+            </div>
         </div>
     </Section>
 </template>

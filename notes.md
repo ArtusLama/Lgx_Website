@@ -1,13 +1,12 @@
-- Loading indicators only after a delay, to avoid flashing them on fast loads
+- > Loading indicators only after a delay, to avoid flashing them on fast loads
 - item gsap appear animations => e.g. YT Channels, Shop products, portfolio thumbnails, ...
 - fix nuxt content optionals vs empty strings (kinda done)
 - trusted by channels => cards + show more button hydration error?!
-- shop page performance issues (scroll laggs)
+- > shop page performance issues (scroll laggs)
 - after heading split text, revert to real one (optional)
-- image fullscreen not working on large screens
-- title typing load in animation -> start opacity to 0
-- start type loading screen animation -> typing logo effect
+- [ image fullscreen not working on large screens]
+- [ title typing load in animation -> start opacity to 0 ]
+- [ start loading screen animation ]
 - become partner page -> maybe form (if easy) else link to mail
 - partners -> maybe infinity horizontal carousel with patners logos/text
-- website icon rounded corners
 - portfolio close fullscreen scrolls user to the bottom of the page

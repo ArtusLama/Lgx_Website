@@ -55,7 +55,7 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
                                     :src="item.src"
                                     :alt="item.alt || `Fullscreen image ${index + 1}`"
                                     loading="lazy"
-                                    class="rounded-lg h-auto max-h-full max-w-full w-auto select-none object-contain"
+                                    class="rounded-lg h-auto max-h-full max-w-full min-w-[80%] w-auto select-none object-contain"
                                     :draggable="false"
                                     @click.stop
                                 />
@@ -73,7 +73,7 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
                         :src="currentImage?.src || ''"
                         :alt="currentImage?.alt || 'Fullscreen image'"
                         loading="lazy"
-                        class="rounded-lg h-auto max-h-full max-w-full w-auto select-none object-contain"
+                        class="rounded-lg h-auto max-h-full max-w-full min-w-[80%] w-auto select-none object-contain"
                         :draggable="false"
                         @click.stop
                     />

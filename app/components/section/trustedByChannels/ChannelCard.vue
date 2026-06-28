@@ -3,16 +3,39 @@ defineProps<{
     channel: YouTubeChannel
 }>()
 
+const card = useTemplateRef<HTMLDivElement>("card")
+
 function formatCount(value: number): string {
     return Intl.NumberFormat("en-US", {
         notation: "compact",
         compactDisplay: "short",
     }).format(value)
 }
+
+onMounted(() => {
+    // make appear scale up on scroll reveal
+    const { gsap } = useGsap()
+
+    if (!card.value)
+        return
+
+    gsap.from(card.value, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: card.value,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+        },
+    })
+})
 </script>
 
 <template>
-    <div class="flex flex-col items-center">
+    <div ref="card" class="flex flex-col items-center">
         <NuxtLink
             external
             :to="channel.url"
