@@ -18,9 +18,9 @@ const rightHalfLinks = computed(() => links.slice(middleIndexLinks.value))
                 <NavDesktopLink :link="link" />
             </li>
         </ul>
-        <div @click="useScroll().toTop()">
+        <NuxtLink to="/" @click="useScroll().toTop()">
             <NavLogo />
-        </div>
+        </NuxtLink>
         <ul class="flex gap-8">
             <li v-for="link in rightHalfLinks" :key="link.label">
                 <NavDesktopLink :link="link" />

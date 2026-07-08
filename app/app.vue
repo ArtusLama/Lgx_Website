@@ -29,9 +29,23 @@ watchEffect((onInvalidate) => {
 
 useSeoMeta({
     titleTemplate: title => (title ? `${title} | Raspocket Studios` : "Raspocket Studios"),
+    ogImage: "/imgs/ogImages/DefaultOgImage.png",
+    twitterImage: "/imgs/ogImages/DefaultOgImage.png",
 })
 
-// TODO: SEO
+useSchemaOrg([
+    defineOrganization({
+        name: "Raspocket Studios",
+        logo: "/imgs/PFP_lgx.png",
+        sameAs: [
+            "https://www.youtube.com/@Lgx__",
+            "https://discord.gg/XJe4JHkQgz",
+            "https://ko-fi.com/lgxgfx",
+            "https://www.paypal.com/paypalme/raspocketstudios",
+        ],
+        email: "contact@lgx.art",
+    }),
+])
 </script>
 
 <template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// TODO: Hydration error for SectionTrustedByChannelsChannelCard and UiButton! -> Pre=None, Post=Whole Component
 const {
     data: contentChannelsQuery,
     error: contentError,
@@ -34,10 +35,16 @@ const {
     return results.filter((result): result is NonNullable<typeof result> => !!result)
 }, { immediate: false })
 
-watchEffect(() => {
-    if (contentChannels.value.length) {
+const isMounted = ref(false)
+
+watch([contentChannels, isMounted], ([channels, mounted]) => {
+    if (mounted && channels.length && !channelsPending.value) {
         void fetchChannelInfos()
     }
+}, { immediate: true })
+
+onMounted(() => {
+    isMounted.value = true
 })
 
 const isPending = computed(() => contentPending.value || channelsPending.value)
@@ -71,7 +78,7 @@ const showChannels = computed(() => {
         <p>ERROR loading channels</p>
     </div>
     <div v-else class="mx-auto gap-16 grid grid-cols-1 max-w-[80rem] w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        <SectionTrustedByChannelsChannelCard
+        <LazySectionTrustedByChannelsChannelCard
             v-for="channel in showChannels"
             :key="channel.data.id"
             :channel="channel.data"

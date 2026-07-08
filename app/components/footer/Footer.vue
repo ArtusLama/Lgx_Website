@@ -15,7 +15,7 @@
                         <FooterSocialIcon icon="simple-icons:youtube" href="https://www.youtube.com/@Lgx__" color="#FF0000" />
                         <FooterSocialIcon icon="simple-icons:discord" href="https://discord.gg/XJe4JHkQgz" color="#7289da" />
                         <FooterSocialIcon icon="simple-icons:kofi" href="https://ko-fi.com/lgxgfx" color="#FF6433" />
-                        <FooterSocialIcon icon="lucide:link" href="https://solo.to/lgx_" color="#256ff8" />
+                        <FooterSocialIcon icon="simple-icons:paypal" href="https://www.paypal.com/paypalme/raspocketstudios" color="#0079C1" />
                     </div>
                 </div>
                 <div class="mt-0 text-center flex flex-col gap-2 md:mt-8 md:text-start">
@@ -34,7 +34,7 @@
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/contact">
+                            <NuxtLink to="mailto:contact@lgx.art" target="_blank">
                                 CONTACT
                             </NuxtLink>
                         </li>

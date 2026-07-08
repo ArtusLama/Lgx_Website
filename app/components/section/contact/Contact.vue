@@ -96,18 +96,21 @@ onBeforeUnmount(() => {
                     </SectionContactBadge>
                 </div>
 
-                <div class="gap-4 grid sm:grid-cols-3">
+                <div class="gap-1 grid sm:grid-cols-3">
                     <SectionContactInfoCard
+                        class="rounded-b-sm sm:rounded-b-2xl sm:rounded-r-sm!"
                         title="1. Contact"
                         description="Send your idea and references."
                         icon="lucide:message-circle"
                     />
                     <SectionContactInfoCard
+                        class="rounded-sm!"
                         title="2. Concept"
                         description="We confirm pricing and timing. Then the fun begins."
                         icon="lucide:clipboard-check"
                     />
                     <SectionContactInfoCard
+                        class="rounded-t-sm sm:rounded-t-2xl sm:rounded-l-sm!"
                         title="3. Deliver"
                         description="Final art, ready to upload."
                         icon="lucide:sparkles"
@@ -132,7 +135,6 @@ onBeforeUnmount(() => {
                             <NuxtImg
                                 class="rounded-full size-12"
                                 src="/imgs/DiscordProfilePicture.png"
-                                loading="lazy"
                             />
                             <div>
                                 <p class="text-sm tracking-wider font-bold">

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// TODO: Hydration error for the click text split.
+
 const clickText = useTemplateRef<HTMLSpanElement>("clickText")
 const clickTextHover = useTemplateRef<HTMLSpanElement>("clickTextHover")
 const clickPill = useTemplateRef<HTMLSpanElement>("clickPill")
@@ -91,11 +93,12 @@ onMounted(() => {
 </script>
 
 <template>
-    <p class="text-5xl tracking-wide font-bold font-jakarta lg:text-8xl sm:text-7xl">
+    <p class="text-5xl tracking-wide font-bold font-jakarta pt-8 lg:text-8xl sm:text-7xl">
         I made<br>
         <span class="text-primary">100 MILLION</span><br>
         people
         <span ref="clickPill" class="group text-4xl text-primary-foreground px-6 pb-3 pt-1 text-center rounded-full bg-primary flex inline-block cursor-pointer transition-transform items-center justify-center relative overflow-hidden lg:text-7xl sm:text-6xl -mb-3 active:scale-90 hover:scale-95">
+            <!-- TODO: Hydration error -->
             <span ref="clickText">click</span>
             <span ref="clickTextHover" class="text-base font-bold opacity-0 flex pointer-events-none transition-opacity transition-delay-100 items-center inset-0 justify-center absolute lg:text-2xl sm:text-xl group-hover:(opacity-100 transition-delay-300)">
                 I know you wanna click

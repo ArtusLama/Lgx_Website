@@ -21,7 +21,9 @@ function handleLogoClick() {
 
 <template>
     <div class="pl-8 pr-3 flex h-full w-full items-center justify-between md:hidden">
-        <NavLogo @click="handleLogoClick" />
+        <NuxtLink to="/" @click="handleLogoClick">
+            <NavLogo />
+        </NuxtLink>
         <NavMobileBurgerMenuBtn v-model:is-open="isOpen" class="shrink-0" />
     </div>
 </template>

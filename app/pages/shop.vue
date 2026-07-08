@@ -1,3 +1,10 @@
+<script setup lang="ts">
+useSeoMeta({
+    title: "Shop",
+    description: "My shop is currently a work in progress. For now, visit my Ko-fi for commissions and future digital products from RaspocketStudios.",
+})
+</script>
+
 <template>
     <div class="mt-18 px-10 py-16 text-center flex flex-col gap-8 items-center justify-center md:mt-32">
         <!-- TODO: IN PROGRESS

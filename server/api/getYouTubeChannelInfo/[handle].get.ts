@@ -19,7 +19,14 @@ export default cachedEventHandler(async (event) => {
     }
 
     try {
-        const handle = data.handle.startsWith("@") ? data.handle.slice(1) : data.handle
+        let handle: string | undefined = data.handle.startsWith("@") ? data.handle.slice(1) : data.handle
+        let channelID: string | undefined
+
+        // Old YT Channel ID format
+        if (!data.handle.startsWith("@") && data.handle.length === 24) {
+            channelID = data.handle
+            handle = undefined
+        }
 
         const channelInfo = await $fetch<{ items: Array<{
             id: string
@@ -39,6 +46,7 @@ export default cachedEventHandler(async (event) => {
             params: {
                 part: "snippet,statistics",
                 forHandle: handle,
+                id: channelID,
                 key: config.youtubeApiKey,
             },
         })
@@ -63,7 +71,7 @@ export default cachedEventHandler(async (event) => {
                 || ""
 
         const response: YouTubeChannel = {
-            handle: channel.snippet.customUrl || handle,
+            handle: channel.snippet.customUrl || handle || "",
             profilePictureUrl,
             subscriberCount,
             viewsCount,
