@@ -4,7 +4,7 @@ const { pending, error, data: profilePictures } = useLazyAsyncData("portfolio-pr
 
 <template>
     <!-- TODO: on first page load pfps very tiny! -->
-    <div v-if="!pending && !error && profilePictures" class="gap-8 grid grid-cols-1 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+    <div v-if="!pending && !error && profilePictures" class="gap-8 grid grid-cols-1 xl:gap-12 md:grid-cols-3 xl:grid-cols-4">
         <PortfolioImageProfilePicture v-for="pfp in profilePictures" :key="pfp.id" :pfp="pfp" />
     </div>
     <div v-else-if="pending" />

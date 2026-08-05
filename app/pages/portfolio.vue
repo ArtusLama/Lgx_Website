@@ -9,6 +9,7 @@ useSeoMeta({
     <div>
         <SectionPortfolioThumbnails />
         <SectionPortfolioProfilePictures />
+        <SectionPortfolioBanners />
 
         <UiFullscreenImageView />
     </div>

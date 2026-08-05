@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { pfp } = defineProps<{
-    pfp: ProfilePicture
+const { banner } = defineProps<{
+    banner: Banner
 }>()
 
 const showBeforeVersion = ref(false)
-const hasBeforeImageVersion = computed(() => !!pfp.beforeImage?.src) // TODO: Test this
+const hasBeforeImageVersion = computed(() => !!banner.beforeImage?.src) // TODO: Test this
 
 const revealStyle = computed(() => ({
     clipPath: showBeforeVersion.value ? "circle(0% at 100% 0%)" : "circle(150% at 100% 0%)",
@@ -13,20 +13,20 @@ const revealStyle = computed(() => ({
     willChange: "clip-path, filter",
 }))
 
-const currentPfp = computed(() => {
-    if (showBeforeVersion.value && pfp.beforeImage?.src) {
-        return pfp.beforeImage
+const currentBanner = computed(() => {
+    if (showBeforeVersion.value && banner.beforeImage?.src) {
+        return banner.beforeImage
     }
 
-    return pfp.finalImage
+    return banner.finalImage
 })
 
 const { open } = useImageViewer()
 
 function openFullscreen() {
-    if (showBeforeVersion.value && pfp.beforeImage?.src) {
+    if (showBeforeVersion.value && banner.beforeImage?.src) {
         open({
-            images: [{ src: pfp.beforeImage.src, alt: pfp.beforeImage.alt }],
+            images: [{ src: banner.beforeImage.src, alt: banner.beforeImage.alt }],
             startIndex: 0,
         })
         return
@@ -34,8 +34,8 @@ function openFullscreen() {
 
     open({
         images: [{
-            src: currentPfp.value?.src || "",
-            alt: currentPfp.value?.alt || "Profile picture",
+            src: currentBanner.value?.src || "",
+            alt: currentBanner.value?.alt || "Banner image",
         }],
         startIndex: 0,
     })
@@ -52,7 +52,7 @@ onMounted(() => {
     <div
         role="button"
         tabindex="0"
-        class="group rounded-lg bg-background w-full aspect-square cursor-pointer shadow-sm transition-all relative overflow-hidden focus-within:(shadow-md scale-103) hover:(shadow-md scale-103)"
+        class="group rounded-lg bg-background h-fit w-full cursor-pointer shadow-sm transition-all relative overflow-hidden focus-within:(shadow-md scale-103) hover:(shadow-md scale-103)"
         @pointerdown.prevent
         @click="openFullscreen"
     >
@@ -60,8 +60,8 @@ onMounted(() => {
             v-if="hasBeforeImageVersion"
             class="w-full pointer-events-none select-none transition-transform duration-300 left-0 top-0 absolute group-focus-within:scale-103 group-hover:scale-103"
             loading="lazy"
-            :src="pfp.beforeImage!.src"
-            :alt="pfp.beforeImage?.alt || 'Before Profile picture'"
+            :src="banner.beforeImage!.src"
+            :alt="banner.beforeImage?.alt || 'Before Banner image'"
         />
         <div
             class="w-full"
@@ -70,8 +70,8 @@ onMounted(() => {
             <NuxtImg
                 class="w-full pointer-events-none select-none transition-transform duration-300 group-focus-within:scale-103 group-hover:scale-103"
                 loading="lazy"
-                :src="pfp.finalImage?.src || ''"
-                :alt="pfp.finalImage?.alt || 'Profile picture'"
+                :src="banner.finalImage?.src || ''"
+                :alt="banner.finalImage?.alt || 'Final Banner image'"
             />
         </div>
 

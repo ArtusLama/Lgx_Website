@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/banners/DVOBVO_Banner_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/banners/DVOBVO_Banner.png",
+    "alt": "X"
+  }
+}
