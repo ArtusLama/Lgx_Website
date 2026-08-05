@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/profilePictures/Lgx__Blue_pfp_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/profilePictures/Lgx__Blue_pfp.png",
+    "alt": "X"
+  }
+}

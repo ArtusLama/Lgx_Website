@@ -8,6 +8,7 @@ useSeoMeta({
 <template>
     <div>
         <SectionPortfolioThumbnails />
+        <SectionPortfolioProfilePictures />
 
         <UiFullscreenImageView />
     </div>

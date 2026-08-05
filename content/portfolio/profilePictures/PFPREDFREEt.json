@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/profilePictures/PFPREDFREEt_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/profilePictures/PFPREDFREEt.png",
+    "alt": "X"
+  }
+}

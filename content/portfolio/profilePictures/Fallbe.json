@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/profilePictures/Fallbe_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/profilePictures/Fallbe.png",
+    "alt": "X"
+  }
+}
