@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png",
+    "alt": "X"
+  }
+}

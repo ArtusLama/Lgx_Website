@@ -35,13 +35,13 @@ onMounted(() => {
         <div class="flex flex-col gap-12 items-center">
             <div ref="bestWorkImageContainer" class="gap-6 grid grid-cols-1 relative z-20 sm:grid-cols-2">
                 <SectionBestWorkShowcaseImage>
+                    <NuxtImg src="/imgs/portfolio/thumbnails/WaterDragon.png" loading="lazy" />
+                </SectionBestWorkShowcaseImage>
+                <SectionBestWorkShowcaseImage>
                     <NuxtImg src="/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png" loading="lazy" />
                 </SectionBestWorkShowcaseImage>
                 <SectionBestWorkShowcaseImage>
-                    <NuxtImg src="/imgs/portfolio/thumbnails/PrestigeVsVoilThumbnail.png" loading="lazy" />
-                </SectionBestWorkShowcaseImage>
-                <SectionBestWorkShowcaseImage>
-                    <NuxtImg src="/imgs/portfolio/thumbnails/TreeTotemThumbnail.png" loading="lazy" />
+                    <NuxtImg src="/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png" loading="lazy" />
                 </SectionBestWorkShowcaseImage>
                 <SectionBestWorkShowcaseImage>
                     <NuxtImg src="/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png" loading="lazy" />
