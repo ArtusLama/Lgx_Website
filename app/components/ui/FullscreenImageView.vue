@@ -23,7 +23,7 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
     <DialogRoot v-model:open="isOpen" modal>
         <DialogPortal>
             <DialogOverlay
-                class="bg-black/80 inset-0 fixed z-40 backdrop-blur-sm"
+                class="bg-black/90 inset-0 fixed z-40"
             />
             <DialogContent
                 class="p-6 outline-none flex flex-col items-center inset-0 justify-center fixed z-55 lg:p-16 sm:p-10"
@@ -55,7 +55,7 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
                                     :src="item.src"
                                     :alt="item.alt || `Fullscreen image ${index + 1}`"
                                     loading="lazy"
-                                    class="rounded-lg h-auto max-h-full max-w-full min-w-[80%] w-auto select-none object-contain"
+                                    class="h-auto max-h-[82vh] max-w-[90vw] w-auto select-none object-contain"
                                     :draggable="false"
                                     @click.stop
                                 />
@@ -73,7 +73,7 @@ watch(isOpen, newVal => document.body.toggleAttribute("data-lenis-prevent", newV
                         :src="currentImage?.src || ''"
                         :alt="currentImage?.alt || 'Fullscreen image'"
                         loading="lazy"
-                        class="rounded-lg h-auto max-h-full max-w-full min-w-[80%] w-auto select-none object-contain"
+                        class="h-auto max-h-[82vh] max-w-[90vw] w-auto select-none object-contain"
                         :draggable="false"
                         @click.stop
                     />

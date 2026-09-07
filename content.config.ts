@@ -1,6 +1,6 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content"
 import { PartnerSchema } from "./shared/utils/content/schemas/partners/partner"
-import { BannerSchema } from "./shared/utils/content/schemas/portfolio/banner"
+import { PixelArtSchema } from "./shared/utils/content/schemas/portfolio/pixelArt"
 import { ProfilePictureSchema } from "./shared/utils/content/schemas/portfolio/profilePicture"
 import { ThumbnailSchema } from "./shared/utils/content/schemas/portfolio/thumbnail"
 import { ShopCategorySchema } from "./shared/utils/content/schemas/shop/category"
@@ -32,10 +32,10 @@ export default defineContentConfig({
             schema: ProfilePictureSchema,
         }),
 
-        portfolioBanners: defineCollection({
+        portfolioPixelArt: defineCollection({
             type: "data",
-            source: "portfolio/banners/*.json",
-            schema: BannerSchema,
+            source: "portfolio/pixelArt/*.json",
+            schema: PixelArtSchema,
         }),
 
         trustedByChannels: defineCollection({
