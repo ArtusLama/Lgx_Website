@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const bestWorkImageContainer = useTemplateRef<HTMLDivElement>("bestWorkImageContainer")
+const { data: topThumbnails } = useLazyAsyncData("top-4-portfolio-thumbnails", () => queryCollection("portfolioThumbnails").limit(4).all())
 
 onMounted(() => {
     const { gsap } = useGsap()
@@ -33,19 +34,9 @@ onMounted(() => {
 <template>
     <Section>
         <div class="flex flex-col gap-12 items-center">
+            <UiFullscreenImageView />
             <div ref="bestWorkImageContainer" class="gap-6 grid grid-cols-1 relative z-20 sm:grid-cols-2">
-                <SectionBestWorkShowcaseImage>
-                    <NuxtImg src="/imgs/portfolio/thumbnails/WaterDragon.png" loading="lazy" />
-                </SectionBestWorkShowcaseImage>
-                <SectionBestWorkShowcaseImage>
-                    <NuxtImg src="/imgs/portfolio/thumbnails/100DaysHardcoreThumbnail.png" loading="lazy" />
-                </SectionBestWorkShowcaseImage>
-                <SectionBestWorkShowcaseImage>
-                    <NuxtImg src="/imgs/portfolio/thumbnails/RiggedTournamentThumbnail.png" loading="lazy" />
-                </SectionBestWorkShowcaseImage>
-                <SectionBestWorkShowcaseImage>
-                    <NuxtImg src="/imgs/portfolio/thumbnails/Bedwars4000StarsMissionThumbnail.png" loading="lazy" />
-                </SectionBestWorkShowcaseImage>
+                <PortfolioImageThumbnail v-for="thumbnail in topThumbnails" :key="thumbnail.stem" :thumbnail="thumbnail" />
             </div>
             <div>
                 <UiButton icon as-child>
