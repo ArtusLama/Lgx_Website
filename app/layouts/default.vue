@@ -8,6 +8,8 @@
             <slot />
         </main>
 
+        <SectionPartnersMarquee />
+
         <Footer />
     </div>
 </template>

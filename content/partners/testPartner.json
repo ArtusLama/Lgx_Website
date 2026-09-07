@@ -1,12 +1,16 @@
 {
-  "description": "This is a test partner for demonstration purposes.",
+  "description": "A template partner profile for showcasing creative tools, services, and collaborations.",
   "link": {
     "label": "Visit Test Partner",
     "url": "https://www.testpartner.com"
   },
   "logo": {
     "url": "/imgs/partners/logos/TESTLOGO.png",
-    "alt": "Test Partner Logo"
+    "alt": "Test Partner template logo"
+  },
+  "marqueeLogo": {
+    "url": "/imgs/partners/logos/TESTLOGO.png",
+    "alt": "Test Partner muted marquee logo"
   },
   "name": "Test Partner"
 }

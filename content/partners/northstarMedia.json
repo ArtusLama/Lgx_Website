@@ -1,0 +1,7 @@
+{
+  "description": "A template media partner for thoughtful collaborations between brands and online creators.",
+  "link": { "label": "Meet Northstar Media", "url": "https://northstar-media.example.com" },
+  "logo": { "url": "/imgs/partners/logos/NORTHSTAR-MEDIA.svg", "alt": "Northstar Media template logo" },
+  "marqueeLogo": { "url": "/imgs/partners/logos/NORTHSTAR-MEDIA.svg", "alt": "Northstar Media muted marquee logo" },
+  "name": "Northstar Media"
+}

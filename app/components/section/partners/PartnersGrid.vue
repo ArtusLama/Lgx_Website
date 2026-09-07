@@ -3,8 +3,13 @@ const { pending, error, data: partners } = useLazyAsyncData("partners", () => qu
 </script>
 
 <template>
-    <div v-if="!pending && !error && partners" class="gap-12 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        <SectionPartnersPartnerCard v-for="partner in partners" :key="partner.name" :partner="partner" />
+    <div v-if="!pending && !error && partners" class="gap-5 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+        <SectionPartnersPartnerCard
+            v-for="(partner, index) in partners"
+            :key="partner.name"
+            :partner="partner"
+            :featured="index === 0"
+        />
     </div>
     <div v-else-if="pending" />
     <div v-else>

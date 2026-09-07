@@ -1,0 +1,7 @@
+{
+  "description": "A template partner for creators looking for practical resources and production essentials.",
+  "link": { "label": "Shop creator essentials", "url": "https://creator-supply.example.com" },
+  "logo": { "url": "/imgs/partners/logos/CREATOR-SUPPLY.svg", "alt": "Creator Supply Co. template logo" },
+  "marqueeLogo": { "url": "/imgs/partners/logos/CREATOR-SUPPLY.svg", "alt": "Creator Supply Co. muted marquee logo" },
+  "name": "Creator Supply Co."
+}

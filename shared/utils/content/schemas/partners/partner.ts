@@ -7,6 +7,10 @@ export const PartnerSchema = z.object({
         url: property(z.string()).editor({ input: "media" }),
         alt: z.string(),
     }),
+    marqueeLogo: z.object({
+        url: property(z.string()).editor({ input: "media" }),
+        alt: z.string(),
+    }).optional(),
     description: z.string(),
     link: z.object({
         label: z.string(),
