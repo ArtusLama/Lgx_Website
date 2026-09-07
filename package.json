@@ -54,6 +54,6 @@
         "zod": "^4.4.3"
     },
     "lint-staged": {
-        "*": "eslint"
+        "*.{js,mjs,cjs,ts,tsx,vue}": "eslint"
     }
 }

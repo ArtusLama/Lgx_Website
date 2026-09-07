@@ -1,12 +1,34 @@
 - > Loading indicators only after a delay, to avoid flashing them on fast loads
-- item gsap appear animations => e.g. YT Channels, Shop products, portfolio thumbnails, ...
-- fix nuxt content optionals vs empty strings (kinda done)
+- > item gsap appear animations => e.g. YT Channels, Shop products, portfolio thumbnails, ...
+- > fix nuxt content optionals vs empty strings (kinda done)
 - trusted by channels => cards + show more button hydration error?!
 - > shop page performance issues (scroll laggs)
-- after heading split text, revert to real one (optional)
+- > after heading split text, revert to real one (optional)
 - [ image fullscreen not working on large screens]
 - [ title typing load in animation -> start opacity to 0 ]
 - [ start loading screen animation ]
-- become partner page -> maybe form (if easy) else link to mail
-- partners -> maybe infinity horizontal carousel with patners logos/text
-- portfolio close fullscreen scrolls user to the bottom of the page
+- partners grid / list -> solo io liste => https://solo.to/lgx_
+- > partners -> maybe infinity horizontal carousel with patners logos/text
+- > portfolio close fullscreen scrolls user to the bottom of the page
+- [ Nav Logo to main page and scroll to top ]
+- [ Center text: "I made 100 Million Clicks" ]
+- [ Fix model render overlapping text ]
+- ?!?! Improve partner animation bar system => SlideBar left to right with logos
+- ?!?!? Create start animation => typing animation ?!
+- Replace starting thumbnails on main page -> test slide up mask?!
+- Better management system?! (-> Implement general system for changing thumbnails, Simplify upload process (easy upload / one-click upload))
+- > Make AI buttons feel less AI-generated / more natural
+- > Fix icon issue in "Get a quick response on Discord"
+- [ Fix /contact route (currently not working) ] 
+- ?!?! Und das man so sachen auswählen kann und sowas -> bilder usw hero text usw ...
+- [ Update YT channel list (add new channels, remove old ones, set up real pinned ones) ]
+- Pick correct yt channel pinned ones
+- Add other content for the portfolio
+- [ remove solo link in footer and put paypal there => https://www.paypal.com/paypalme/raspocketstudios ]
+- [ cards middle not rouded in contact -> mobile/desktop! ]
+- error page
+- [ seo identity / org schema setzup ]
+- other seo titles, descriptions, [ og images ], etc.
+- Make repo public?! -> solves the vercel + nuxt content issue -> is now public but still small issue
+- [ dynamic load top 4 thumbnails as first 4 from content loading instead of hardcoded ones ]
+- complete partners page
