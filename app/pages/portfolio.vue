@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-    title: "Portfolio",
-    description: "Browse my portfolio of Minecraft thumbnails, pixel art, and digital art. I'm Lgx_, a solo designer behind RaspocketStudios, making visuals for creators.",
+    title: "Portfolio - Minecraft Thumbnails, Pixel Art & Creator Graphics",
+    description: "Explore Lgx_'s portfolio of Minecraft thumbnails, profile pictures, pixel art, banners, and digital graphics created for YouTube creators and online communities.",
 })
 </script>
 

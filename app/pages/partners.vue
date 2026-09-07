@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
     title: "Partners & Affiliates",
-    description: "Check out my partners and affiliates. If you want to become a partner or affiliate, contact me for more information.",
+    description: "Meet Raspocket Studios partners and affiliates, and learn how to collaborate with a Minecraft and YouTube graphics designer on creator-focused projects.",
 })
 </script>
 

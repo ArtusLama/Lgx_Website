@@ -135,6 +135,7 @@ onBeforeUnmount(() => {
                             <NuxtImg
                                 class="rounded-full size-12"
                                 src="/imgs/DiscordProfilePicture.png"
+                                alt="Lgx_ on Discord"
                             />
                             <div>
                                 <p class="text-sm tracking-wider font-bold">

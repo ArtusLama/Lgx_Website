@@ -1,7 +1,8 @@
 <script setup lang="ts">
 useSeoMeta({
-    title: "Shop",
-    description: "My shop is currently a work in progress. For now, visit my Ko-fi for commissions and future digital products from RaspocketStudios.",
+    title: "Shop Commissions Coming Soon",
+    description: "The Raspocket Studios shop is coming soon. Visit Ko-fi to inquire about Minecraft thumbnails, banners, profile pictures, and other creator graphics.",
+    robots: "noindex, follow",
 })
 </script>
 

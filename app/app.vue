@@ -31,6 +31,7 @@ useSeoMeta({
     titleTemplate: title => (title ? `${title} | Raspocket Studios` : "Raspocket Studios"),
     ogImage: "/imgs/ogImages/DefaultOgImage.png",
     twitterImage: "/imgs/ogImages/DefaultOgImage.png",
+    twitterCard: "summary_large_image",
 })
 
 useSchemaOrg([
