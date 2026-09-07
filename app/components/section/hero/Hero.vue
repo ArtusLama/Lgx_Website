@@ -1,16 +1,14 @@
 <script setup lang="ts">
 const heroTitle = useTemplateRef<HTMLHeadingElement>("hero-title")
 const background = useTemplateRef<HTMLImageElement>("background")
-const heroSkinRender = useTemplateRef<HTMLImageElement>("hero-skin-render")
 const sloganSection = useTemplateRef<HTMLDivElement>("slogan-section")
 
 onMounted(() => {
     const { gsap, SplitText } = useGsap()
 
     const backgroundEl = (background.value as any)?.$el ?? background.value
-    const heroSkinRenderEl = (heroSkinRender.value as any)?.$el ?? heroSkinRender.value
 
-    if (!heroTitle.value || !heroSkinRenderEl || !backgroundEl || !sloganSection.value)
+    if (!heroTitle.value || !backgroundEl || !sloganSection.value)
         return
 
     const split = SplitText.create(heroTitle.value, {
@@ -38,19 +36,6 @@ onMounted(() => {
         },
     })
 
-    gsap.to(heroSkinRenderEl, {
-        yPercent: 5,
-        scale: 0.8,
-        opacity: 0.75,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: heroSkinRenderEl,
-            start: "top center",
-            end: "top+=300 top",
-            scrub: true,
-        },
-    })
-
     gsap.set(sloganSection.value, { scale: 0.8 })
 
     gsap.to(sloganSection.value, {
@@ -72,12 +57,6 @@ onMounted(() => {
         { scale: 1.2, autoAlpha: 0 },
         { scale: 1, autoAlpha: 1, duration: 1.5, ease: "power2.out" },
     )
-    pageLoadTimeline.fromTo(
-        heroSkinRenderEl,
-        { y: 40, scale: 0.98, autoAlpha: 0 },
-        { y: 0, scale: 1, autoAlpha: 1, duration: 1, ease: "power2.out" },
-        "<-0.1",
-    )
 })
 </script>
 
@@ -91,8 +70,6 @@ onMounted(() => {
                     <span>Raspocket</span><br>
                     <span class="text-size-[clamp(4rem,16vw,18rem)]">Studios</span>
                 </h1>
-
-                <NuxtImg ref="hero-skin-render" src="/imgs/HeroSkinRender.png" alt="Hero Skin Render" class="w-150 pointer-events-none select-none transform left-1/2 top-[clamp(4rem,14vw,18rem)] absolute z-20 -translate-x-1/2" />
             </div>
         </div>
 
