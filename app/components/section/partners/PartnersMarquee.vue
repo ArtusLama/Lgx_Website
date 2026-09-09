@@ -25,6 +25,7 @@ const marqueePartners = computed(() => (partners.value ?? []).filter(partner => 
                             :src="partner.marqueeLogo!.url"
                             :alt="partner.marqueeLogo!.alt"
                             loading="lazy"
+                            class="pointer-events-none select-none"
                         />
                     </a>
                 </div>

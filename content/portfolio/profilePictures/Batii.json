@@ -1,10 +1,6 @@
 {
-  "beforeImage": {
-    "src": "/imgs/portfolio/profilePictures/Batii_BEFORE.png",
-    "alt": "X"
-  },
-  "finalImage": {
-    "src": "/imgs/portfolio/profilePictures/Batii.png",
-    "alt": "X"
-  }
+    "finalImage": {
+        "src": "/imgs/portfolio/profilePictures/Batii.png",
+        "alt": "Custom Minecraft skin for Batii"
+    }
 }

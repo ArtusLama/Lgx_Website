@@ -13,15 +13,12 @@ onMounted(() => {
     const preheadingSplit = new SplitText(preheading.value, { type: "words,chars" })
     const headingSplit = new SplitText(heading.value, { type: "words,chars" })
 
-    const preheadingChars = preheadingSplit.chars
-    const headingChars = headingSplit.chars
-
     gsap.set(preheading.value, {
         display: "inline-block",
         overflow: "hidden",
     })
-    gsap.set(preheadingChars, { yPercent: 120 })
-    gsap.set(headingChars, { opacity: 0 })
+    gsap.set(preheadingSplit.chars, { yPercent: 120 })
+    gsap.set(headingSplit.chars, { opacity: 0 })
 
     const introTimeline = gsap.timeline({
         defaults: { ease: "power3.out" },
@@ -33,13 +30,13 @@ onMounted(() => {
     })
 
     introTimeline
-        .to(preheadingChars, {
+        .to(preheadingSplit.chars, {
             yPercent: 0,
             duration: 1.2,
             delay: 0.2,
             stagger: { each: 0.04, from: "start" },
         })
-        .to(headingChars, {
+        .to(headingSplit.chars, {
             opacity: 1,
             duration: 1,
             stagger: { each: 0.05, from: "start" },
@@ -62,18 +59,15 @@ onBeforeUnmount(() => {
     <Section class="flex flex-col gap-12 items-center">
         <div class="font-jakarta text-center">
             <p ref="preheading" class="text-xl text-primary tracking-wider font-black uppercase font-italic sm:text-3xl">
-                Pixel Art
+                Skins
             </p>
-            <h2 ref="heading" class="text-5xl leading-[0.7] font-black sm:text-8xl">
-                I craft<br>
-                <span class="text-4xl font-black font-mono sm:text-6xl">
-                    pixel by pixel
-                </span>
+            <h2 ref="heading" class="text-5xl font-black sm:text-8xl">
+                Minecraft<br>Skins
             </h2>
         </div>
 
         <div class="mt-24 w-full">
-            <PortfolioPixelArtGrid />
+            <PortfolioSkinGrid />
         </div>
     </Section>
 </template>

@@ -6,6 +6,7 @@ import type { ShopProduct } from "../utils/content/schemas/shop/product"
 export type { Partner, Partners }
 export type { PixelArt } from "../utils/content/schemas/portfolio/pixelArt"
 export type { ProfilePicture } from "../utils/content/schemas/portfolio/profilePicture"
+export type { Skin } from "../utils/content/schemas/portfolio/skin"
 export type { Thumbnail } from "../utils/content/schemas/portfolio/thumbnail"
 export type { TrustedByYouTubeChannels } from "../utils/content/schemas/trustedBy/trustedByYouTubeChannels"
 export type { ShopCategory }

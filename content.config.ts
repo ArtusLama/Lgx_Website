@@ -2,6 +2,7 @@ import { defineCollection, defineContentConfig } from "@nuxt/content"
 import { PartnerSchema } from "./shared/utils/content/schemas/partners/partner"
 import { PixelArtSchema } from "./shared/utils/content/schemas/portfolio/pixelArt"
 import { ProfilePictureSchema } from "./shared/utils/content/schemas/portfolio/profilePicture"
+import { SkinSchema } from "./shared/utils/content/schemas/portfolio/skin"
 import { ThumbnailSchema } from "./shared/utils/content/schemas/portfolio/thumbnail"
 import { ShopCategorySchema } from "./shared/utils/content/schemas/shop/category"
 import { ShopProductSchema } from "./shared/utils/content/schemas/shop/product"
@@ -30,6 +31,12 @@ export default defineContentConfig({
             type: "data",
             source: "portfolio/profilePictures/*.json",
             schema: ProfilePictureSchema,
+        }),
+
+        portfolioSkins: defineCollection({
+            type: "data",
+            source: "portfolio/skins/*.json",
+            schema: SkinSchema,
         }),
 
         portfolioPixelArt: defineCollection({

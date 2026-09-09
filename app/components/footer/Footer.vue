@@ -44,7 +44,7 @@
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/partners">
+                            <NuxtLink to="/partners#become-a-partner">
                                 BECOME A PARTNER
                             </NuxtLink>
                         </li>

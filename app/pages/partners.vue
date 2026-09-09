@@ -9,6 +9,6 @@ useSeoMeta({
     <div>
         <SectionPartners class="pt-10" />
 
-        <SectionPartnersContact class="pt-32" />
+        <SectionPartnersContact id="become-a-partner" class="pt-32" />
     </div>
 </template>
