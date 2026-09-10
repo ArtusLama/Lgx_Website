@@ -20,7 +20,7 @@ useHead({
 </script>
 
 <template>
-    <div class="mt-18 px-10 py-16 text-center flex flex-col gap-8 items-center justify-center md:mt-32">
+    <div class="mt-18 px-10 py-16 pb-8 text-center flex flex-col gap-8 items-center justify-center md:mt-32">
         <div class="text-center space-y-6">
             <h1 class="text-4xl font-bold sm:text-6xl xl:text-7xl">
                 Explore my<br>
