@@ -25,7 +25,7 @@ function openFullscreen() {
         @click="openFullscreen"
     >
         <NuxtImg
-            class="h-full w-full object-cover pointer-events-none select-none transition-transform duration-300 group-focus-within:scale-103 group-hover:scale-103"
+            class="h-full w-full pointer-events-none select-none transition-transform duration-300 object-cover group-focus-within:scale-103 group-hover:scale-103"
             loading="lazy"
             :src="skin.finalImage.src"
             :alt="skin.finalImage.alt || 'Minecraft skin'"

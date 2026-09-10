@@ -13,7 +13,6 @@
 - [ Nav Logo to main page and scroll to top ]
 - [ Center text: "I made 100 Million Clicks" ]
 - [ Fix model render overlapping text ]
-- ?!?! Improve partner animation bar system => SlideBar left to right with logos
 - ?!?!? Create start animation => typing animation ?!
 - Replace starting thumbnails on main page -> test slide up mask?!
 - Better management system?! (-> Implement general system for changing thumbnails, Simplify upload process (easy upload / one-click upload))
@@ -26,9 +25,10 @@
 - Add other content for the portfolio
 - [ remove solo link in footer and put paypal there => https://www.paypal.com/paypalme/raspocketstudios ]
 - [ cards middle not rouded in contact -> mobile/desktop! ]
-- error page
 - [ seo identity / org schema setzup ]
 - other seo titles, descriptions, [ og images ], etc.
 - Make repo public?! -> solves the vercel + nuxt content issue -> is now public but still small issue
 - [ dynamic load top 4 thumbnails as first 4 from content loading instead of hardcoded ones ]
 - complete partners page
+- add skins portfolio section -> remove the 6-7 from the profile picture section
+- error page instant redirect WHY?!

@@ -3,7 +3,7 @@
         <div class="max-w-120rem w-full">
             <div class="gap flex flex-col flex-wrap gap-12 items-center justify-between md:flex-row md:items-start">
                 <div class="text-center flex flex-col items-center md:text-start md:items-start">
-                    <p class="text-5xl tracking-wide font-black font-jakarta w-fit uppercase md:text-8xl sm:text-7xl xl:text-9xl">
+                    <p class="text-5xl tracking-wide font-black font-jakarta w-fit select-none uppercase md:text-8xl sm:text-7xl xl:text-9xl">
                         RASPOCKET<br>
                         STUDIOS.
                     </p>
@@ -19,10 +19,10 @@
                     </div>
                 </div>
                 <div class="mt-0 text-center flex flex-col gap-2 md:mt-8 md:text-start">
-                    <p class="tracking-wider font-bold opacity-75 uppercase italic">
+                    <p class="tracking-wider opacity-75 uppercase italic">
                         LINKS:
                     </p>
-                    <ul class="text-lg flex flex-col gap-1 items-center *:(tracking-wider underline-hover-anim w-fit uppercase) md:items-start">
+                    <ul class="text-lg font-semibold flex flex-col gap-1 items-center *:(tracking-wider underline-hover-anim w-fit uppercase) md:items-start">
                         <li>
                             <NuxtLink to="/">
                                 HOME
