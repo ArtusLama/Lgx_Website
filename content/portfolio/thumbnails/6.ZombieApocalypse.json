@@ -1,0 +1,20 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/thumbnails/ZombieApocalypse_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/thumbnails/ZombieApocalypse_Aqua.png",
+    "alt": "X"
+  },
+  "finalImageVariants": [
+    {
+      "src": "/imgs/portfolio/thumbnails/ZombieApocalypse_Gray.png",
+      "alt": "X"
+    },
+    {
+      "src": "/imgs/portfolio/thumbnails/ZombieApocalypse_Green.png",
+      "alt": "X"
+    }
+  ]
+}

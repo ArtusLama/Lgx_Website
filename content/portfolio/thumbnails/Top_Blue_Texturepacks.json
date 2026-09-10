@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/thumbnails/Top_Blue_Texturepacks_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/thumbnails/Top_Blue_Texturepacks.png",
+    "alt": "X"
+  }
+}

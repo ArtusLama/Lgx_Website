@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/thumbnails/Nautilus_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/thumbnails/Nautilus.png",
+    "alt": "X"
+  }
+}
