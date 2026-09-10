@@ -1,7 +1,0 @@
-{
-  "description": "A template creative studio partner focused on motion, editing, and visual storytelling.",
-  "link": { "label": "See Motion Lab", "url": "https://motion-lab.example.com" },
-  "logo": { "url": "/imgs/partners/logos/MOTION-LAB.svg", "alt": "Motion Lab template logo" },
-  "marqueeLogo": { "url": "/imgs/partners/logos/MOTION-LAB.svg", "alt": "Motion Lab muted marquee logo" },
-  "name": "Motion Lab"
-}

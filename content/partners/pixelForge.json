@@ -1,7 +1,0 @@
-{
-  "description": "A template affiliate for artists who want to sharpen their workflow and build with intention.",
-  "link": { "label": "Discover Pixel Forge", "url": "https://pixel-forge.example.com" },
-  "logo": { "url": "/imgs/partners/logos/PIXEL-FORGE.svg", "alt": "Pixel Forge template logo" },
-  "marqueeLogo": { "url": "/imgs/partners/logos/PIXEL-FORGE.svg", "alt": "Pixel Forge muted marquee logo" },
-  "name": "Pixel Forge"
-}

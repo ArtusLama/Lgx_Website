@@ -30,5 +30,4 @@
 - Make repo public?! -> solves the vercel + nuxt content issue -> is now public but still small issue
 - [ dynamic load top 4 thumbnails as first 4 from content loading instead of hardcoded ones ]
 - complete partners page
-- add skins portfolio section -> remove the 6-7 from the profile picture section
 - error page instant redirect WHY?!
