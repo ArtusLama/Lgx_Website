@@ -63,7 +63,7 @@ onMounted(() => {
 <template>
     <Section class="px-0! py-0! [&>div]:(max-w-none w-full)">
         <div class="flex min-h-screen w-full items-center relative z-10">
-            <NuxtImg ref="background" src="/imgs/HeroBackground.png" alt="Hero Background" class="h-full w-full pointer-events-none select-none left-0 top-0 absolute object-cover object-center -z-10" loading="lazy" />
+            <NuxtImg ref="background" src="/imgs/HeroBackground.png" alt="Hero Background" class="h-full w-full pointer-events-none select-none left-0 top-0 absolute object-cover object-center -z-10" />
 
             <div class="mx-auto relative -mt-48">
                 <h1 ref="hero-title" class="text-size-[clamp(3rem,12vw,15rem)] text-primary leading-[0.8] tracking-[10] font-black text-center uppercase [&>span]:(py-5 -my-5)">

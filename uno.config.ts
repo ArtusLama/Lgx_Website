@@ -40,6 +40,7 @@ export default defineConfig({
         },
         font: {
             jakarta: "Plus Jakarta Sans, sans-serif",
+            pixel: "'Press Start 2P', monospace",
         },
     },
 })

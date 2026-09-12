@@ -50,6 +50,12 @@ export default defineNuxtConfig({
                 weights: ["200 800"],
                 styles: ["normal", "italic"],
             },
+            {
+                name: " Press Start 2P",
+                provider: "google",
+                weights: ["400"],
+                styles: ["normal"],
+            },
         ],
     },
 

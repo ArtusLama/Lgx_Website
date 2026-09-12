@@ -66,8 +66,8 @@ onBeforeUnmount(() => {
             </p>
             <h2 ref="heading" class="text-5xl leading-[0.7] font-black sm:text-8xl">
                 I craft<br>
-                <span class="text-4xl font-black font-mono sm:text-6xl">
-                    pixel by pixel
+                <span class="text-3xl font-black font-pixel sm:text-5xl">
+                    pixel <span class="text-4xl font-mono sm:text-6xl">by</span> pixel
                 </span>
             </h2>
         </div>
