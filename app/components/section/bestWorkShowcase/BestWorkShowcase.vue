@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: topThumbnails } = useLazyAsyncData("top-4-portfolio-thumbnails", () => queryCollection("portfolioThumbnails").limit(4).all())
+const { data: topThumbnails } = await useAsyncData("top-4-portfolio-thumbnails", () => queryCollection("portfolioThumbnails").limit(4).all())
 </script>
 
 <template>

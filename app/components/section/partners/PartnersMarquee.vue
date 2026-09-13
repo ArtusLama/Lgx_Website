@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: partners } = useLazyAsyncData("partner-marquee", () => queryCollection("partners").all())
+const { data: partners } = await useAsyncData("partner-marquee", () => queryCollection("partners").all())
 
 const marqueePartners = computed(() => (partners.value ?? []).filter(partner => partner.marqueeLogo))
 </script>
@@ -24,7 +24,7 @@ const marqueePartners = computed(() => (partners.value ?? []).filter(partner => 
                         <NuxtImg
                             :src="partner.marqueeLogo!.url"
                             :alt="partner.marqueeLogo!.alt"
-                            loading="lazy"
+                            loading="eager"
                             class="pointer-events-none select-none"
                         />
                     </a>
@@ -43,7 +43,7 @@ const marqueePartners = computed(() => (partners.value ?? []).filter(partner => 
                         <NuxtImg
                             :src="partner.marqueeLogo!.url"
                             alt=""
-                            loading="lazy"
+                            loading="eager"
                             class="pointer-events-none select-none"
                         />
                     </a>
