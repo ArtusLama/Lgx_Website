@@ -40,7 +40,7 @@ useHead({
             </UiButton>
         </div>
 
-        <div id="kofi-commissions-embed" class="max-w-400" data-commissions-id="D1D61GGK54" data-commissions-currency="€" data-commissions-theme="default" />
         <div id="kofi-shop-embed" class="max-w-400" data-shop-id="D1D61GGK54" data-shop-currency="€" data-shop-theme="default" data-shop-soldout="show" />
+        <div id="kofi-commissions-embed" class="max-w-400" data-commissions-id="D1D61GGK54" data-commissions-currency="€" data-commissions-theme="default" />
     </div>
 </template>
