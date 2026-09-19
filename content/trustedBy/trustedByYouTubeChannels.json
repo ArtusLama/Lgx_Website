@@ -1,8 +1,24 @@
 {
   "channels": [
     {
-      "handle": "@Blissolic",
+      "handle": "@Dewier",
       "pinToTop": true
+    },
+    {
+      "handle": "@bluwavee",
+      "pinToTop": false
+    },
+    {
+      "handle": "UCZEDQbrQqkoBhPJLWI2C0OA",
+      "pinToTop": false
+    },
+    {
+      "handle": "UCIfkKPPmqG9vH12LwOZJXmQ",
+      "pinToTop": false
+    },
+    {
+      "handle": "@Blissolic",
+      "pinToTop": false
     },
     {
       "handle": "@Felbolt",
@@ -10,7 +26,7 @@
     },
     {
       "handle": "@xFlxme",
-      "pinToTop": true
+      "pinToTop": false
     },
     {
       "handle": "@OvejaGD",
@@ -46,7 +62,7 @@
     },
     {
       "handle": "@bandisergio",
-      "pinToTop": true
+      "pinToTop": false
     },
     {
       "handle": "@cydeYT",
@@ -54,7 +70,7 @@
     },
     {
       "handle": "@Twixxel_lesgo",
-      "pinToTop": false
+      "pinToTop": true
     },
     {
       "handle": "@CarpyyVuoleGiocare",
@@ -62,7 +78,7 @@
     },
     {
       "handle": "@BBlocks",
-      "pinToTop": false
+      "pinToTop": true
     },
     {
       "handle": "@clevooo",
@@ -70,19 +86,19 @@
     },
     {
       "handle": "@Carpyy",
-      "pinToTop": true
+      "pinToTop": false
     },
     {
       "handle": "@Thunderflares",
       "pinToTop": false
     },
     {
-      "pinToTop": false,
-      "handle": "@SculkyYoutube"
+      "handle": "@SculkyYoutube",
+      "pinToTop": true
     },
     {
-      "handle": "UCAev5Ow_OuXNJhORF1Fk5WA",
-      "pinToTop": false
+      "handle": "@SoyManuelYouTube",
+      "pinToTop": true
     },
     {
       "handle": "UCOSXLQ95RG694XNSyvGCMzQ",
@@ -114,7 +130,7 @@
     },
     {
       "handle": "@Jooonah",
-      "pinToTop": false
+      "pinToTop": true
     }
   ]
 }
