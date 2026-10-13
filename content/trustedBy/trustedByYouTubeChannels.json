@@ -127,6 +127,14 @@
     {
       "handle": "@Jooonah",
       "pinToTop": true
+    },
+    {
+      "handle": "@BlvckWlf",
+      "pinToTop": false
+    },
+    {
+      "handle": "@lluurii11",
+      "pinToTop": false
     }
   ]
 }
