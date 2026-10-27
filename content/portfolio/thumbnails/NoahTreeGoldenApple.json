@@ -1,0 +1,10 @@
+{
+  "beforeImage": {
+    "src": "/imgs/portfolio/thumbnails/NoahTreeGoldenApple_BEFORE.png",
+    "alt": "X"
+  },
+  "finalImage": {
+    "src": "/imgs/portfolio/thumbnails/NoahTreeGoldenApple.png",
+    "alt": "X"
+  }
+}
